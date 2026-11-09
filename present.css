@@ -20,6 +20,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0;
   background: var(--paper);
   color: var(--ink);
@@ -29,6 +33,14 @@ body {
   line-height: 1.5;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.page-end {
+  margin-top: auto;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -168,8 +180,7 @@ h1, h2, h3 {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 24rem;
-  border-bottom: var(--rule);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .hero-main { padding: 4.3rem var(--x); }
@@ -358,6 +369,49 @@ a.cell:hover svg { transform: translate(0.15rem, -0.15rem); }
 
 .cell:hover .meta {
   color: rgba(245, 248, 251, 0.65);
+}
+
+.screens {
+  display: grid;
+  gap: 1.2rem;
+  padding: 0 var(--x) 2.5rem;
+}
+
+.screen-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: 42rem;
+  min-height: 6.4rem;
+  padding: 1.6rem 2.2rem;
+  border: 0.1rem solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--nh);
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  transition: background var(--hover), color var(--hover), border-color var(--hover);
+}
+
+.screen-btn svg {
+  flex: none;
+  width: 1.8rem;
+  height: 1.8rem;
+  transition: transform var(--hover);
+}
+
+.screen-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--paper);
+}
+
+.screen-btn:hover svg {
+  transform: translate(0.15rem, -0.15rem);
 }
 
 /* footer */
