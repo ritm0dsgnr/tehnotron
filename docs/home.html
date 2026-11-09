@@ -1,0 +1,437 @@
+
+<!doctype html>
+<html lang="ru">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Технотрон</title>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (location.hash === "" || location.hash === "#") {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
+    window.scrollTo(0, 0);
+  </script>
+  <style>
+    a { color: inherit; text-decoration: none; }
+    body { margin: 0; color: #141414; background: #fff; }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transform: translate3d(0, 0, 0);
+    }
+    .header--over { color: #fff; background: transparent; }
+    .header--solid { color: #035c8c; background: #fff; }
+    .header.is-hidden { transform: translate3d(0, -100%, 0); }
+  </style>
+  <script type="module" crossorigin src="/tehnotron/assets/home-F6vCjjkL.js"></script>
+  <link rel="stylesheet" crossorigin href="/tehnotron/assets/home-H4A_ecf6.css">
+</head>
+
+  <body data-page="home">
+    <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="logo" viewBox="0 0 235 30" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M22.9224 2.88255L21.1767 10.7168H24.5754L24.1922 12.4241H20.7964L19.5214 18.1462H26.1229L29.5455 2.88255H22.9224ZM6.72695 10.7168H13.3264H15.0026H19.5008L21.2465 2.88255H13.3483C12.1309 2.98042 8.45654 2.43272 7.53226 7.12451L6.72695 10.7168ZM9.86055 26.2654L11.2896 19.8541H7.402L7.78483 18.1462H11.6704L12.9456 12.4241H6.34393L3.24015 26.2654H9.86055ZM17.8448 18.1462L19.12 12.4241H14.622L13.3468 18.1462H17.8448ZM25.7397 19.8541H19.1406H17.464H12.9662L11.5377 26.2654H19.8127C22.8888 26.2326 24.2302 26.2469 25.1235 22.5998L25.7397 19.8541ZM0 29.1471L5.35017 5.28737C6.50237 -0.561287 11.0824 0.121714 12.6002 0H32.7905L27.2784 24.5778C26.1646 29.1241 24.4924 29.1062 20.6576 29.1471H0ZM1.40865 27.8953L6.29927 6.08529C7.35252 0.739188 11.5392 1.36346 12.9265 1.2526H31.3821L26.3436 23.7185C25.3251 27.8742 23.7966 27.8577 20.2913 27.8953H1.40865Z"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M147.968 17.1585C147.674 19.488 146.819 21.3716 145.404 22.8083C143.616 24.624 141.116 25.5314 137.913 25.5314C134.707 25.5314 132.207 24.624 130.411 22.8083C128.988 21.3716 128.132 19.488 127.836 17.1585H133.559C133.728 18.2706 134.062 19.1653 134.555 19.8394C135.306 20.8778 136.425 21.3932 137.913 21.3932C139.388 21.3932 140.501 20.8778 141.243 19.8394C141.728 19.1653 142.053 18.2706 142.221 17.1585H147.968ZM235 25.0214H230.08V16.3637H223.412V25.0214H218.492V5.4757H223.412V12.6271H230.08V5.4757H235V25.0214ZM188.365 11.6416C188.365 12.5508 188.222 13.4158 187.931 14.2399C187.644 15.0598 187.227 15.7504 186.685 16.3013C186.354 16.6414 185.986 16.9554 185.587 17.2471C185.188 17.5334 184.749 17.7798 184.271 17.9819C183.786 18.1789 183.267 18.3403 182.702 18.4521C182.137 18.564 181.505 18.6221 180.802 18.6221H178.23V25.0214H173.31V5.4757H180.905C182.034 5.4757 183.006 5.57901 183.826 5.7846C184.646 5.99094 185.386 6.31384 186.053 6.76143C186.788 7.24984 187.357 7.90401 187.761 8.72393C188.164 9.53943 188.365 10.5121 188.365 11.6416ZM183.311 11.7621C183.311 11.2103 183.181 10.7401 182.917 10.3419C182.657 9.94719 182.343 9.67395 181.976 9.5264C181.514 9.32424 181.071 9.20793 180.645 9.17669C180.224 9.14546 179.65 9.13169 178.924 9.13169H178.23V14.9661H178.57C179.032 14.9661 179.471 14.9619 179.879 14.9523C180.291 14.9435 180.65 14.9122 180.954 14.8628C181.214 14.8178 181.492 14.7327 181.787 14.6078C182.079 14.4777 182.303 14.339 182.46 14.1818C182.791 13.8592 183.015 13.5232 183.137 13.1738C183.253 12.8241 183.311 12.3538 183.311 11.7621ZM157.204 25.0214V9.21236H151.424V5.4757H167.905V9.21236H162.124V25.0214H157.204ZM121.889 25.0214H116.969V16.3637H110.302V25.0214H105.381V5.4757H110.302V12.6271H116.969V5.4757H121.889V25.0214ZM100.134 25.0214H94.4566L90.666 18.806L86.8254 25.0214H81.395L87.7665 15.1675L81.6363 5.4757H87.3138L90.863 11.3718L94.4878 5.4757H99.9189L93.7756 14.9836L100.134 25.0214ZM63.6269 25.0214V5.4757H76.8549V9.21236H68.5202V12.6271H76.2096V16.3637H68.5202V21.2838H76.8549V25.0214H63.6269ZM47.522 25.0214V9.21236H41.7422V5.4757H58.2229V9.21236H52.4421V25.0214H47.522ZM212.003 17.1585C211.71 19.488 210.856 21.3716 209.439 22.8083C207.653 24.624 205.151 25.5314 201.949 25.5314C198.742 25.5314 196.242 24.624 194.446 22.8083C193.024 21.3716 192.167 19.488 191.872 17.1585H197.595C197.763 18.2706 198.098 19.1653 198.591 19.8394C199.342 20.8778 200.461 21.3932 201.949 21.3932C203.425 21.3932 204.536 20.8778 205.278 19.8394C205.763 19.1653 206.088 18.2706 206.257 17.1585H212.003ZM191.905 13.0592C192.225 10.8426 193.075 9.04585 194.442 7.66545C196.226 5.86599 198.735 4.9654 201.949 4.9654C205.151 4.9654 207.653 5.86599 209.439 7.66545C210.806 9.04585 211.65 10.8426 211.975 13.0592H206.228C206.051 12.0312 205.734 11.1965 205.278 10.5598C204.536 9.51952 203.425 9.00502 201.949 9.00502C200.461 9.00502 199.342 9.5237 198.591 10.564C198.125 11.2044 197.805 12.0381 197.624 13.0592H191.905ZM127.869 13.0592C128.19 10.8426 129.039 9.04585 130.406 7.66545C132.19 5.86599 134.699 4.9654 137.913 4.9654C141.116 4.9654 143.616 5.86599 145.404 7.66545C146.771 9.04585 147.614 10.8426 147.939 13.0592H142.193C142.016 12.0312 141.699 11.1965 141.243 10.5598C140.501 9.51952 139.388 9.00502 137.913 9.00502C136.425 9.00502 135.306 9.5237 134.555 10.564C134.089 11.2044 133.769 12.0381 133.589 13.0592H127.869Z"/>
+  </symbol>
+  <symbol id="arrow-down" viewBox="0 0 8 4" fill="none">
+    <path d="M0.375 0.651184L3.875 2.65118L7.375 0.651184" stroke="currentColor" stroke-width="1.5" />
+  </symbol>
+  <symbol id="arrow" viewBox="0 0 18 14" fill="none">
+    <path fill="currentColor" d="M10.8525 0.222658C11.1347 -0.0746488 11.6017 -0.074772 11.8838 0.222658L17.79 6.45508C18.0721 6.75282 18.0722 7.24531 17.79 7.54297L11.8838 13.7744C11.7379 13.9284 11.553 14 11.3682 14C11.1833 14 10.9985 13.9284 10.8525 13.7744C10.5704 13.4767 10.5704 12.9842 10.8525 12.6865L15.5137 7.76856L0.729491 7.76855C0.330757 7.76838 0.000137585 7.41972 -1.22373e-06 6.99902C-1.15016e-06 6.57821 0.330673 6.22869 0.729491 6.22852L15.5127 6.22852L10.8525 1.31153C10.5704 1.0138 10.5704 0.52038 10.8525 0.222658Z"/>
+  </symbol>
+</svg>
+  <symbol id="social-vk" viewBox="0 0 34 34" fill="none">
+    <path fill="currentColor" d="M17 0C26.3888 2.57703e-07 34 7.61116 34 17C34 26.3888 26.3888 34 17 34C7.61116 34 2.5772e-07 26.3888 0 17C0 7.61116 7.61116 0 17 0ZM16.6172 12.002C15.5443 11.9914 14.6363 12.0053 14.1221 12.248C13.7799 12.4096 13.5159 12.7703 13.6768 12.791C13.8756 12.8165 14.3259 12.9077 14.5645 13.2207C14.8687 13.62 14.8615 14.5097 14.8613 14.5322C14.8613 14.5322 15.0387 17.0328 14.4482 17.3438C14.043 17.5568 13.4867 17.1223 12.293 15.1338C11.6814 14.1151 11.2197 12.9883 11.2197 12.9883C11.2191 12.9869 11.13 12.7773 10.9717 12.665C10.7808 12.5299 10.5147 12.4862 10.5098 12.4854L7.65234 12.5039C7.65234 12.5039 7.22304 12.5155 7.06543 12.6953C6.92832 12.8521 7.04858 13.1722 7.05371 13.1855C7.05371 13.1855 9.29181 18.2324 11.8252 20.7754C14.1344 23.0929 16.7539 22.9558 16.7852 22.9541H17.9805C17.9805 22.9541 18.3418 22.9151 18.5264 22.7236C18.6959 22.5476 18.6904 22.2178 18.6904 22.2178C18.6903 22.2095 18.6698 20.6705 19.4121 20.4434C20.1461 20.2199 21.0884 21.9387 22.0869 22.5996C22.8338 23.094 23.4035 22.9925 23.416 22.9902L26.0869 22.9541C26.0869 22.9541 27.4838 22.8706 26.8213 21.8115C26.7664 21.7236 26.4338 21.0266 24.8359 19.5967C23.1611 18.0981 23.3851 18.3401 25.4023 15.748C26.6309 14.1694 27.1222 13.2057 26.9688 12.793C26.8224 12.3998 25.9189 12.5039 25.9189 12.5039L22.9121 12.5215C22.9121 12.5215 22.6887 12.4926 22.5234 12.5879C22.3635 12.6803 22.2598 12.8943 22.2578 12.8984C22.2578 12.8984 21.782 14.1202 21.1475 15.1592C19.8084 17.3513 19.2726 17.4674 19.0537 17.3311C18.5447 17.0137 18.6718 16.057 18.6719 15.377C18.6719 13.2527 19.0062 12.3661 18.0215 12.1367C17.6946 12.0607 17.4532 12.0102 16.6172 12.002Z"/>
+  </symbol>
+  <symbol id="social-max" viewBox="0 0 34 34" fill="none">
+    <path fill="currentColor" d="M17 0C26.3888 0 34 7.61116 34 17C34 26.3888 26.3888 34 17 34C7.61116 34 0 26.3888 0 17C0 7.61116 7.61116 0 17 0ZM17.1523 7.55566C11.9476 7.55572 7.55477 11.6007 7.55469 16.9775C7.55469 19.2287 7.96965 20.7826 8.33496 22.1777C8.64165 23.3102 8.9121 24.3477 8.91211 25.5752C9.04292 27.2105 12.0421 26.2543 12.9893 25.0312C14.4866 26.1184 15.3484 26.3906 17.2021 26.3906C22.3264 26.3631 26.4608 22.1739 26.4434 17.0273C26.4433 11.8 22.3616 7.55566 17.1523 7.55566ZM17.2783 12.2031V12.208C19.9051 12.3591 21.9279 14.5958 21.8252 17.2363C21.6487 19.871 19.4045 21.8787 16.7783 21.752C15.9563 21.6858 15.1659 21.4033 14.4873 20.9326C14.0769 21.3448 13.4178 21.8788 13.1562 21.8154C12.6106 21.67 11.9704 18.8849 12.3311 16.5977C12.7685 13.8346 14.7438 12.072 17.2783 12.2031Z"/>
+  </symbol>
+  <symbol id="social-dzen" viewBox="0 0 34 34" fill="none">
+    <path fill="currentColor" d="M17 0C26.3888 0 34 7.61116 34 17C34 26.3888 26.3888 34 17 34C7.61116 34 0 26.3888 0 17C0 7.61116 7.61116 0 17 0ZM8 17.0967C8 20.6901 8.01315 23.3769 9.29883 24.7012C10.6231 25.9869 13.1877 26 16.9033 26C16.7747 22.0143 16.6789 20.1946 15.2646 18.7354C14.9911 18.4702 14.7043 18.252 14.3936 18.0703C13.0466 17.2842 11.2384 17.2011 8 17.0967ZM26 17.0967C22.0143 17.2253 20.1946 17.3211 18.7354 18.7354C18.4702 19.0089 18.252 19.2957 18.0703 19.6064C17.2842 20.9534 17.2011 22.7616 17.0967 26L18.4355 25.9971C21.4339 25.977 23.5424 25.8262 24.7012 24.7012C25.9869 23.3769 26 20.6901 26 17.0967ZM16.9033 8C13.1942 8 10.6231 8.01315 9.29883 9.29883C8.01315 10.6231 8 13.3099 8 16.9033C11.9857 16.7747 13.8054 16.6789 15.2646 15.2646C15.5298 14.9911 15.748 14.7043 15.9297 14.3936C16.7158 13.0466 16.7989 11.2384 16.9033 8ZM17.0967 8C17.2188 11.9857 17.3211 13.8054 18.7354 15.2646C20.1946 16.6789 22.0143 16.7747 26 16.9033C26 13.3099 25.9869 10.6231 24.7012 9.29883C23.3769 8.01315 20.8123 8 17.0967 8Z"/>
+  </symbol>
+</svg>
+
+<header class="header header--over" data-header>
+  <div class="header__bar">
+    <div class="container header__inner">
+      <div class="header__brand">
+        <a class="logo" href="/tehnotron/home.html" aria-label="Технотрон"><svg class="logo__icon" width="235" height="30" aria-hidden="true" focusable="false">
+  <use href="#logo"></use>
+</svg>
+</a>
+        <p class="header__tagline">Российский производитель автокомпонентов</p>
+      </div>
+      <nav class="nav" aria-label="Основное меню">
+        <div class="nav__item nav__item--mega" data-nav-mega>
+          <a href="#directions" data-nav="products">Продукция</a>
+          <div class="nav-mega nav-mega--products" id="nav-mega-products">
+            <div class="container nav-mega__grid nav-mega__grid--products">
+              <div class="nav-mega__col">
+                <a href="#directions">Автокомпоненты</a>
+                <a href="#directions">Оперение кабины (экстерьер)</a>
+                <a href="#directions">Принадлежности кабины (интерьер)</a>
+                <a href="#directions">Система охлаждения</a>
+              </div>
+              <div class="nav-mega__col">
+                <a href="#directions">Детали ДВС</a>
+                <a href="#directions">Система питания</a>
+                <a href="#directions">Элементы подвески</a>
+                <a href="#directions">Тягово-сцепные устройства</a>
+              </div>
+              <div class="nav-mega__col">
+                <a href="#directions">Электрика</a>
+                <a href="#directions">Седельно-сцепные устройства и монтажные плиты</a>
+                <a href="#directions">Прочее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#resources" data-nav="services">Услуги</a>
+        <a href="#request" data-nav="suppliers">Поставщикам</a>
+        <div class="nav__item nav__item--mega" data-nav-mega>
+          <a href="#resources" data-nav="about">О предприятии</a>
+          <div class="nav-mega nav-mega--about" id="nav-mega-about">
+            <div class="container nav-mega__grid nav-mega__grid--about">
+              <div class="nav-mega__col">
+                <a href="#resources">Ресурсы</a>
+                <a href="#news">Новости</a>
+                <a href="#request">Заявка</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#resources" data-nav="quality">Качество</a>
+        <a href="#request" data-nav="contacts">Контакты</a>
+      </nav>
+      <div class="header__aside">
+        <a class="header__phone" href="tel:88002004738">8 800 200-47-38</a>
+        <button class="header__lang" type="button" aria-label="Язык">
+          <span>RU</span>
+          <svg class="icon icon--arrow-down" width="8" height="4" aria-hidden="true" focusable="false">
+  <use href="#arrow-down"></use>
+</svg>
+
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="pin-stack">
+        <section class="hero pin-stack__layer" style="--z: 1" data-hero>
+          <div class="hero__media" data-hero-media></div>
+          <div class="hero__overlay" aria-hidden="true"></div>
+          <div class="container hero__body">
+            <h1 class="hero__title">
+              <span class="hero__title-line" data-hero-line data-hero-intro="1">Полный цикл</span>
+              <span class="hero__title-line" data-hero-line data-hero-intro="2">разработки продукта</span>
+            </h1>
+            <div class="hero__bottom">
+              <div class="hero__copy">
+                <p class="hero__lead" data-hero-lead data-hero-intro="3">
+                  С внедрением технологий - от идеи до серийного производства
+                </p>
+                <div class="hero__actions" data-hero-intro="4">
+                  <a class="btn btn--ghost" data-hero-btn href="#resources">Подробнее</a>
+                </div>
+              </div>
+              <div class="hero__slider" aria-label="Слайдер" data-hero-intro="5">
+                <div class="hero__slider-nav">
+                  <button class="hero__slider-btn hero__slider-btn--prev" type="button" data-hero-prev aria-label="Назад">
+                    <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+  <use href="#arrow"></use>
+</svg>
+
+                  </button>
+                  <button class="hero__slider-btn" type="button" data-hero-next aria-label="Вперед">
+                    <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+  <use href="#arrow"></use>
+</svg>
+
+                  </button>
+                </div>
+                <div class="hero__progress" aria-hidden="true">
+                  <span class="hero__progress-bar" data-hero-progress></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats pin-stack__layer" style="--z: 2" data-animate="stats">
+          <div class="stats__media">
+            <img src="/tehnotron/img/stats-bg.png" alt="" width="1920" height="1800" />
+          </div>
+          <div class="stats__shade" aria-hidden="true"></div>
+          <div class="stats__lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="stats__body">
+            <div class="stats__item stats__item--clients is-animate">
+              <img class="stats__num" src="/tehnotron/img/200.svg" alt="200+" width="687" height="226" />
+              <p class="stats__label">Клиентов по всей стране</p>
+            </div>
+            <div class="stats__item stats__item--years is-animate">
+              <img class="stats__num" src="/tehnotron/img/years.svg" alt="" width="326" height="226" />
+              <p class="stats__label">Года плодотворной работы</p>
+            </div>
+            <div class="stats__item stats__item--staff is-animate">
+              <img class="stats__num" src="/tehnotron/img/900.svg" alt="900+" width="700" height="230" />
+              <p class="stats__label">Сотрудников в компании</p>
+            </div>
+            <div class="stats__item stats__item--output is-animate">
+              <img class="stats__num" src="/tehnotron/img/5mln.svg" alt="5 млн" width="791" height="226" />
+              <p class="stats__label">Выпускаемой продукции в год</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="directions pin-stack__layer" style="--z: 3" id="directions" data-animate="directions">
+          <div class="container">
+            <h2 class="directions__title is-animate">направления деятельности</h2>
+            <div class="directions__stage" data-directions-stage>
+              <div class="directions__visual">
+                <div class="directions__photo is-active" data-directions-photo>
+                  <img src="/tehnotron/img/01.png" alt="" width="802" height="785" />
+                </div>
+                <div class="directions__photo" data-directions-photo>
+                  <img src="/tehnotron/img/02.png" alt="" width="802" height="779" />
+                </div>
+                <div class="directions__photo" data-directions-photo>
+                  <img src="/tehnotron/img/03.png" alt="" width="803" height="711" />
+                </div>
+              </div>
+              <div class="directions__copy">
+                <div class="directions__track" data-directions-track>
+                  <article class="direction" data-directions-panel>
+                    <p class="direction__num">01</p>
+                    <h3 class="direction__name">Принадлежности кабины</h3>
+                    <p class="direction__text">Краткое описание направление продукции в две или три строчки</p>
+                    <a class="btn btn--dark" href="#directions">Подробнее</a>
+                  </article>
+                  <article class="direction" data-directions-panel>
+                    <p class="direction__num">02</p>
+                    <h3 class="direction__name">системы охлаждения</h3>
+                    <p class="direction__text">Краткое описание направление продукции в две или три строчки</p>
+                    <a class="btn btn--dark" href="#directions">Подробнее</a>
+                  </article>
+                  <article class="direction" data-directions-panel>
+                    <p class="direction__num">03</p>
+                    <h3 class="direction__name">тягово-сцепные устройства</h3>
+                    <p class="direction__text">Краткое описание направление продукции в две или три строчки</p>
+                    <a class="btn btn--dark" href="#directions">Подробнее</a>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <a class="directions__more" href="#directions">все направления</a>
+          </div>
+        </section>
+      </div>
+
+      <section class="partners" data-animate="partners">
+        <div class="container">
+          <h2 class="partners__title is-animate">наши партнеры</h2>
+        </div>
+        <div class="partners__marquee">
+          <div class="partners__track">
+            <div class="partners__group">
+              <img class="partners__logo" src="/tehnotron/img/partner-add.svg" alt="ADD Awards" width="185" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-forbes.svg" alt="Forbes" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-officenext.svg" alt="OfficeNext" width="296" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-rd.png" alt="РД Премия" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-design.png" alt="Дизайн + Здоровье" width="201" height="75" />
+            </div>
+            <div class="partners__group" aria-hidden="true">
+              <img class="partners__logo" src="/tehnotron/img/partner-add.svg" alt="" width="185" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-forbes.svg" alt="" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-officenext.svg" alt="" width="296" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-rd.png" alt="" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-design.png" alt="" width="201" height="75" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cover-stack">
+        <section class="resources cover-stack__layer" style="--z: 1" id="resources" data-resources>
+          <div class="resources__media" aria-hidden="true">
+            <div class="resources__photo is-active" data-resources-photo>
+              <img src="/tehnotron/img/resource-1.png" alt="" width="1920" height="1080" />
+            </div>
+            <div class="resources__photo" data-resources-photo>
+              <img src="/tehnotron/img/resource-2.jpg" alt="" width="1920" height="1080" />
+            </div>
+            <div class="resources__photo" data-resources-photo>
+              <img src="/tehnotron/img/resource-1.png" alt="" width="1920" height="1080" />
+            </div>
+          </div>
+          <div class="resources__shade" aria-hidden="true"></div>
+          <div class="container resources__body">
+            <div class="resources__vline" data-resources-vline aria-hidden="true"></div>
+
+            <div class="resources__left">
+              <h2 class="resources__title" data-resources-title>наши ресурсы</h2>
+              <a class="resources__all" href="#">все ресурсы</a>
+            </div>
+
+            <div class="resources__right">
+              <div class="resources__slides">
+                <article class="resources__slide is-active" data-resources-slide>
+                  <p class="resources__count">01 / 03</p>
+                  <h3 class="resources__name">окрасочное производство</h3>
+                  <p class="resources__text">Краткое описание направления продукции в две или три строчки</p>
+                  <a class="btn btn--ghost" href="#">Подробнее</a>
+                </article>
+                <article class="resources__slide" data-resources-slide>
+                  <p class="resources__count">02 / 03</p>
+                  <h3 class="resources__name">механообработка</h3>
+                  <p class="resources__text">Краткое описание направления продукции в две или три строчки</p>
+                  <a class="btn btn--ghost" href="#">Подробнее</a>
+                </article>
+                <article class="resources__slide" data-resources-slide>
+                  <p class="resources__count">03 / 03</p>
+                  <h3 class="resources__name">сборочное производство</h3>
+                  <p class="resources__text">Краткое описание направления продукции в две или три строчки</p>
+                  <a class="btn btn--ghost" href="#">Подробнее</a>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="resources__nav">
+            <button class="resources__nav-btn resources__nav-btn--prev" type="button" data-resources-prev aria-label="Назад">
+              <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+  <use href="#arrow"></use>
+</svg>
+
+            </button>
+            <button class="resources__nav-btn" type="button" data-resources-next aria-label="Вперед">
+              <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+  <use href="#arrow"></use>
+</svg>
+
+            </button>
+          </div>
+        </section>
+
+        <section class="news cover-stack__layer" id="news" data-animate="news" style="--z: 2">
+          <div class="container">
+            <h2 class="news__title is-animate">новости компании</h2>
+            <div class="news__list">
+              <a class="news-card is-animate" href="#">
+                <div class="news-card__media">
+                  <img src="/tehnotron/img/news-1.png" alt="" width="600" height="400" />
+                </div>
+                <h3 class="news-card__name">Современные Технологии на выставке MinTech 2023</h3>
+                <p class="news-card__date">18.09.2023</p>
+              </a>
+              <a class="news-card is-animate" href="#">
+                <div class="news-card__media">
+                  <img src="/tehnotron/img/news-2.png" alt="" width="600" height="400" />
+                </div>
+                <h3 class="news-card__name">Современные Технологии на выставке MinTech 2023</h3>
+                <p class="news-card__date">18.09.2023</p>
+              </a>
+              <a class="news-card is-animate" href="#">
+                <div class="news-card__media">
+                  <img src="/tehnotron/img/news-3.png" alt="" width="600" height="400" />
+                </div>
+                <h3 class="news-card__name">Конкурс «Лучшие товары Республики Татарстан» 2023 года!</h3>
+                <p class="news-card__date">18.09.2023</p>
+              </a>
+            </div>
+            <a class="news__more" href="#">все новости</a>
+          </div>
+        </section>
+
+        <div class="cover-stack__layer" style="--z: 3">
+          <section class="cta" id="request">
+  <div class="cta__inner">
+    <h2 class="cta__title">Есть вопросы или нужна консультация специалиста?</h2>
+    <p class="cta__text">Оставьте заявку, наш менеджер проконсультирует Вас по всем интересующим вопросам</p>
+    <a class="btn btn--ghost" href="#request">Оставить заявку</a>
+
+    <h2 class="cta__title cta__title--address">Наш адрес</h2>
+    <p class="cta__text">РФ, Республика Татарстан, г. Набережные Челны, ул. Моторная, 38</p>
+    <div
+      class="cta__map"
+      data-map
+      role="region"
+      aria-label="Карта: Набережные Челны, ул. Моторная, 38"
+    ></div>
+
+    <a class="cta__download" href="#">Скачать презентацию</a>
+    <a class="cta__download" href="#">Скачать каталог</a>
+  </div>
+</section>
+
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+  <div class="container footer__inner">
+    <a class="logo footer__logo" href="/tehnotron/home.html" aria-label="Технотрон"><svg class="logo__icon" width="235" height="30" aria-hidden="true" focusable="false">
+  <use href="#logo"></use>
+</svg>
+</a>
+
+    <div class="footer__col">
+      <p class="footer__heading">Продукция</p>
+      <a href="#directions">Автокомпоненты</a>
+      <a href="#directions">Оперение кабины (экстерьер)</a>
+      <a href="#directions">Принадлежности кабины (интерьер)</a>
+      <a href="#directions">Система охлаждения</a>
+      <a href="#directions">Детали ДВС</a>
+      <a href="#directions">Система питания</a>
+      <a href="#directions">Элементы подвески</a>
+      <a href="#directions">Тягово-сцепные устройства</a>
+      <a href="#directions">Электрика</a>
+      <a href="#directions">Седельно-сцепные устройства и монтажные плиты</a>
+      <a href="#directions">Прочее</a>
+    </div>
+
+    <div class="footer__col">
+      <a href="#resources">Услуги</a>
+      <a href="#request">Поставщикам</a>
+      <a href="#resources">О компании</a>
+      <a href="#resources">Ресурсы</a>
+      <a href="#news">Новости</a>
+      <a href="#request">Контакты</a>
+      <a class="footer__muted" href="#">Политика конфиденциальности</a>
+      <a class="footer__muted" href="#">Соглашение на обработку персональных данных</a>
+    </div>
+
+    <div class="footer__col footer__col--contacts">
+      <a class="footer__phone" href="tel:88002004738">8 800 200-47-38</a>
+      <a class="btn btn--ghost" href="#request">Оставить заявку</a>
+      <p class="footer__muted">Мы в социальных сетях и меседжерах:</p>
+      <div class="footer__socials">
+        <a href="#" aria-label="VK"><svg class="icon icon--social" width="34" height="34" aria-hidden="true" focusable="false">
+  <use href="#social-vk"></use>
+</svg>
+</a>
+        <a href="#" aria-label="Max"><svg class="icon icon--social" width="34" height="34" aria-hidden="true" focusable="false">
+  <use href="#social-max"></use>
+</svg>
+</a>
+        <a href="#" aria-label="Дзен"><svg class="icon icon--social" width="34" height="34" aria-hidden="true" focusable="false">
+  <use href="#social-dzen"></use>
+</svg>
+</a>
+      </div>
+      <p class="footer__muted">2025 © АО “ПТФК Технотрон”<br />Все права защищены</p>
+      <p class="footer__muted">Создание сайта <a class="footer__credit" href="#">Lepinskih</a></p>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

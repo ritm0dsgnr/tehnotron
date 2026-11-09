@@ -1,0 +1,128 @@
+.stats
+  position: relative
+  height: 196.7rem
+  color: var(--color-white)
+  overflow: hidden
+  background: var(--color-black)
+  isolation: isolate
+
+.stats.pin-stack__layer
+  z-index: var(--z, 2)
+
+.stats__item
+  will-change: transform
+
+.stats__media,
+.stats__shade
+  position: absolute
+  inset: 0
+
+.stats__media
+  top: -12rem
+  bottom: -12rem
+  height: auto
+
+.stats__media img
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: center top
+
+.stats__shade
+  background: var(--color-dim)
+  pointer-events: none
+
+.stats__lines
+  position: absolute
+  inset: 0
+  pointer-events: none
+
+.stats__lines span
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 0.1rem
+  background: rgba(255, 255, 255, 0.5)
+
+.stats__lines span:nth-child(1)
+  left: 48rem
+  height: 100%
+
+.stats__lines span:nth-child(2)
+  left: 96rem
+
+.stats__lines span:nth-child(3)
+  left: 144rem
+
+.stats__body
+  position: relative
+  z-index: 1
+  height: 100%
+
+.stats__item
+  position: absolute
+
+.stats__num
+  display: block
+  height: auto
+  max-width: none
+
+.stats__label
+  font-size: 3.2rem
+  line-height: normal
+  font-weight: 400
+
+.stats__item--clients
+  top: 19rem
+  left: 48rem
+  display: flex
+  align-items: flex-start
+  gap: 11.3rem
+
+.stats__item--clients .stats__num
+  width: 68.7rem
+
+.stats__item--clients .stats__label
+  width: 34.1rem
+  padding-top: 0.3rem
+
+.stats__item--years
+  top: 60.8rem
+  left: 4.1rem
+  display: flex
+  align-items: flex-start
+  gap: 11.3rem
+
+.stats__item--years .stats__num
+  width: 32.6rem
+
+.stats__item--years .stats__label
+  width: 34.1rem
+  padding-top: 1.5rem
+
+.stats__item--staff
+  top: 103rem
+  left: 95.8rem
+
+.stats__item--staff .stats__num
+  width: 70rem
+
+.stats__item--staff .stats__label
+  margin-top: 6.4rem
+
+.stats__item--output
+  top: 155.4rem
+  left: 48rem
+  right: 3rem
+  display: flex
+  align-items: flex-end
+  justify-content: space-between
+  gap: 3rem
+
+.stats__item--output .stats__num
+  width: 79.1rem
+
+.stats__item--output .stats__label
+  width: 39.7rem
+  padding-bottom: 1.6rem
+  text-align: left

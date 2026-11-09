@@ -1,0 +1,205 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 100
+  transform: translate3d(0, 0, 0)
+
+.header.is-ready
+  transition: transform var(--t)
+
+.header.is-hidden
+  transform: translate3d(0, -100%, 0)
+  pointer-events: none
+
+.header--over
+  color: var(--color-white)
+  background: transparent
+  border-bottom: 0.1rem solid transparent
+
+.header--over.is-ready
+  transition: transform var(--t), background-color var(--t), color var(--t), border-color var(--t)
+
+.header--over.is-ready.is-hidden
+  transition: transform var(--t)
+
+.header--solid,
+.header--over.is-scrolled,
+.header.is-mega
+  color: var(--color-blue)
+  background: var(--color-white)
+  border-bottom-color: var(--color-line)
+
+.header--solid
+  border-bottom: 0.1rem solid var(--color-line)
+
+body:has(.header--solid)
+  padding-top: 10rem
+
+.header__bar
+  position: relative
+  z-index: 2
+
+.header__inner
+  display: flex
+  align-items: stretch
+  justify-content: space-between
+  gap: 3rem
+  min-height: 8.9rem
+  padding-top: 3rem
+
+.header--solid .header__inner
+  padding-top: 3.5rem
+
+.header__brand
+  display: flex
+  align-items: flex-start
+  gap: 5rem
+  flex-shrink: 0
+  padding-bottom: 2.4rem
+
+.logo
+  display: inline-flex
+  flex-shrink: 0
+  color: currentColor
+
+.logo__icon
+  display: block
+  width: 23.5rem
+  height: 2.9rem
+
+.header__tagline
+  max-width: 18.8rem
+  font-size: 1.1rem
+  line-height: 1.18
+  font-weight: 400
+
+.nav
+  display: flex
+  flex-wrap: nowrap
+  align-items: stretch
+  gap: 4.6rem
+  margin-left: auto
+  font-size: 1.6rem
+  line-height: 1.2
+  font-weight: 400
+
+.nav > a
+  display: flex
+  align-items: flex-start
+  padding-top: 0.6rem
+  padding-bottom: 2.4rem
+  white-space: nowrap
+
+  &:hover
+    opacity: 0.7
+
+.nav__item--mega
+  position: static
+  display: flex
+  align-items: flex-start
+
+.nav__item--mega > a
+  position: relative
+  z-index: 3
+  display: flex
+  align-items: flex-start
+  padding-top: 0.6rem
+  padding-bottom: 2.4rem
+  white-space: nowrap
+
+.nav__item--mega.is-open > a,
+.nav__item--mega > a:hover
+  opacity: 0.7
+
+.header__aside
+  display: flex
+  align-items: flex-start
+  flex-shrink: 0
+  gap: 3rem
+  padding-top: 0.6rem
+  padding-bottom: 2.4rem
+  font-size: 1.6rem
+  line-height: 1.2
+
+.header__phone
+  white-space: nowrap
+  text-decoration: underline
+  text-underline-offset: 0.2rem
+
+  &:hover
+    opacity: 0.7
+
+.header__lang
+  display: inline-flex
+  align-items: center
+  gap: 0.5rem
+
+  &:hover
+    opacity: 0.7
+
+.icon--arrow-down
+  width: 0.8rem
+  height: 0.4rem
+  display: block
+  flex-shrink: 0
+
+.nav-mega
+  position: absolute
+  top: 100%
+  left: 0
+  right: 0
+  z-index: 1
+  visibility: hidden
+  opacity: 0
+  pointer-events: none
+  background: var(--color-white)
+  color: var(--color-text)
+  transition: opacity var(--t), visibility var(--t)
+
+.nav-mega::before
+  content: ""
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 100%
+  height: 4rem
+
+.nav__item--mega.is-open .nav-mega
+  visibility: visible
+  opacity: 1
+  pointer-events: auto
+
+.nav-mega__grid
+  min-height: 27.7rem
+  padding-top: 2.1rem
+  padding-bottom: 5rem
+
+.nav-mega__grid--products
+  display: grid
+  grid-template-columns: 61.9rem 62rem 1fr
+
+.nav-mega__grid--about
+  display: block
+
+.nav-mega__col
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 2.3rem
+  padding-right: 3rem
+
+.nav-mega__grid--products .nav-mega__col + .nav-mega__col
+  padding-left: 3.1rem
+  border-left: 0.1rem solid var(--color-line)
+
+.nav-mega__col a
+  max-width: 57.5rem
+  font-size: 2.4rem
+  line-height: normal
+  font-weight: 400
+  color: var(--color-text)
+
+  &:hover
+    color: var(--color-blue)

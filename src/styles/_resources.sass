@@ -1,0 +1,194 @@
+.resources
+  position: sticky
+  top: 0
+  z-index: var(--z, 1)
+  height: 100vh
+  min-height: 90rem
+  color: var(--color-white)
+  overflow: hidden
+  background: var(--color-black)
+
+.resources__media,
+.resources__shade
+  position: absolute
+  inset: 0
+
+.resources__media
+  overflow: hidden
+
+.resources__photo
+  position: absolute
+  inset: -3rem
+  opacity: 0
+  will-change: transform, opacity
+
+.resources__photo.is-active
+  opacity: 1
+
+.resources__photo img
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+.resources__shade
+  background: var(--color-dim)
+  pointer-events: none
+
+.resources__body
+  position: relative
+  z-index: 1
+  display: grid
+  grid-template-columns: 1fr 1fr
+  height: 100%
+  padding-top: 12rem
+  padding-bottom: 0
+
+.resources__left,
+.resources__right
+  position: relative
+  display: flex
+  flex-direction: column
+  min-height: 0
+
+.resources__left
+  padding-right: 6rem
+  padding-bottom: 10rem
+
+.resources__right
+  padding-left: 6rem
+  padding-bottom: 10rem
+
+.resources__title
+  max-width: 70rem
+  font-size: 7.2rem
+  line-height: 1.2
+  text-transform: uppercase
+  opacity: 0
+  will-change: transform, opacity
+
+.resources__all
+  margin-top: auto
+  margin-bottom: 0
+  width: fit-content
+  font-size: 1.6rem
+  line-height: 1.2
+  font-weight: 400
+  text-transform: uppercase
+  text-decoration: underline
+  text-underline-offset: 0.4rem
+
+  &:hover
+    opacity: 0.7
+
+.resources__vline
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 50%
+  width: 0.1rem
+  background: var(--color-white)
+  transform: scaleY(0)
+  transform-origin: bottom center
+  pointer-events: none
+  will-change: transform
+
+.resources__slides
+  position: relative
+  flex: 1
+  min-height: 0
+  padding-bottom: 4rem
+
+.resources__slide
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  max-width: 70rem
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+  will-change: transform, opacity
+
+.resources__slide.is-active
+  opacity: 1
+  visibility: visible
+  pointer-events: auto
+
+.resources__count
+  margin-bottom: 4rem
+  font-size: 1.6rem
+  line-height: 1.2
+  font-weight: 400
+  opacity: 0.7
+
+.resources__name
+  margin-bottom: 3rem
+  font-size: 4.6rem
+  line-height: 1.3
+  text-transform: uppercase
+
+.resources__text
+  max-width: 51rem
+  margin-bottom: 5rem
+  font-size: 2.4rem
+  line-height: normal
+  font-weight: 400
+  opacity: 0.8
+
+.resources__nav
+  position: absolute
+  left: 50%
+  right: 0
+  bottom: 0
+  z-index: 2
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  width: auto
+  height: 10rem
+  border-top: 0.1rem solid var(--color-white)
+
+.resources__nav-btn
+  position: relative
+  z-index: 0
+  display: grid
+  place-items: center
+  width: 100%
+  min-width: 0
+  height: 100%
+  overflow: hidden
+  color: var(--color-white)
+  background: transparent
+  transition: color var(--t)
+
+  &::before
+    content: ""
+    position: absolute
+    inset: 0
+    z-index: -1
+    background: var(--color-white)
+    transform: scaleX(0)
+    transform-origin: left center
+    transition: transform var(--t)
+
+  &:hover
+    color: var(--color-text)
+
+    &::before
+      transform: scaleX(1)
+
+.resources__nav-btn + .resources__nav-btn
+  border-left: 0.1rem solid var(--color-white)
+
+.resources__nav-btn .icon--arrow
+  position: relative
+  z-index: 1
+
+.resources__nav-btn--prev .icon--arrow
+  transform: scaleX(-1)
+
+@media (prefers-reduced-motion: reduce)
+  .resources__title
+    opacity: 1
+
+  .resources__vline
+    transform: scaleY(1)

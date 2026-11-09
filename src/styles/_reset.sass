@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  border: 0
+  vertical-align: baseline
+
+html
+  -webkit-text-size-adjust: 100%
+  text-size-adjust: 100%
+  line-height: 1.15
+  -moz-tab-size: 4
+  tab-size: 4
+
+body
+  min-height: 100%
+  line-height: inherit
+
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd, pre
+  margin: 0
+  padding: 0
+  font: inherit
+  font-size: inherit
+  font-weight: inherit
+
+ul, ol
+  list-style: none
+
+img, picture, video, canvas
+  display: block
+  max-width: 100%
+  height: auto
+
+img
+  border-style: none
+
+svg
+  display: block
+
+
+a
+  color: inherit
+  text-decoration: none
+  background-color: transparent
+
+button, input, optgroup, select, textarea
+  font: inherit
+  color: inherit
+  letter-spacing: inherit
+  margin: 0
+  padding: 0
+  border: 0
+  background: none
+  border-radius: 0
+  appearance: none
+  -webkit-appearance: none
+
+button, [type="button"], [type="reset"], [type="submit"]
+  cursor: pointer
+  background: none
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner
+  border: 0
+  padding: 0
+
+input, textarea, select
+  background-color: transparent
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button
+  -webkit-appearance: none
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus
+  -webkit-text-fill-color: var(--color-text)
+  caret-color: var(--color-text)
+  box-shadow: 0 0 0 100rem var(--color-bg) inset
+  transition: background-color 99999s ease-out
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+td, th
+  padding: 0
+
+fieldset
+  min-width: 0
+
+iframe
+  border: 0
+
+[hidden]
+  display: none
+
+a,
+button,
+.btn
+  transition: color var(--t), background-color var(--t), border-color var(--t), opacity var(--t), transform var(--t)

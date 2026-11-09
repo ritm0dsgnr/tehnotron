@@ -1,0 +1,233 @@
+<!-- data: {"title":"Технотрон","page":"home","header":"over"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <div class="pin-stack">
+        <section class="hero pin-stack__layer" style="--z: 1" data-hero>
+          <div class="hero__media" data-hero-media></div>
+          <div class="hero__overlay" aria-hidden="true"></div>
+          <div class="container hero__body">
+            <h1 class="hero__title">
+              <span class="hero__title-line" data-hero-line data-hero-intro="1">Полный цикл</span>
+              <span class="hero__title-line" data-hero-line data-hero-intro="2">разработки продукта</span>
+            </h1>
+            <div class="hero__bottom">
+              <div class="hero__copy">
+                <p class="hero__lead" data-hero-lead data-hero-intro="3">
+                  С внедрением технологий - от идеи до серийного производства
+                </p>
+                <div class="hero__actions" data-hero-intro="4">
+                  <a class="btn btn--ghost" data-hero-btn href="#resources">Подробнее</a>
+                </div>
+              </div>
+              <div class="hero__slider" aria-label="Слайдер" data-hero-intro="5">
+                <div class="hero__slider-nav">
+                  <button class="hero__slider-btn hero__slider-btn--prev" type="button" data-hero-prev aria-label="Назад">
+                    {{> icon-arrow}}
+                  </button>
+                  <button class="hero__slider-btn" type="button" data-hero-next aria-label="Вперед">
+                    {{> icon-arrow}}
+                  </button>
+                </div>
+                <div class="hero__progress" aria-hidden="true">
+                  <span class="hero__progress-bar" data-hero-progress></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats pin-stack__layer" style="--z: 2" data-animate="stats">
+          <div class="stats__media">
+            <img src="/tehnotron/img/stats-bg.png" alt="" width="1920" height="1800" />
+          </div>
+          <div class="stats__shade" aria-hidden="true"></div>
+          <div class="stats__lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="stats__body">
+            <div class="stats__item stats__item--clients is-animate">
+              <img class="stats__num" src="/tehnotron/img/200.svg" alt="200+" width="687" height="226" />
+              <p class="stats__label">Клиентов по всей стране</p>
+            </div>
+            <div class="stats__item stats__item--years is-animate">
+              <img class="stats__num" src="/tehnotron/img/years.svg" alt="" width="326" height="226" />
+              <p class="stats__label">Года плодотворной работы</p>
+            </div>
+            <div class="stats__item stats__item--staff is-animate">
+              <img class="stats__num" src="/tehnotron/img/900.svg" alt="900+" width="700" height="230" />
+              <p class="stats__label">Сотрудников в компании</p>
+            </div>
+            <div class="stats__item stats__item--output is-animate">
+              <img class="stats__num" src="/tehnotron/img/5mln.svg" alt="5 млн" width="791" height="226" />
+              <p class="stats__label">Выпускаемой продукции в год</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="directions pin-stack__layer" style="--z: 3" id="directions" data-animate="directions">
+          <div class="container">
+            <h2 class="directions__title is-animate">направления деятельности</h2>
+            <div class="directions__stage" data-directions-stage>
+              <div class="directions__visual">
+                <div class="directions__photo is-active" data-directions-photo>
+                  <img src="/tehnotron/img/01.png" alt="" width="802" height="785" />
+                </div>
+                <div class="directions__photo" data-directions-photo>
+                  <img src="/tehnotron/img/02.png" alt="" width="802" height="779" />
+                </div>
+                <div class="directions__photo" data-directions-photo>
+                  <img src="/tehnotron/img/03.png" alt="" width="803" height="711" />
+                </div>
+              </div>
+              <div class="directions__copy">
+                <div class="directions__track" data-directions-track>
+                  <article class="direction" data-directions-panel>
+                    <p class="direction__num">01</p>
+                    <h3 class="direction__name">Принадлежности кабины</h3>
+                    <p class="direction__text">Краткое описание направление продукции в две или три строчки</p>
+                    <a class="btn btn--dark" href="#directions">Подробнее</a>
+                  </article>
+                  <article class="direction" data-directions-panel>
+                    <p class="direction__num">02</p>
+                    <h3 class="direction__name">системы охлаждения</h3>
+                    <p class="direction__text">Краткое описание направление продукции в две или три строчки</p>
+                    <a class="btn btn--dark" href="#directions">Подробнее</a>
+                  </article>
+                  <article class="direction" data-directions-panel>
+                    <p class="direction__num">03</p>
+                    <h3 class="direction__name">тягово-сцепные устройства</h3>
+                    <p class="direction__text">Краткое описание направление продукции в две или три строчки</p>
+                    <a class="btn btn--dark" href="#directions">Подробнее</a>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <a class="directions__more" href="#directions">все направления</a>
+          </div>
+        </section>
+      </div>
+
+      <section class="partners" data-animate="partners">
+        <div class="container">
+          <h2 class="partners__title is-animate">наши партнеры</h2>
+        </div>
+        <div class="partners__marquee">
+          <div class="partners__track">
+            <div class="partners__group">
+              <img class="partners__logo" src="/tehnotron/img/partner-add.svg" alt="ADD Awards" width="185" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-forbes.svg" alt="Forbes" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-officenext.svg" alt="OfficeNext" width="296" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-rd.png" alt="РД Премия" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-design.png" alt="Дизайн + Здоровье" width="201" height="75" />
+            </div>
+            <div class="partners__group" aria-hidden="true">
+              <img class="partners__logo" src="/tehnotron/img/partner-add.svg" alt="" width="185" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-forbes.svg" alt="" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-officenext.svg" alt="" width="296" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-rd.png" alt="" width="201" height="85" />
+              <img class="partners__logo" src="/tehnotron/img/partner-design.png" alt="" width="201" height="75" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cover-stack">
+        <section class="resources cover-stack__layer" style="--z: 1" id="resources" data-resources>
+          <div class="resources__media" aria-hidden="true">
+            <div class="resources__photo is-active" data-resources-photo>
+              <img src="/tehnotron/img/resource-1.png" alt="" width="1920" height="1080" />
+            </div>
+            <div class="resources__photo" data-resources-photo>
+              <img src="/tehnotron/img/resource-2.jpg" alt="" width="1920" height="1080" />
+            </div>
+            <div class="resources__photo" data-resources-photo>
+              <img src="/tehnotron/img/resource-1.png" alt="" width="1920" height="1080" />
+            </div>
+          </div>
+          <div class="resources__shade" aria-hidden="true"></div>
+          <div class="container resources__body">
+            <div class="resources__vline" data-resources-vline aria-hidden="true"></div>
+
+            <div class="resources__left">
+              <h2 class="resources__title" data-resources-title>наши ресурсы</h2>
+              <a class="resources__all" href="#">все ресурсы</a>
+            </div>
+
+            <div class="resources__right">
+              <div class="resources__slides">
+                <article class="resources__slide is-active" data-resources-slide>
+                  <p class="resources__count">01 / 03</p>
+                  <h3 class="resources__name">окрасочное производство</h3>
+                  <p class="resources__text">Краткое описание направления продукции в две или три строчки</p>
+                  <a class="btn btn--ghost" href="#">Подробнее</a>
+                </article>
+                <article class="resources__slide" data-resources-slide>
+                  <p class="resources__count">02 / 03</p>
+                  <h3 class="resources__name">механообработка</h3>
+                  <p class="resources__text">Краткое описание направления продукции в две или три строчки</p>
+                  <a class="btn btn--ghost" href="#">Подробнее</a>
+                </article>
+                <article class="resources__slide" data-resources-slide>
+                  <p class="resources__count">03 / 03</p>
+                  <h3 class="resources__name">сборочное производство</h3>
+                  <p class="resources__text">Краткое описание направления продукции в две или три строчки</p>
+                  <a class="btn btn--ghost" href="#">Подробнее</a>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="resources__nav">
+            <button class="resources__nav-btn resources__nav-btn--prev" type="button" data-resources-prev aria-label="Назад">
+              {{> icon-arrow}}
+            </button>
+            <button class="resources__nav-btn" type="button" data-resources-next aria-label="Вперед">
+              {{> icon-arrow}}
+            </button>
+          </div>
+        </section>
+
+        <section class="news cover-stack__layer" id="news" data-animate="news" style="--z: 2">
+          <div class="container">
+            <h2 class="news__title is-animate">новости компании</h2>
+            <div class="news__list">
+              <a class="news-card is-animate" href="#">
+                <div class="news-card__media">
+                  <img src="/tehnotron/img/news-1.png" alt="" width="600" height="400" />
+                </div>
+                <h3 class="news-card__name">Современные Технологии на выставке MinTech 2023</h3>
+                <p class="news-card__date">18.09.2023</p>
+              </a>
+              <a class="news-card is-animate" href="#">
+                <div class="news-card__media">
+                  <img src="/tehnotron/img/news-2.png" alt="" width="600" height="400" />
+                </div>
+                <h3 class="news-card__name">Современные Технологии на выставке MinTech 2023</h3>
+                <p class="news-card__date">18.09.2023</p>
+              </a>
+              <a class="news-card is-animate" href="#">
+                <div class="news-card__media">
+                  <img src="/tehnotron/img/news-3.png" alt="" width="600" height="400" />
+                </div>
+                <h3 class="news-card__name">Конкурс «Лучшие товары Республики Татарстан» 2023 года!</h3>
+                <p class="news-card__date">18.09.2023</p>
+              </a>
+            </div>
+            <a class="news__more" href="#">все новости</a>
+          </div>
+        </section>
+
+        <div class="cover-stack__layer" style="--z: 3">
+          {{> cta}}
+        </div>
+      </div>
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>
