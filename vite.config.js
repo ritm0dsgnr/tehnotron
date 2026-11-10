@@ -7,6 +7,14 @@ export default defineConfig({
   base: "/tehnotron/",
   publicDir: "public",
   plugins: [htmlPartials()],
+  server: {
+    watch: {
+      ignored: [
+        "**/public/**/.figma-export*/**",
+        "**/public/**/.figma-export*",
+      ],
+    },
+  },
   build: {
     outDir: "docs",
     emptyOutDir: true,

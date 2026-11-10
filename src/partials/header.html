@@ -3,7 +3,7 @@
   <div class="header__bar">
     <div class="container header__inner">
       <div class="header__brand">
-        <a class="logo" href="/tehnotron/home.html" aria-label="Технотрон">{{> logo}}</a>
+        <a class="logo" href="/home.html" aria-label="Технотрон">{{> logo}}</a>
         <p class="header__tagline">Российский производитель автокомпонентов</p>
       </div>
       <nav class="nav" aria-label="Основное меню">
@@ -49,6 +49,9 @@
         <a href="#request" data-nav="contacts">Контакты</a>
       </nav>
       <div class="header__aside">
+        <button class="header__menu" type="button" data-menu-open aria-expanded="false" aria-controls="nav-drawer" aria-label="Открыть меню">
+          {{> icon-menu}}
+        </button>
         <a class="header__phone" href="tel:88002004738">8 800 200-47-38</a>
         <button class="header__lang" type="button" aria-label="Язык">
           <span>RU</span>
@@ -58,3 +61,23 @@
     </div>
   </div>
 </header>
+
+<div class="nav-drawer" id="nav-drawer" data-nav-drawer hidden>
+  <div class="nav-drawer__shade" data-menu-close tabindex="-1" aria-hidden="true"></div>
+  <div class="nav-drawer__panel" role="dialog" aria-modal="true" aria-label="Меню">
+    <button class="nav-drawer__close" type="button" data-menu-close aria-label="Закрыть меню">
+      {{> icon-close}}
+    </button>
+    <nav class="nav-drawer__nav" aria-label="Мобильное меню">
+      <a href="#directions">Продукция</a>
+      <a href="#resources">Услуги</a>
+      <a href="#request">Поставщикам</a>
+      <a href="#resources">О предприятии</a>
+      <a class="nav-drawer__sub" href="#resources">Ресурсы</a>
+      <a class="nav-drawer__sub" href="#news">Отзывы</a>
+      <a class="nav-drawer__sub" href="#request">Карьера</a>
+      <a href="#resources">Качество</a>
+      <a href="#request">Контакты</a>
+    </nav>
+  </div>
+</div>

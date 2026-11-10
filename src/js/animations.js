@@ -87,15 +87,24 @@ function initDirectionsSlider() {
 
   const photos = gsap.utils.toArray(stage.querySelectorAll("[data-directions-photo]"));
   const panels = gsap.utils.toArray(track.querySelectorAll("[data-directions-panel]"));
+
+  panels.forEach((panel, i) => {
+    const num = panel.querySelector("[data-directions-num]");
+    if (num) num.textContent = String(i + 1).padStart(2, "0");
+  });
+
   if (photos.length < 2 || panels.length < 2) return;
 
   const steps = panels.length - 1;
-  const panelHeight = () => panels[0].offsetHeight;
+  const panelHeight = () => Math.max(panels[0].offsetHeight, window.innerHeight);
 
   gsap.set(photos, { opacity: 0 });
   gsap.set(photos[0], { opacity: 1 });
 
+  let active = 0;
   const setActive = (index) => {
+    if (index === active) return;
+    active = index;
     photos.forEach((photo, i) => {
       photo.classList.toggle("is-active", i === index);
     });
@@ -107,13 +116,13 @@ function initDirectionsSlider() {
     scrollTrigger: {
       trigger: stage,
       start: "top top",
-      end: () => `+=${steps * window.innerHeight}`,
+      end: () => `+=${steps * window.innerHeight * 1.5}`,
       pin: true,
-      scrub: 0.35,
+      scrub: 0.5,
       anticipatePin: 1,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
-        setActive(Math.round(self.progress * steps));
+        setActive(Math.min(steps, Math.round(self.progress * steps)));
       },
     },
   });
@@ -133,7 +142,7 @@ function initDirectionsSlider() {
       at,
     );
 
-    tl.to(photos[i - 1], { opacity: 0, duration: 0.45, ease: "power1.inOut" }, at);
-    tl.to(photos[i], { opacity: 1, duration: 0.45, ease: "power1.inOut" }, at);
+    tl.to(photos[i - 1], { opacity: 0, duration: 0.55, ease: "power1.inOut" }, at);
+    tl.to(photos[i], { opacity: 1, duration: 0.55, ease: "power1.inOut" }, at);
   });
 }

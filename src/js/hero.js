@@ -1,17 +1,19 @@
 import gsap from "gsap";
 
+const BASE = import.meta.env.BASE_URL;
+
 const SLIDES = [
   {
     type: "video",
-    src: "/tehnotron/video/hero.mp4",
-    poster: "/tehnotron/img/hero.jpg",
+    src: `${BASE}video/hero.mp4`,
+    poster: `${BASE}img/01.jpg`,
     title: ["Полный цикл", "разработки продукта"],
     lead: "С внедрением технологий - от идеи до серийного производства",
     href: "#resources",
   },
   {
     type: "image",
-    src: "/tehnotron/img/hero-2.jpg",
+    src: `${BASE}img/02.jpg`,
     title: ["Лучшая система", "качества"],
     lead: "Стабильность и уверенность в завтрашнем дне",
     href: "#resources",

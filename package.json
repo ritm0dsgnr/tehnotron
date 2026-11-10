@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "img": "node scripts/rename-images.mjs",
+    "predev": "npm run img",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

@@ -45,7 +45,7 @@ body:has(.header--solid)
   display: flex
   align-items: stretch
   justify-content: space-between
-  gap: 3rem
+  gap: 14.8rem
   min-height: 8.9rem
   padding-top: 3rem
 
@@ -123,6 +123,24 @@ body:has(.header--solid)
   font-size: 1.6rem
   line-height: 1.2
 
+.header__menu
+  display: none
+  align-items: center
+  justify-content: center
+  width: 4rem
+  height: 4rem
+  margin-top: -0.5rem
+  color: currentColor
+  flex-shrink: 0
+
+  &:hover
+    opacity: 0.7
+
+.icon--menu
+  display: block
+  width: 4rem
+  height: 4rem
+
 .header__phone
   white-space: nowrap
   text-decoration: underline
@@ -145,6 +163,113 @@ body:has(.header--solid)
   display: block
   flex-shrink: 0
 
+.nav-drawer
+  position: fixed
+  inset: 0
+  z-index: 120
+  pointer-events: none
+
+.nav-drawer.is-open
+  pointer-events: auto
+
+.nav-drawer__shade
+  position: absolute
+  inset: 0
+  background: var(--color-overlay)
+  opacity: 0
+  transition: opacity var(--t)
+
+.nav-drawer.is-open .nav-drawer__shade
+  opacity: 1
+
+.nav-drawer__panel
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 1
+  width: 42.7rem
+  max-width: 100%
+  padding: 3rem
+  background: var(--color-white)
+  color: var(--color-text)
+  transform: translateX(100%)
+  transition: transform var(--t)
+  overflow: auto
+
+.nav-drawer.is-open .nav-drawer__panel
+  transform: translateX(0)
+
+.nav-drawer__close
+  position: absolute
+  top: 3rem
+  right: 3rem
+  display: grid
+  place-items: center
+  width: 1.4rem
+  height: 1.4rem
+  color: var(--color-text)
+
+  &:hover
+    opacity: 0.7
+
+.icon--close
+  display: block
+  width: 1.4rem
+  height: 1.4rem
+
+.nav-drawer__nav
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 2.5rem
+  padding-right: 3rem
+  font-size: 3.2rem
+  line-height: 1.3
+  font-weight: 400
+  color: var(--color-text)
+
+.nav-drawer__nav a
+  color: var(--color-text)
+
+  &:hover
+    color: var(--color-blue)
+
+.nav-drawer__sub
+  font-size: 2rem
+  line-height: 1.3
+  opacity: 0.7
+
+  &:hover
+    opacity: 1
+
+.nav-drawer__sub + .nav-drawer__sub
+  margin-top: -1rem
+
+@media (max-width: 1440px)
+  .header__inner
+    gap: 3rem
+
+  .nav
+    display: none
+
+  .header__menu
+    display: inline-flex
+
+  .header__aside
+    gap: 2.4rem
+    margin-left: auto
+
+@media (max-width: 767px)
+  .header__tagline
+    display: none
+
+  .header__phone
+    display: none
+
+  .nav-drawer__panel
+    width: 100%
+
 .nav-mega
   position: absolute
   top: 100%
@@ -156,6 +281,7 @@ body:has(.header--solid)
   pointer-events: none
   background: var(--color-white)
   color: var(--color-text)
+  border-top: 0.1rem solid var(--color-line)
   transition: opacity var(--t), visibility var(--t)
 
 .nav-mega::before
@@ -171,14 +297,9 @@ body:has(.header--solid)
   opacity: 1
   pointer-events: auto
 
-.nav-mega__grid
-  min-height: 27.7rem
-  padding-top: 2.1rem
-  padding-bottom: 5rem
-
 .nav-mega__grid--products
   display: grid
-  grid-template-columns: 61.9rem 62rem 1fr
+  grid-template-columns: 1fr 1fr 1fr
 
 .nav-mega__grid--about
   display: block
@@ -187,11 +308,12 @@ body:has(.header--solid)
   display: flex
   flex-direction: column
   align-items: flex-start
-  gap: 2.3rem
-  padding-right: 3rem
+  gap: 1.5rem
+  padding: 3rem 0
+  min-height: 27.7rem
 
 .nav-mega__grid--products .nav-mega__col + .nav-mega__col
-  padding-left: 3.1rem
+  padding-left: 3rem
   border-left: 0.1rem solid var(--color-line)
 
 .nav-mega__col a

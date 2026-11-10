@@ -44,18 +44,18 @@ export function initSmoothScroll() {
     "load",
     () => {
       requestAnimationFrame(() => {
-        const y = window.scrollY;
         ScrollTrigger.refresh();
 
-        if (startHash) {
-          const target = document.getElementById(startHash);
-          if (target) {
-            lenis.scrollTo(target, { immediate: true });
-            return;
-          }
-        }
+        if (!startHash) return;
 
-        if (window.scrollY !== y) lenis.scrollTo(y, { immediate: true });
+        const target = document.getElementById(startHash);
+        if (!target) return;
+
+        // После pin-расчетов, иначе #directions клинит Lenis/ScrollTrigger
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+          lenis.scrollTo(target, { offset: -20, immediate: true });
+        });
       });
     },
     { once: true },

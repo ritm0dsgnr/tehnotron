@@ -1,9 +1,9 @@
 <footer class="footer">
   <div class="container footer__inner">
-    <a class="logo footer__logo" href="/tehnotron/home.html" aria-label="Технотрон">{{> logo}}</a>
+    <a class="logo footer__logo" href="/home.html" aria-label="Технотрон">{{> logo}}</a>
 
     <div class="footer__col">
-      <p class="footer__heading">Продукция</p>
+      <a class="footer__heading" href="#directions">Продукция</a>
       <a href="#directions">Автокомпоненты</a>
       <a href="#directions">Оперение кабины (экстерьер)</a>
       <a href="#directions">Принадлежности кабины (интерьер)</a>
@@ -17,19 +17,23 @@
       <a href="#directions">Прочее</a>
     </div>
 
-    <div class="footer__col">
+    <div class="footer__col footer__col--nav">
       <a href="#resources">Услуги</a>
       <a href="#request">Поставщикам</a>
       <a href="#resources">О компании</a>
       <a href="#resources">Ресурсы</a>
-      <a href="#news">Новости</a>
+      <a href="#news">Отзывы</a>
+      <a href="#request">Карьера</a>
+      <a href="#resources">Качество</a>
       <a href="#request">Контакты</a>
-      <a class="footer__muted" href="#">Политика конфиденциальности</a>
-      <a class="footer__muted" href="#">Соглашение на обработку персональных данных</a>
+      <div class="footer__legal">
+        <a class="footer__muted" href="#">Политика конфиденциальности</a>
+        <a class="footer__muted" href="#">Соглашение на обработку персональных данных</a>
+      </div>
     </div>
 
     <div class="footer__col footer__col--contacts">
-      <a class="footer__phone" href="tel:88002004738">8 800 200-47-38</a>
+      <a class="footer__phone" href="tel:88002004738">{{> icon-phone}}<span>8 800 200-47-38</span></a>
       <a class="btn btn--ghost" href="#request">Оставить заявку</a>
       <p class="footer__muted">Мы в социальных сетях и меседжерах:</p>
       <div class="footer__socials">
@@ -37,8 +41,10 @@
         <a href="#" aria-label="Max">{{> icon-social-max}}</a>
         <a href="#" aria-label="Дзен">{{> icon-social-dzen}}</a>
       </div>
-      <p class="footer__muted">2025 © АО “ПТФК Технотрон”<br />Все права защищены</p>
-      <p class="footer__muted">Создание сайта <a class="footer__credit" href="#">Lepinskih</a></p>
+      <div class="footer__meta">
+        <p class="footer__muted">2025 © АО “ПТФК Технотрон”<br />Все права защищены</p>
+        <p class="footer__muted">Создание сайта <a class="footer__credit" href="#">Lepinskih</a></p>
+      </div>
     </div>
   </div>
 </footer>

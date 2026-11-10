@@ -16,6 +16,15 @@ export function initResources() {
   const total = slides.length;
   if (!total) return;
 
+  const pad = (n) => String(n).padStart(2, "0");
+  const totalLabel = pad(total);
+
+  slides.forEach((slide, n) => {
+    const count = slide.querySelector("[data-resources-count]");
+    if (!count) return;
+    count.innerHTML = `<span class="resources__count-current">${pad(n + 1)}</span><span class="resources__count-rest"> / ${totalLabel}</span>`;
+  });
+
   let index = 0;
   let busy = false;
   let ready = false;

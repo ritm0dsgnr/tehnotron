@@ -1,16 +1,49 @@
 .cta
+  position: relative
   background: var(--color-blue)
   color: var(--color-white)
   padding-top: 10rem
   padding-bottom: 14.5rem
   overflow: hidden
 
+.cta__lines
+  position: absolute
+  inset: 0
+  pointer-events: none
+  z-index: 0
+
+.cta__lines span
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 0.1rem
+  background: rgba(255, 255, 255, 0.5)
+
+.cta__lines span:nth-child(1)
+  left: 48rem
+
+.cta__lines span:nth-child(2)
+  left: 96rem
+
+.cta__lines span:nth-child(3)
+  left: 144rem
+
 .cta__inner
+  position: relative
+  z-index: 1
   width: 100%
   max-width: 192rem
   margin-left: auto
   margin-right: auto
   padding-left: 96rem
+
+.cta .btn
+  padding: 2.1rem 3.8rem
+
+  &:hover
+    background: var(--color-white)
+    color: var(--color-blue)
+    border-color: var(--color-white)
 
 .cta__title
   max-width: 90.9rem
@@ -20,11 +53,11 @@
   text-transform: uppercase
 
 .cta__title--address
-  margin-top: 15.4rem
+  margin-top: 14.9rem
 
 .cta__text
   max-width: 63.2rem
-  margin-bottom: 4.6rem
+  margin-bottom: 9rem
   font-size: 2.4rem
   line-height: normal
   font-weight: 400
@@ -75,13 +108,13 @@
   color: var(--color-white)
   border-top: 0.1rem solid rgba(255, 255, 255, 0.35)
   padding-top: 4rem
-  padding-bottom: 5rem
+  padding-bottom: 9rem
   overflow: hidden
 
 .footer__inner
   display: grid
   grid-template-columns: 45rem 48rem 48rem 45rem
-  align-items: start
+  align-items: stretch
 
 .footer__logo
   width: 23.5rem
@@ -100,31 +133,68 @@
 .footer__heading
   font-weight: 400
 
-.footer a:not(.footer__logo)
+.footer a:not(.footer__logo):not(.btn)
   opacity: 0.6
   transition: opacity var(--t)
 
   &:hover
     opacity: 1
 
+.footer__col--nav a
+  opacity: 1
+
+  &:hover
+    opacity: 0.7
+
+.footer__legal,
+.footer__meta
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 1.6rem
+  margin-top: auto
+  padding-top: 2rem
+
 .footer__muted
   color: rgba(255, 255, 255, 0.6)
 
 .footer__credit
+  opacity: 1
+  color: inherit
   text-decoration: underline
   text-underline-offset: 0.3rem
 
+  &:hover
+    opacity: 1
+    color: var(--color-white)
+
 .footer__phone
+  display: inline-flex
+  align-items: center
+  gap: 0.8rem
   font-family: var(--font-helvetica)
   font-weight: 500
+
+.icon--phone
+  display: block
+  width: 1.7rem
+  height: 1.7rem
+  flex-shrink: 0
 
 .footer__col--contacts .btn
   margin-top: 1.2rem
   margin-bottom: 4rem
+  padding: 2.1rem 3.8rem
+  opacity: 1
+
+  &:hover
+    background: var(--color-white)
+    color: var(--color-blue)
+    border-color: var(--color-white)
 
 .footer__socials
   display: flex
-  gap: 1.2rem
+  gap: 3rem
   margin-bottom: 4rem
 
 .footer__socials a
