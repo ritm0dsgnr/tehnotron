@@ -222,7 +222,7 @@ body:has(.header--solid)
   display: flex
   flex-direction: column
   align-items: flex-start
-  gap: 2.5rem
+  gap: 1.5rem
   padding-right: 3rem
   font-size: 3.2rem
   line-height: 1.3
@@ -243,9 +243,6 @@ body:has(.header--solid)
   &:hover
     opacity: 1
 
-.nav-drawer__sub + .nav-drawer__sub
-  margin-top: -1rem
-
 @media (max-width: 1440px)
   .header__inner
     gap: 3rem
@@ -256,15 +253,32 @@ body:has(.header--solid)
   .header__menu
     display: inline-flex
 
-  .header__aside
-    gap: 2.4rem
-    margin-left: auto
-
 @media (max-width: 767px)
+  .header__inner
+    min-height: 0
+    padding-top: 2rem
+    gap: 0
+
+  .header__brand
+    padding-bottom: 1rem
+
+  .header .logo__icon
+    width: 17rem
+    height: 2.1rem
+
   .header__tagline
     display: none
 
-  .header__phone
+  .header__aside
+    gap: 0
+    padding-top: 0
+    padding-bottom: 1rem
+
+  .header__menu
+    margin-top: -0.9rem
+
+  .header__phone,
+  .header__lang
     display: none
 
   .nav-drawer__panel

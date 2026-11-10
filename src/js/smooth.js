@@ -40,6 +40,36 @@ export function initSmoothScroll() {
   });
   gsap.ticker.lagSmoothing(0);
 
+  // Ctrl/Cmd+F: Lenis ломает нативный find-in-page, на время поиска отдаем скролл браузеру
+  let findMode = false;
+  const leaveFindMode = () => {
+    if (!findMode) return;
+    findMode = false;
+    lenis.scrollTo(window.scrollY, { immediate: true });
+    lenis.start();
+    ScrollTrigger.refresh();
+  };
+
+  window.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "f") {
+      findMode = true;
+      lenis.stop();
+      return;
+    }
+    if (e.key === "Escape") leaveFindMode();
+  });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!findMode) return;
+      lenis.scrollTo(window.scrollY, { immediate: true });
+    },
+    { passive: true },
+  );
+
+  window.addEventListener("pointerdown", leaveFindMode, { passive: true });
+
   window.addEventListener(
     "load",
     () => {

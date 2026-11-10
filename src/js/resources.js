@@ -140,7 +140,9 @@ export function initResources() {
 
   applyActive(0);
 
-  if (reduce) {
+  const mobile = window.matchMedia("(max-width: 767px)").matches;
+
+  if (reduce || mobile) {
     applyActive(0);
     if (title) gsap.set(title, { opacity: 1, x: 0 });
     if (line) gsap.set(line, { scaleY: 1 });

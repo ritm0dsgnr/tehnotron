@@ -1,5 +1,7 @@
 .partners
   position: relative
+  z-index: 2
+  margin-top: -0.1rem
   padding-top: 8rem
   padding-bottom: 24rem
   overflow: hidden
@@ -7,7 +9,8 @@
   color: var(--color-text)
 
 .partners__title
-  margin-bottom: 16.6rem
+  // padding, не margin: иначе схлопывается через .container и до лого меньше макета
+  padding-bottom: 16.6rem
   font-size: 7.6rem
   line-height: 1.3
   text-transform: uppercase

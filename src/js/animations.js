@@ -3,25 +3,32 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const desktopPin = () => window.matchMedia("(min-width: 768px)").matches;
+
 export function initAnimations() {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll("[data-animate] .is-animate").forEach((el) => {
-      el.style.opacity = "1";
-      el.style.transform = "none";
+      el.classList.add("is-shown");
     });
-    return;
+  } else {
+    document.querySelectorAll("[data-animate] .is-animate").forEach((el, i) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: "1.25rem" },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          delay: i * 0.08,
+          ease: "power2.out",
+          onComplete: () => {
+            el.classList.add("is-shown");
+            gsap.set(el, { clearProps: "transform,opacity" });
+          },
+        },
+      );
+    });
   }
-
-  document.querySelectorAll("[data-animate] .is-animate").forEach((el, i) => {
-    gsap.to(el, {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      delay: i * 0.08,
-      ease: "power2.out",
-      clearProps: "transform",
-    });
-  });
 
   initStackCover();
   initDirectionsSlider();
@@ -29,7 +36,7 @@ export function initAnimations() {
 
 function initStackCover() {
   const stats = document.querySelector(".stats");
-  if (!stats) return;
+  if (!stats || !desktopPin()) return;
 
   const travel = () =>
     Math.max(stats.offsetHeight - window.innerHeight, window.innerHeight * 1.25);
@@ -83,9 +90,9 @@ function initStackCover() {
 function initDirectionsSlider() {
   const stage = document.querySelector("[data-directions-stage]");
   const track = document.querySelector("[data-directions-track]");
+  const visual = stage?.querySelector(".directions__visual");
   if (!stage || !track) return;
 
-  const photos = gsap.utils.toArray(stage.querySelectorAll("[data-directions-photo]"));
   const panels = gsap.utils.toArray(track.querySelectorAll("[data-directions-panel]"));
 
   panels.forEach((panel, i) => {
@@ -93,56 +100,92 @@ function initDirectionsSlider() {
     if (num) num.textContent = String(i + 1).padStart(2, "0");
   });
 
-  if (photos.length < 2 || panels.length < 2) return;
+  const mm = gsap.matchMedia();
 
-  const steps = panels.length - 1;
-  const panelHeight = () => Math.max(panels[0].offsetHeight, window.innerHeight);
+  // Мобилка: обычный скролл, фото в потоке над каждым текстом
+  mm.add("(max-width: 767px)", () => {
+    const photos = gsap.utils.toArray(stage.querySelectorAll("[data-directions-photo]"));
 
-  gsap.set(photos, { opacity: 0 });
-  gsap.set(photos[0], { opacity: 1 });
-
-  let active = 0;
-  const setActive = (index) => {
-    if (index === active) return;
-    active = index;
-    photos.forEach((photo, i) => {
-      photo.classList.toggle("is-active", i === index);
+    gsap.set(track, { clearProps: "transform" });
+    ScrollTrigger.getAll().forEach((st) => {
+      if (st.trigger === stage) st.kill();
     });
-  };
 
-  setActive(0);
+    panels.forEach((panel, i) => {
+      const photo = photos[i];
+      if (!photo) return;
+      photo.classList.add("is-active");
+      gsap.set(photo, { clearProps: "opacity,transform" });
+      panel.insertBefore(photo, panel.firstChild);
+    });
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: stage,
-      start: "top top",
-      end: () => `+=${steps * window.innerHeight * 1.5}`,
-      pin: true,
-      scrub: 0.5,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        setActive(Math.min(steps, Math.round(self.progress * steps)));
-      },
-    },
+    return () => {
+      photos.forEach((photo) => {
+        if (visual && photo.parentElement !== visual) visual.appendChild(photo);
+        photo.classList.remove("is-active");
+      });
+      if (photos[0]) photos[0].classList.add("is-active");
+    };
   });
 
-  panels.forEach((_, i) => {
-    if (i === 0) return;
+  // Десктоп: pin + смена фото
+  mm.add("(min-width: 768px)", () => {
+    const photos = gsap.utils.toArray(stage.querySelectorAll("[data-directions-photo]"));
+    if (photos.length < 2 || panels.length < 2) return;
 
-    const at = i - 1;
+    const steps = panels.length - 1;
+    const panelHeight = () => Math.max(panels[0].offsetHeight, window.innerHeight);
 
-    tl.to(
-      track,
-      {
-        y: () => -i * panelHeight(),
-        duration: 1,
-        ease: "none",
+    gsap.set(photos, { opacity: 0 });
+    gsap.set(photos[0], { opacity: 1 });
+
+    let active = 0;
+    const setActive = (index) => {
+      if (index === active) return;
+      active = index;
+      photos.forEach((photo, i) => {
+        photo.classList.toggle("is-active", i === index);
+      });
+    };
+
+    setActive(0);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: stage,
+        start: "top top",
+        end: () => `+=${steps * window.innerHeight * 1.5}`,
+        pin: true,
+        scrub: 0.5,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          setActive(Math.min(steps, Math.round(self.progress * steps)));
+        },
       },
-      at,
-    );
+    });
 
-    tl.to(photos[i - 1], { opacity: 0, duration: 0.55, ease: "power1.inOut" }, at);
-    tl.to(photos[i], { opacity: 1, duration: 0.55, ease: "power1.inOut" }, at);
+    panels.forEach((_, i) => {
+      if (i === 0) return;
+      const at = i - 1;
+      tl.to(
+        track,
+        {
+          y: () => -i * panelHeight(),
+          duration: 1,
+          ease: "none",
+        },
+        at,
+      );
+      tl.to(photos[i - 1], { opacity: 0, duration: 0.55, ease: "power1.inOut" }, at);
+      tl.to(photos[i], { opacity: 1, duration: 0.55, ease: "power1.inOut" }, at);
+    });
+
+    return () => {
+      tl.scrollTrigger?.kill();
+      tl.kill();
+      gsap.set(track, { clearProps: "transform" });
+      gsap.set(photos, { clearProps: "opacity" });
+    };
   });
 }

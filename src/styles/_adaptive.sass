@@ -1,23 +1,38 @@
-// Отличия артборда 1440 от 1920 (типографика). Сетку pin-секций не трогаем — ломает ScrollTrigger.
+// Артборд 1440. Цифры с Figma node 1:2.
 @media (max-width: 1440px)
   .hero__body
     padding-top: 13.4rem
+    padding-bottom: 7.1rem
 
-  .hero__title,
+  .hero__title
+    width: 69rem
+    max-width: 100%
+    font-size: 5.2rem
+
+  // lead 573 шире, чем 690 − slider 200; слайдер абсолютом как в макете (x1210)
   .hero__bottom
+    position: relative
     width: 69rem
     max-width: 100%
 
-  .hero__title
-    font-size: 5.2rem
-
   .hero__lead
-    max-width: 57.3rem
+    width: 57.3rem
+    max-width: 100%
     font-size: 2rem
 
   .hero__copy
-    max-width: 57.3rem
+    width: 57.3rem
+    max-width: 100%
+    flex-shrink: 0
     gap: 5rem
+
+  .hero__slider
+    position: absolute
+    right: 0
+    bottom: 0
+
+  .stats
+    height: 147.5rem
 
   .stats__lines span:nth-child(1)
     left: 36rem
@@ -28,14 +43,110 @@
   .stats__lines span:nth-child(3)
     left: 108rem
 
+  .stats__item--clients
+    top: 14.5rem
+    left: 36rem
+    gap: 8.5rem
+
+  .stats__item--clients .stats__num
+    width: 51.5rem
+
+  .stats__item--clients .stats__label
+    width: 31.7rem
+
+  .stats__item--years
+    top: 45.8rem
+    left: 3.1rem
+    gap: 8.5rem
+
+  .stats__item--years .stats__num
+    width: 24.4rem
+
+  .stats__item--years .stats__label
+    width: 30.4rem
+
+  .stats__item--staff
+    top: 77rem
+    left: 71.9rem
+
+  .stats__item--staff .stats__num
+    width: 52.5rem
+
+  .stats__item--staff .stats__label
+    margin-top: 4.3rem
+    width: 42.3rem
+
+  .stats__item--output
+    top: 116.1rem
+    left: 36rem
+
+  .stats__item--output .stats__num
+    width: 59.3rem
+
+  .stats__item--output .stats__label
+    width: 28.8rem
+
+  .stats__label
+    font-size: 2.4rem
+
+  .directions
+    padding-top: 34.3rem
+    padding-bottom: 8.9rem
+
+  .directions__more
+    width: 16.4rem
+    height: 2.5rem
+    margin-top: 6rem
+
   .directions__title
     font-size: 5rem
+    margin-bottom: 6rem
+
+  .directions__stage
+    grid-template-columns: 57.3rem 1fr
+    column-gap: 14.7rem
+    padding: 0 8.7rem !important
+    height: max(100vh, 58.3rem)
+
+  .direction
+    height: max(100vh, 58.3rem)
+
+  .partners
+    padding-top: 11rem
+    padding-bottom: 22.6rem
 
   .partners__title
     font-size: 5.2rem
+    padding-bottom: 17.9rem
+    margin-bottom: 0
+
+  .partners__logo
+    height: 8.5rem
+
+  .resources
+    height: 75rem
+    min-height: 75rem
 
   .resources__title
     font-size: 5rem
+    line-height: 1.3
+    max-width: 44.2rem
+
+  .resources__body
+    padding-top: 7.8rem
+    grid-template-columns: 54fr 46fr
+
+  .resources__right
+    padding-top: 0
+    padding-left: 5.1rem
+    padding-bottom: 7.6rem
+
+  .resources__left
+    padding-bottom: 3.8rem
+
+  .resources__vline,
+  .resources__nav
+    left: 54%
 
   .resources__nav
     height: 7.6rem
@@ -43,21 +154,73 @@
   .resources__nav-btn
     height: 7.6rem
 
+  .resources__text
+    margin-bottom: 9rem
+    opacity: 0.7
+
+  .resources__name
+    max-width: 48.4rem
+
+  // ресурсы → новости 70; title → фото 100; карточки → more 100; more → CTA 150
+  .news
+    padding-top: 7rem
+    padding-bottom: 15rem
+
   .news__title
     font-size: 5rem
+    padding-bottom: 10rem
+
+  // padding 0 для метрик; клик как раньше (6.6 / 63×9) через ::before
+  .news-card
+    position: relative
+    padding: 0
+
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      right: 0
+      top: -6.6rem
+      bottom: -6.6rem
+
+  .news-card__media
+    aspect-ratio: 447 / 316
+    margin-bottom: 1rem
 
   .news-card__name
     font-size: 2.2rem
     line-height: 1.4
+    width: 100%
 
   .news-card__date
     font-size: 1.6rem
+    opacity: 0.5
+    color: var(--color-text)
+
+  .news__more
+    position: relative
+    width: 12rem
+    height: 2.5rem
+    margin-top: 10rem
+
+    &::before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      width: 63rem
+      height: 9rem
+      transform: translate(-50%, -50%)
+
+  .cta
+    padding-top: 10rem
+    padding-bottom: 12rem
 
   .cta__lines span:nth-child(1)
     left: 36rem
 
   .cta__lines span:nth-child(2)
-    left: 72rem
+    left: 72.1rem
 
   .cta__lines span:nth-child(3)
     left: 108rem
@@ -69,17 +232,1017 @@
     max-width: 68.2rem
     font-size: 3.2rem
 
+  .cta__title--address
+    margin-top: 13rem
+
+  // text→btn 70; address text→map 90
   .cta__text
     max-width: 56.3rem
     font-size: 2.2rem
+    margin-bottom: 7rem
+
+  .cta__title--address + .cta__text
+    margin-bottom: 9rem
 
   .cta__map
     width: 71.9rem
     max-width: 100%
+    height: 41.3rem
+    margin-top: 0
+    margin-bottom: 10rem
 
   .cta__download
     max-width: 58.3rem
     font-size: 3.2rem
 
+  .footer
+    padding-top: 4rem
+    padding-bottom: 7rem
+
   .footer__inner
     grid-template-columns: 33.1rem 35.9rem 36rem 1fr
+
+  .footer__col,
+  .footer__nav-links,
+  .footer__contacts-main,
+  .footer__legal,
+  .footer__meta
+    gap: 1.6rem
+
+  .footer__contacts-main .btn
+    margin-top: 1.9rem
+    margin-bottom: 6.3rem
+
+  .footer__socials
+    margin-top: 1.4rem
+
+// Артборд 1080. Цифры с Figma node 1:377.
+@media (max-width: 1080px)
+  .hero__body
+    padding-top: 13.4rem
+    padding-bottom: 10rem
+
+  .hero__title,
+  .hero__bottom
+    position: relative
+    width: 73.5rem
+    margin-left: 28.5rem
+    margin-right: 0
+
+  .hero__title
+    font-size: 5.6rem
+
+  .hero__lead
+    width: auto
+    max-width: 43.5rem
+    font-size: 2.4rem
+
+  .hero__copy
+    width: auto
+    max-width: 43.5rem
+    flex-shrink: 1
+    gap: 5rem
+
+  .hero__slider
+    position: static
+    right: auto
+    bottom: auto
+
+  .stats
+    height: 133.4rem
+
+  .stats__lines span:nth-child(1)
+    left: 27rem
+
+  .stats__lines span:nth-child(2)
+    left: 54rem
+
+  .stats__lines span:nth-child(3)
+    left: 81rem
+
+  .stats__item--clients
+    top: 15.3rem
+    left: 27rem
+    gap: 6.3rem
+
+  .stats__item--clients .stats__num
+    width: 38.6rem
+
+  .stats__item--clients .stats__label
+    width: 25.7rem
+
+  .stats__item--years
+    top: 42.9rem
+    left: 2.4rem
+    gap: 6.3rem
+
+  .stats__item--years .stats__num
+    width: 18.3rem
+
+  .stats__item--years .stats__label
+    width: 30.4rem
+
+  .stats__item--staff
+    top: 70.6rem
+    left: 53.9rem
+
+  .stats__item--staff .stats__num
+    width: 39.4rem
+
+  .stats__item--staff .stats__label
+    margin-top: 4.5rem
+    width: 42.3rem
+
+  .stats__item--output
+    top: 105.6rem
+    left: 27rem
+
+  .stats__item--output .stats__num
+    width: 44.6rem
+
+  .stats__item--output .stats__label
+    width: 24.1rem
+
+  .stats__label
+    font-size: 2rem
+
+  .directions
+    padding-top: 61.8rem
+    padding-bottom: 8rem
+
+  .directions__title
+    font-size: 5rem
+    max-width: 82.4rem
+    margin-bottom: 6rem
+
+  .directions__more
+    width: 16.4rem
+    height: 2.5rem
+    margin-top: 6rem
+
+  // центр 540; pad 30 у .container; фото ~443–461×409–451
+  .directions__stage
+    grid-template-columns: 1fr 1fr
+    column-gap: 0
+    align-items: center
+    padding: 0 !important
+    height: max(100vh, 47.4rem)
+
+  .direction
+    height: max(100vh, 47.4rem)
+
+  .direction__name
+    font-size: 4.6rem
+    max-width: 51rem
+
+  .direction__text
+    max-width: 51rem
+
+  .directions__visual
+    width: 46.1rem
+    max-width: 100%
+    height: 45.1rem
+    justify-self: start
+
+  .directions__photo img
+    object-position: left center
+
+  // more→title 150 = dir pb 80 + pt 70; title→logo 119; logo→res 236
+  .partners
+    padding-top: 7rem
+    padding-bottom: 23.6rem
+
+  .partners__title
+    font-size: 5.6rem
+    padding-bottom: 11.9rem
+    margin-bottom: 0
+
+  .partners__logo
+    height: 8.5rem
+
+  // Figma: 1300, pt 70, vline 540, right pl 51, nav 77
+  .resources
+    height: 130rem
+    min-height: 130rem
+
+  .resources__body
+    padding-top: 7rem
+    grid-template-columns: 1fr 1fr
+
+  .resources__vline,
+  .resources__nav
+    left: 50%
+
+  .resources__nav
+    height: 7.7rem
+
+  .resources__nav-btn
+    height: 7.7rem
+
+  .resources__left
+    padding-bottom: 3.8rem
+
+  .resources__right
+    padding-top: 0
+    padding-left: 5.1rem
+    padding-bottom: 7.7rem
+
+  .resources__title
+    font-size: 5rem
+    line-height: 1.3
+    max-width: 44.2rem
+
+  .resources__name
+    max-width: 48.4rem
+    font-size: 4.6rem
+
+  .resources__text
+    max-width: 44.4rem
+    margin-bottom: 9rem
+    font-size: 2.4rem
+    opacity: 0.7
+
+  // res→title 70; title→фото 70; 2×2 gap 20; more→CTA 130
+  .news
+    padding-top: 7rem
+    padding-bottom: 13rem
+
+  .news__title
+    font-size: 5rem
+    padding-bottom: 7rem
+
+  .news__list
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 4rem 2rem
+
+  .news-card
+    position: relative
+    padding: 0
+
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      right: 0
+      top: -3rem
+      bottom: -3rem
+
+  .news-card__media
+    aspect-ratio: 500 / 354
+    margin-bottom: 1rem
+
+  .news-card__name
+    font-size: 2.2rem
+    line-height: 1.4
+    width: 100%
+
+  .news-card__date
+    font-size: 1.6rem
+    opacity: 0.5
+    color: var(--color-text)
+
+  .news__more
+    position: relative
+    width: 12rem
+    height: 2.5rem
+    margin-top: 10rem
+
+    &::before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      width: 40rem
+      height: 9rem
+      transform: translate(-50%, -50%)
+
+  .cta
+    padding-top: 10rem
+    padding-bottom: 12rem
+
+  .cta__lines span:nth-child(1)
+    left: 36rem
+
+  .cta__lines span:nth-child(2)
+    left: 72.1rem
+
+  .cta__lines span:nth-child(3)
+    display: none
+
+  .cta__inner
+    padding-left: 35.8rem
+
+  .cta__title
+    max-width: 68.2rem
+    font-size: 3.2rem
+
+  .cta__title--address
+    margin-top: 13rem
+
+  .cta__text
+    max-width: 56.3rem
+    font-size: 2.2rem
+    margin-bottom: 7rem
+
+  .cta__title--address + .cta__text
+    margin-bottom: 9rem
+
+  .cta__map
+    width: 72rem
+    max-width: 100%
+    height: 41.3rem
+    margin-top: 0
+    margin-bottom: 10rem
+
+  .cta__download
+    max-width: 58.3rem
+    font-size: 3.2rem
+
+  // Figma 1080: logo | products/nav | contacts/legal/meta
+  .footer
+    padding-top: 4rem
+    padding-bottom: 7rem
+
+  .footer__inner
+    grid-template-columns: 33rem 36rem 1fr
+    grid-template-rows: auto auto
+    column-gap: 0
+    row-gap: 5rem
+    align-items: stretch
+
+  .footer__logo
+    grid-column: 1
+    grid-row: 1
+    align-self: start
+
+  .footer__col--products
+    grid-column: 2
+    grid-row: 1
+
+  .footer__col--nav
+    display: contents
+
+  .footer__nav-links
+    grid-column: 2
+    grid-row: 2
+
+  .footer__legal
+    grid-column: 3
+    grid-row: 2
+    align-self: start
+    padding-top: 0
+
+  .footer__col--contacts
+    display: contents
+    padding-right: 0
+
+  .footer__contacts-main
+    grid-column: 3
+    grid-row: 1
+
+  .footer__meta
+    grid-column: 3
+    grid-row: 2
+    align-self: end
+    padding-top: 0
+
+  .footer__contacts-main .btn
+    margin-top: 1.9rem
+    margin-bottom: 6.3rem
+
+// Артборд 375. Цифры с Figma node 1:883. 1rem = 10px на 375.
+@media (max-width: 767px)
+  .container
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+  // Без sticky pin с десктопа — иначе слои едут поверх друг друга
+  .hero
+    position: relative
+
+  .hero__body
+    padding-top: 11.1rem
+    padding-bottom: 0
+    justify-content: flex-start
+
+  .hero__title
+    position: relative
+    width: 34.4rem
+    max-width: 100%
+    margin-left: 0
+    margin-right: 0
+    font-size: 3.2rem
+
+  // Figma 700: lead y470 (от низа 230), btn y556 (от низа 144), стрелки 636/650, прогресс y700
+  .hero__bottom
+    position: absolute
+    inset: 0
+    width: auto
+    max-width: none
+    margin: 0
+    display: block
+    pointer-events: none
+
+  // btn bottom от низа 9.4rem; lead+gap40+btn = блок от низа 23rem
+  .hero__copy
+    position: absolute
+    left: 1.5rem
+    top: auto
+    bottom: 9.4rem
+    width: 31.5rem
+    max-width: calc(100% - 3rem)
+    flex-shrink: 1
+    gap: 4rem
+    pointer-events: auto
+
+  .hero__lead
+    width: auto
+    max-width: 31.5rem
+    font-size: 1.8rem
+
+  .hero__actions .btn
+    min-width: 13.1rem
+    min-height: 5rem
+    padding: 1.7rem 2.4rem
+    font-size: 1.3rem
+
+  // Figma x301/331, обе 18×14, gap 12; в одну линию (диагональный сдвиг выглядел криво)
+  .hero__slider
+    position: absolute
+    right: 2.6rem
+    bottom: 0
+    left: auto
+    top: auto
+    width: 4.8rem
+    padding-bottom: 5rem
+    flex-direction: column
+    align-items: stretch
+    pointer-events: auto
+
+  .hero__slider-nav
+    position: relative
+    display: block
+    width: 4.8rem
+    height: 1.4rem
+    margin-bottom: 0
+
+  .hero__slider-btn
+    position: absolute
+    top: 0
+    width: 1.8rem
+    height: 1.4rem
+    padding: 0
+    background: transparent
+
+    &:hover
+      background: transparent
+      color: var(--color-white)
+
+  .hero__slider-btn--prev
+    left: -1.8rem
+
+  .hero__slider-btn:not(.hero__slider-btn--prev)
+    left: 3rem
+
+  .hero__slider-btn .icon--arrow
+    width: 1.8rem
+    height: 1.4rem
+    display: block
+
+  .hero__progress
+    display: block
+    position: absolute
+    left: auto
+    right: -2.6rem
+    bottom: 0
+    width: 37.5rem
+    height: 0.2rem
+    transform: none
+
+  .stats
+    height: auto
+    min-height: 0
+    padding: 10.1rem 1.5rem 10rem
+
+  .stats__lines
+    display: none
+
+  .stats__body
+    display: flex
+    flex-direction: column
+    gap: 8rem
+    height: auto
+
+  .stats__item
+    position: relative
+    top: auto !important
+    left: auto !important
+    right: auto !important
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    gap: 2rem
+    width: 100%
+
+  .stats__item--clients .stats__num,
+  .stats__item--years .stats__num,
+  .stats__item--staff .stats__num,
+  .stats__item--output .stats__num
+    width: auto
+    max-width: 23.5rem
+    height: 6.7rem
+
+  .stats__item--years .stats__num
+    max-width: 9.7rem
+
+  .stats__label
+    width: auto !important
+    max-width: 37rem
+    margin-top: 0 !important
+    padding: 0 !important
+    font-size: 2.1rem
+    line-height: 2.1rem
+
+  // Figma 1:883: section→title 308, title→photo 308, more→partners 130; title text-center x26
+  .directions
+    padding-top: 30.8rem
+    padding-bottom: 13rem
+
+  .directions__title
+    font-size: 3.2rem
+    line-height: 1.3
+    max-width: 32.3rem
+    margin-bottom: 30.8rem
+    text-align: center
+    margin-left: auto
+    margin-right: auto
+
+  .directions__stage
+    display: block
+    grid-template-columns: none
+    column-gap: 0
+    align-items: stretch
+    height: auto !important
+    min-height: 0
+    overflow: visible
+    padding: 0 !important
+
+  .directions__hit
+    display: none
+
+  .directions__visual
+    display: none
+    width: auto
+    height: auto
+
+  .directions__copy
+    height: auto
+    overflow: visible
+
+  .directions__track
+    transform: none !important
+    will-change: auto
+
+  .direction
+    height: auto !important
+    min-height: 0
+    padding: 0
+    margin: 0 0 3.8rem
+    justify-content: flex-start
+    align-items: flex-start
+    gap: 0
+    text-align: left
+
+  .direction .directions__photo
+    position: relative
+    inset: auto
+    width: calc(100% + 1rem)
+    max-width: none
+    height: 36.1rem
+    margin: 0 -0.5rem 1rem
+    opacity: 1 !important
+    visibility: visible
+    will-change: auto
+    overflow: hidden
+    background: var(--color-bg-mute)
+
+  // Figma: 02 фото 355×345, до номера 18; 03 фото 315, до номера 33
+  .direction:nth-child(2)
+    margin-bottom: 5.3rem
+
+  .direction:nth-child(2) .directions__photo
+    height: 34.5rem
+    margin-bottom: 1.8rem
+
+  .direction:nth-child(3)
+    margin-bottom: 0
+
+  .direction:nth-child(3) .directions__photo
+    height: 31.5rem
+    margin-bottom: 3.3rem
+
+  .direction .directions__photo img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: center
+
+  .direction__num
+    margin-bottom: 2rem
+    font-size: 2.1rem
+    line-height: 2.1rem
+    text-align: left
+
+  .direction__name
+    margin-bottom: 3rem
+    font-size: 3.2rem
+    max-width: 34.2rem
+    text-align: left
+
+  .direction__text
+    max-width: 29.9rem
+    margin-bottom: 6.1rem
+    font-size: 1.8rem
+    text-align: left
+
+  .direction .btn
+    min-height: 5rem
+    padding: 1.7rem 2.4rem
+    font-size: 1.3rem
+    align-self: flex-start
+
+  // Figma: btn03→more 100; more→partners 130; 14px Bold, блок 144×20
+  .directions__more
+    width: 14.4rem
+    height: 2rem
+    margin-top: 10rem
+    font-size: 1.4rem
+    line-height: 1.2
+
+    span
+      padding-bottom: 0.2rem
+
+  // more→title 130 (pb directions); title→logo 70; logo→res 150
+  .partners
+    padding-top: 0
+    padding-bottom: 15rem
+
+  .partners__title
+    font-size: 3.2rem
+    padding-bottom: 7rem
+    margin-bottom: 0
+
+  .partners__group
+    gap: 8rem
+    padding-right: 8rem
+
+  .partners__logo
+    height: 7.6rem
+
+  .resources
+    height: 68.6rem
+    min-height: 68.6rem
+    position: relative
+
+  .resources__body
+    display: flex
+    flex-direction: column
+    grid-template-columns: none
+    padding-top: 5rem
+    padding-bottom: 0
+    height: 100%
+    min-height: 0
+
+  .resources__vline
+    display: none
+
+  .resources__left
+    display: contents
+
+  .resources__right
+    display: flex
+    flex-direction: column
+    padding: 0
+    width: 100%
+    order: 2
+    flex: 1 1 auto
+    min-height: 0
+
+  .resources__title
+    order: 1
+    font-size: 3.2rem
+    max-width: 29.9rem
+    line-height: 1.3
+    margin-bottom: 5rem
+    opacity: 1 !important
+    transform: none !important
+
+  // Figma 1:1025: 14px Bold
+  .resources__all
+    order: 3
+    margin-top: auto
+    margin-bottom: 5.3rem
+    font-size: 1.4rem
+    line-height: 1.2
+
+  .resources__slides
+    position: relative
+    flex: 0 0 auto
+    min-height: 0
+    padding-bottom: 0
+
+  .resources__slide
+    position: relative
+    max-width: 31.2rem
+    transform: none !important
+
+  .resources__slide.is-active
+    opacity: 1 !important
+    visibility: visible !important
+
+  .resources__slide:not(.is-active)
+    display: none
+
+  .resources__count
+    margin-bottom: 2rem
+    font-size: 1.8rem
+
+  .resources__name
+    margin-bottom: 2rem
+    font-size: 2.4rem
+    line-height: 1.3
+    max-width: 31.2rem
+
+  .resources__text
+    max-width: 22rem
+    margin-bottom: 3rem
+    font-size: 1.8rem
+    opacity: 0.7
+
+  .resources__slides .btn
+    min-height: 5rem
+    padding: 1.7rem 2.4rem
+    font-size: 1.3rem
+
+  // те же 18×14, gap 12, в одну линию
+  .resources__nav
+    position: absolute
+    left: auto
+    right: 2.6rem
+    bottom: 5.3rem
+    width: 4.8rem
+    height: 1.4rem
+    border-top: 0
+    display: block
+    grid-template-columns: none
+
+  .resources__nav-btn
+    position: absolute
+    top: 0
+    width: 1.8rem
+    height: 1.4rem
+    padding: 0
+    background: transparent
+
+    &:hover
+      background: transparent
+      color: var(--color-white)
+
+  .resources__nav-btn:first-child
+    left: -1.8rem
+
+  .resources__nav-btn:last-child
+    left: 3rem
+
+  .resources__nav-btn .icon--arrow
+    width: 1.8rem
+    height: 1.4rem
+    display: block
+
+  .resources__nav-btn + .resources__nav-btn
+    border-left: 0
+
+  .resources__nav-btn::before
+    display: none
+
+  // res→title 50; title→фото 30; date→след.фото 40; more→CTA 100
+  .news
+    margin-top: 0
+    padding-top: 5rem
+    padding-bottom: 10rem
+
+  .news__title
+    font-size: 3.2rem
+    max-width: 33.9rem
+    line-height: 1.3
+    padding-bottom: 3rem
+
+  .news__list
+    grid-template-columns: 1fr
+    gap: 4rem
+
+  .news-card
+    position: relative
+    padding: 0
+
+    &::before
+      display: none
+
+  .news-card__media
+    aspect-ratio: 345 / 244
+    margin-bottom: 1.5rem
+
+  .news-card__name
+    width: 100%
+    font-size: 1.8rem
+    line-height: 1.3
+    margin-bottom: 1rem
+
+  .news-card__date
+    font-size: 1.4rem
+    line-height: 1.8rem
+    opacity: 1
+    color: var(--color-mute)
+
+  // Figma 1:1029: 14px Bold; date→more 70; more→cta 100; блок 144×20 по центру
+  .news__more
+    position: relative
+    width: 14.4rem
+    height: 2rem
+    margin-top: 7rem
+    margin-left: auto
+    margin-right: auto
+    font-size: 1.4rem
+    line-height: 1.2
+
+    span
+      padding-bottom: 0.2rem
+
+    &::before
+      display: none
+
+  .cta
+    padding-top: 5rem
+    padding-bottom: 13rem
+
+  .cta__lines
+    display: none
+
+  .cta__inner
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+
+  .cta__title
+    max-width: 34.6rem
+    font-size: 2.4rem
+    line-height: 1.3
+
+  .cta__title--address
+    margin-top: 7rem
+    font-size: 2.4rem
+    line-height: 1.3
+
+  .cta__text
+    max-width: 33.9rem
+    margin-bottom: 4rem
+    font-size: 1.8rem
+    line-height: 1.28
+
+  // Figma 1:1050 h69 в 3 строки; наша метрика шрифта чуть уже, 32rem дает те же переносы
+  .cta__title--address + .cta__text
+    max-width: 32rem
+    margin-bottom: 4rem
+    line-height: 2.3rem
+
+  .cta .btn
+    min-height: 5rem
+    padding: 1.7rem 2.2rem
+    font-size: 1.3rem
+
+  .cta__map
+    width: 34.5rem
+    max-width: 100%
+    height: 41.3rem
+    margin-top: 0
+    margin-bottom: 7rem
+
+  .cta__download
+    max-width: 31.3rem
+    font-size: 2.4rem
+    margin-bottom: 1.5rem
+
+  // Figma: logo→products 57; products gap top-to-top 30 (16px); nav top-to-top 36 (17px)
+  .footer
+    padding-top: 4rem
+    padding-bottom: 7rem
+
+  .footer__inner
+    display: flex
+    flex-direction: column
+    gap: 0
+    grid-template-columns: none
+    grid-template-rows: none
+
+  .footer__col--nav,
+  .footer__col--contacts
+    display: contents
+
+  .footer__logo
+    display: flex
+    width: 23.5rem
+    max-width: 100%
+    margin-bottom: 5.7rem
+    order: 1
+
+  .footer .logo__icon
+    width: 23.5rem
+    height: 2.9rem
+
+  .footer__col--products
+    display: flex
+    flex-direction: column
+    width: 100%
+    padding-right: 0
+    gap: 1.2rem
+    margin-bottom: 3.9rem
+    order: 2
+    font-size: 1.6rem
+    line-height: 1.8rem
+
+  .footer__col--products .footer__heading,
+  .footer__col--products a
+    font-size: 1.6rem
+    line-height: 1.8rem
+
+  .footer__nav-links
+    display: flex
+    flex-direction: column
+    gap: 1.9rem
+    width: 100%
+    margin-bottom: 5rem
+    order: 3
+    font-size: 1.7rem
+    line-height: 1.7rem
+
+  .footer__nav-links a
+    font-size: 1.7rem
+    line-height: 1.7rem
+
+  .footer__contacts-main
+    display: flex
+    flex-direction: column
+    gap: 0
+    width: 100%
+    order: 4
+    font-size: 1.6rem
+    line-height: 1.9rem
+
+  .footer__phone
+    font-size: 1.6rem
+    line-height: 1.9rem
+
+  .footer__contacts-main .btn
+    margin-top: 3.7rem
+    margin-bottom: 5rem
+    min-height: 5rem
+    padding: 1.7rem 2.2rem
+    font-size: 1.3rem
+
+  .footer__contacts-main .footer__muted
+    font-size: 1.6rem
+    line-height: 1.9rem
+
+  .footer__socials
+    margin-top: 2.5rem
+    margin-bottom: 0
+
+  .footer__legal
+    display: flex
+    flex-direction: column
+    width: 100%
+    margin-top: 5rem
+    padding-top: 0
+    gap: 1.2rem
+    order: 5
+    font-size: 1.6rem
+    line-height: 1.9rem
+
+  .footer__legal a
+    font-size: 1.6rem
+    line-height: 1.9rem
+
+  .footer__meta
+    display: flex
+    flex-direction: column
+    width: 100%
+    margin-top: 3rem
+    padding-top: 0
+    gap: 1.2rem
+    order: 6
+    font-size: 1.6rem
+    line-height: 1.9rem
+
+  .footer__meta p
+    font-size: 1.6rem
+    line-height: 1.9rem

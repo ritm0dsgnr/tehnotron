@@ -7,7 +7,7 @@ const SLIDES = [
     type: "video",
     src: `${BASE}video/hero.mp4`,
     poster: `${BASE}img/01.jpg`,
-    title: ["Полный цикл", "разработки продукта"],
+    title: ["Полный", "цикл разработки продукта"],
     lead: "С внедрением технологий - от идеи до серийного производства",
     href: "#resources",
   },

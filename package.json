@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "playwright": "^1.49.0",
     "sass": "^1.93.2",
     "vite": "^7.1.12"
   },

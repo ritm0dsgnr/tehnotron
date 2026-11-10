@@ -3,7 +3,7 @@
   background: var(--color-blue)
   color: var(--color-white)
   padding-top: 10rem
-  padding-bottom: 14.5rem
+  padding-bottom: 18rem
   overflow: hidden
 
 .cta__lines
@@ -67,7 +67,7 @@
   max-width: 100%
   height: 41.3rem
   margin-top: 4.6rem
-  margin-bottom: 8.7rem
+  margin-bottom: 15rem
   overflow: hidden
   background: var(--color-bg-mute)
 
@@ -100,6 +100,9 @@
   text-decoration: underline
   text-underline-offset: 0.4rem
 
+  &:last-child
+    margin-bottom: 0
+
   &:hover
     opacity: 0.7
 
@@ -118,6 +121,9 @@
 
 .footer__logo
   width: 23.5rem
+  grid-column: 1
+  grid-row: 1 / -1
+  align-self: start
 
 .footer__col
   display: flex
@@ -125,10 +131,34 @@
   align-items: flex-start
   gap: 1.6rem
   font-size: 1.7rem
-  line-height: normal
+  line-height: 2rem
   font-weight: 400
   min-width: 0
   padding-right: 2rem
+
+.footer__col--products
+  grid-column: 2
+  grid-row: 1 / -1
+
+.footer__col--nav
+  grid-column: 3
+  grid-row: 1 / -1
+  justify-content: space-between
+  gap: 0
+
+.footer__col--contacts
+  grid-column: 4
+  grid-row: 1 / -1
+  justify-content: space-between
+  gap: 0
+  padding-right: 0
+
+.footer__nav-links,
+.footer__contacts-main
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 1.6rem
 
 .footer__heading
   font-weight: 400
@@ -140,7 +170,8 @@
   &:hover
     opacity: 1
 
-.footer__col--nav a
+.footer__col--nav a,
+.footer__nav-links a
   opacity: 1
 
   &:hover
@@ -152,7 +183,6 @@
   flex-direction: column
   align-items: flex-start
   gap: 1.6rem
-  margin-top: auto
   padding-top: 2rem
 
 .footer__muted
@@ -181,9 +211,10 @@
   height: 1.7rem
   flex-shrink: 0
 
-.footer__col--contacts .btn
-  margin-top: 1.2rem
-  margin-bottom: 4rem
+.footer__contacts-main .btn
+  // phone→btn 35; btn→«Мы в соц…» 79 (вместе с gap 1.6)
+  margin-top: 1.9rem
+  margin-bottom: 6.3rem
   padding: 2.1rem 3.8rem
   opacity: 1
 
@@ -195,7 +226,7 @@
 .footer__socials
   display: flex
   gap: 3rem
-  margin-bottom: 4rem
+  margin-top: 1.4rem
 
 .footer__socials a
   display: grid
