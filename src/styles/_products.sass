@@ -1,0 +1,79 @@
+.products
+  padding-top: 4.9rem
+  padding-bottom: 24.9rem
+  background: var(--color-bg)
+  color: var(--color-text)
+
+.products__title
+  max-width: 100.3rem
+  margin-bottom: 10rem
+  font-size: 7.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.products__grid
+  display: grid
+  grid-template-columns: repeat(2, 91.5rem)
+  column-gap: 3rem
+  row-gap: 7rem
+  justify-content: space-between
+
+.products-card
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 2rem
+  width: 100%
+  max-width: 91.5rem
+  color: inherit
+  transition: color var(--t)
+
+  &:hover
+    color: var(--color-blue)
+
+.products-card__media
+  display: grid
+  place-items: center
+  width: 100%
+  height: 60rem
+  overflow: hidden
+  background: #f0f0f0
+
+.products-card__photo
+  position: relative
+  width: 74.6%
+  height: 100%
+  overflow: hidden
+
+.products-card__photo--a
+  height: 95%
+
+.products-card__photo img
+  position: absolute
+  max-width: none
+  object-fit: fill
+
+.products-card__photo--a img
+  width: 162.88%
+  height: 122.17%
+  left: -26.12%
+  top: -11.17%
+
+.products-card__photo--b img
+  width: 155.41%
+  height: 110.5%
+  left: -27.71%
+  top: -5.33%
+
+.products-card__photo--c img
+  width: 141.48%
+  height: 100.83%
+  left: -18.41%
+  top: -0.5%
+
+.products-card__name
+  max-width: 83.1rem
+  font-size: 3.2rem
+  line-height: normal
+  font-weight: 400

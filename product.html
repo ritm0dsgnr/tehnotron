@@ -1,0 +1,112 @@
+<!-- data: {"title":"Оперение кабины — Технотрон","page":"product","header":"solid"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <section class="subproduct" data-animate="subproduct">
+        <div class="container">
+          <h1 class="subproduct__title is-animate">Оперение кабины</h1>
+
+          <div class="subproduct__layout">
+            <div class="subproduct-nav is-open" data-subproduct-nav>
+              <button class="subproduct-nav__toggle" type="button" data-subproduct-nav-toggle aria-expanded="true">
+                <span>Новинки</span>
+                <svg class="subproduct-nav__chevron" width="8" height="4" aria-hidden="true" focusable="false">
+                  <use href="#arrow-down"></use>
+                </svg>
+              </button>
+              <div class="subproduct-nav__panel">
+                <a class="subproduct-nav__link is-active" href="product.html">Оперение кабины (экстерьер)</a>
+                <a class="subproduct-nav__link" href="#">Принадлежности кабины (интерьер)</a>
+                <a class="subproduct-nav__link" href="#">Система охлаждения</a>
+                <a class="subproduct-nav__link" href="#">Детали ДВС</a>
+                <a class="subproduct-nav__link" href="#">Система питания</a>
+                <a class="subproduct-nav__link" href="#">Элементы подвески</a>
+                <a class="subproduct-nav__link" href="#">Тягово-сцепные устройства</a>
+                <a class="subproduct-nav__link" href="#">Электрика</a>
+                <a class="subproduct-nav__link" href="#">Седельно-сцепные устройства и монтажные плиты</a>
+                <a class="subproduct-nav__link" href="#">Прочее</a>
+              </div>
+            </div>
+
+            <div class="subproduct__main">
+              <div class="subproduct-promo is-animate" data-subproduct-promo>
+                <div class="subproduct-promo__slides">
+                  <article class="subproduct-promo__slide is-active">
+                    <div class="subproduct-promo__copy">
+                      <h2 class="subproduct-promo__name">ССУ 21-807</h2>
+                      <p class="subproduct-promo__discount">-20%</p>
+                      <a class="btn btn--ghost subproduct-promo__btn" href="#">Подробнее</a>
+                    </div>
+                    <div class="subproduct-promo__media">
+                      <img src="/img/20.png" alt="" width="601" height="367" />
+                    </div>
+                  </article>
+                </div>
+                <div class="subproduct-promo__nav" aria-hidden="true">
+                  <button class="subproduct-promo__arrow" type="button" data-promo-prev aria-label="Назад">
+                    <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+                      <use href="#arrow"></use>
+                    </svg>
+                  </button>
+                  <button class="subproduct-promo__arrow" type="button" data-promo-next aria-label="Вперёд">
+                    <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+                      <use href="#arrow"></use>
+                    </svg>
+                  </button>
+                  <span class="subproduct-promo__progress"></span>
+                </div>
+              </div>
+
+              <div class="subproduct-grid">
+                <a class="subproduct-card is-animate" href="#">
+                  <div class="subproduct-card__media">
+                    <div class="subproduct-card__badges">
+                      <span class="subproduct-card__badge subproduct-card__badge--new">Новое</span>
+                      <span class="subproduct-card__badge subproduct-card__badge--hit">Хит</span>
+                    </div>
+                    <img src="/img/21.png" alt="" width="413" height="196" />
+                  </div>
+                  <h2 class="subproduct-card__name">Оперение кабины К3</h2>
+                </a>
+                <a class="subproduct-card is-animate" href="#">
+                  <div class="subproduct-card__media">
+                    <div class="subproduct-card__badges">
+                      <span class="subproduct-card__badge subproduct-card__badge--hit">Хит</span>
+                    </div>
+                    <img src="/img/22.png" alt="" width="414" height="152" />
+                  </div>
+                  <h2 class="subproduct-card__name">Оперение кабины К4</h2>
+                </a>
+                <a class="subproduct-card is-animate" href="#">
+                  <div class="subproduct-card__media">
+                    <img src="/img/23.png" alt="" width="414" height="254" />
+                  </div>
+                  <h2 class="subproduct-card__name">Оперение кабины К5</h2>
+                </a>
+                <a class="subproduct-card is-animate" href="#">
+                  <div class="subproduct-card__media">
+                    <img src="/img/24.png" alt="" width="414" height="171" />
+                  </div>
+                  <h2 class="subproduct-card__name">Оперение кабины УРАЛ</h2>
+                </a>
+                <a class="subproduct-card is-animate" href="#">
+                  <div class="subproduct-card__media">
+                    <img src="/img/25.png" alt="" width="414" height="215" />
+                  </div>
+                  <h2 class="subproduct-card__name">Оперение кабины КАМАЗ-КОМПАС</h2>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>

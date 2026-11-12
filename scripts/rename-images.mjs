@@ -55,7 +55,6 @@ async function numberPhotos() {
 }
 
 async function moveLooseSvg() {
-  // svg, попавшие в img, переносим в svg/
   const loose = await listFiles(IMG_DIR, SVG_EXTS);
   let changed = 0;
   for (const file of loose) {

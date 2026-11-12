@@ -1,4 +1,3 @@
-// Артборд 1440. Цифры с Figma node 1:2.
 @media (max-width: 1440px)
   .hero__body
     padding-top: 13.4rem
@@ -9,7 +8,6 @@
     max-width: 100%
     font-size: 5.2rem
 
-  // lead 573 шире, чем 690 − slider 200; слайдер абсолютом как в макете (x1210)
   .hero__bottom
     position: relative
     width: 69rem
@@ -161,7 +159,6 @@
   .resources__name
     max-width: 48.4rem
 
-  // ресурсы → новости 70; title → фото 100; карточки → more 100; more → CTA 150
   .news
     padding-top: 7rem
     padding-bottom: 15rem
@@ -170,7 +167,6 @@
     font-size: 5rem
     padding-bottom: 10rem
 
-  // padding 0 для метрик; клик как раньше (6.6 / 63×9) через ::before
   .news-card
     position: relative
     padding: 0
@@ -235,7 +231,6 @@
   .cta__title--address
     margin-top: 13rem
 
-  // text→btn 70; address text→map 90
   .cta__text
     max-width: 56.3rem
     font-size: 2.2rem
@@ -276,7 +271,78 @@
   .footer__socials
     margin-top: 1.4rem
 
-// Артборд 1080. Цифры с Figma node 1:377.
+  .products
+    padding-top: 3.4rem
+    padding-bottom: 25rem
+
+  .products__title
+    max-width: 53.8rem
+    margin-bottom: 10rem
+    font-size: 5.2rem
+
+  .products__grid
+    grid-template-columns: repeat(2, 68rem)
+    column-gap: 2rem
+    row-gap: 7rem
+
+  .products-card
+    max-width: 68rem
+    gap: 2rem
+
+  .products-card__media
+    height: 44.6rem
+
+  .products-card__name
+    max-width: 63.1rem
+    font-size: 2.4rem
+
+  .subproduct
+    padding-top: 3.4rem
+    padding-bottom: 25rem
+
+  .subproduct__title
+    max-width: 54.4rem
+    margin-bottom: 10rem
+    font-size: 5.2rem
+
+  .subproduct__layout
+    grid-template-columns: 1fr
+    row-gap: 2rem
+
+  .subproduct-nav
+    position: static
+    top: auto
+
+  .subproduct-nav__chevron
+    display: block
+
+  .subproduct-nav:not(.is-open) .subproduct-nav__panel
+    display: none
+
+  .subproduct-nav__panel
+    gap: 3rem
+    padding: 2.4rem 3rem 3rem
+
+  .subproduct__main
+    gap: 5rem
+
+  .subproduct-promo__media
+    left: 61.3rem
+
+  .subproduct-grid
+    grid-template-columns: repeat(2, 68rem)
+    column-gap: 2rem
+    row-gap: 7rem
+
+  .subproduct-card
+    max-width: 68rem
+
+  .subproduct-card__media
+    height: 44.6rem
+
+  .subproduct-card__name
+    font-size: 2.4rem
+
 @media (max-width: 1080px)
   .hero__body
     padding-top: 13.4rem
@@ -380,7 +446,6 @@
     height: 2.5rem
     margin-top: 6rem
 
-  // центр 540; pad 30 у .container; фото ~443–461×409–451
   .directions__stage
     grid-template-columns: 1fr 1fr
     column-gap: 0
@@ -407,7 +472,6 @@
   .directions__photo img
     object-position: left center
 
-  // more→title 150 = dir pb 80 + pt 70; title→logo 119; logo→res 236
   .partners
     padding-top: 7rem
     padding-bottom: 23.6rem
@@ -420,7 +484,6 @@
   .partners__logo
     height: 8.5rem
 
-  // Figma: 1300, pt 70, vline 540, right pl 51, nav 77
   .resources
     height: 130rem
     min-height: 130rem
@@ -462,7 +525,6 @@
     font-size: 2.4rem
     opacity: 0.7
 
-  // res→title 70; title→фото 70; 2×2 gap 20; more→CTA 130
   .news
     padding-top: 7rem
     padding-bottom: 13rem
@@ -558,7 +620,6 @@
     max-width: 58.3rem
     font-size: 3.2rem
 
-  // Figma 1080: logo | products/nav | contacts/legal/meta
   .footer
     padding-top: 4rem
     padding-bottom: 7rem
@@ -610,13 +671,66 @@
     margin-top: 1.9rem
     margin-bottom: 6.3rem
 
-// Артборд 375. Цифры с Figma node 1:883. 1rem = 10px на 375.
+  .products
+    padding-top: 3.4rem
+    padding-bottom: 15rem
+
+  .products__title
+    max-width: 73.5rem
+    margin-bottom: 10rem
+    font-size: 5.6rem
+
+  .products__grid
+    grid-template-columns: repeat(2, 50rem)
+    column-gap: 2rem
+    row-gap: 5rem
+
+  .products-card
+    max-width: 50rem
+    gap: 2rem
+
+  .products-card__media
+    height: 33rem
+
+  .products-card__name
+    max-width: 47.4rem
+    font-size: 2.4rem
+
+  .subproduct
+    padding-top: 3.4rem
+    padding-bottom: 15rem
+
+  .subproduct__title
+    max-width: 73.5rem
+    margin-bottom: 10rem
+    font-size: 5.6rem
+
+  .subproduct-grid
+    grid-template-columns: repeat(2, 50rem)
+    column-gap: 2rem
+    row-gap: 5rem
+
+  .subproduct-card
+    max-width: 50rem
+
+  .subproduct-card__media
+    height: 33rem
+
+  .subproduct-card__name
+    font-size: 2.4rem
+
+  .subproduct-promo__media
+    left: 35.3rem
+    width: min(60.1rem, 55%)
+
 @media (max-width: 767px)
   .container
     padding-left: 1.5rem
     padding-right: 1.5rem
 
-  // Без sticky pin с десктопа — иначе слои едут поверх друг друга
+  body:has(.header--solid)
+    padding-top: 6.2rem
+
   .hero
     position: relative
 
@@ -633,7 +747,6 @@
     margin-right: 0
     font-size: 3.2rem
 
-  // Figma 700: lead y470 (от низа 230), btn y556 (от низа 144), стрелки 636/650, прогресс y700
   .hero__bottom
     position: absolute
     inset: 0
@@ -643,7 +756,6 @@
     display: block
     pointer-events: none
 
-  // btn bottom от низа 9.4rem; lead+gap40+btn = блок от низа 23rem
   .hero__copy
     position: absolute
     left: 1.5rem
@@ -666,7 +778,6 @@
     padding: 1.7rem 2.4rem
     font-size: 1.3rem
 
-  // Figma x301/331, обе 18×14, gap 12; в одну линию (диагональный сдвиг выглядел криво)
   .hero__slider
     position: absolute
     right: 2.6rem
@@ -764,7 +875,6 @@
     font-size: 2.1rem
     line-height: 2.1rem
 
-  // Figma 1:883: section→title 308, title→photo 308, more→partners 130; title text-center x26
   .directions
     padding-top: 30.8rem
     padding-bottom: 13rem
@@ -827,7 +937,6 @@
     overflow: hidden
     background: var(--color-bg-mute)
 
-  // Figma: 02 фото 355×345, до номера 18; 03 фото 315, до номера 33
   .direction:nth-child(2)
     margin-bottom: 5.3rem
 
@@ -872,7 +981,6 @@
     font-size: 1.3rem
     align-self: flex-start
 
-  // Figma: btn03→more 100; more→partners 130; 14px Bold, блок 144×20
   .directions__more
     width: 14.4rem
     height: 2rem
@@ -883,7 +991,6 @@
     span
       padding-bottom: 0.2rem
 
-  // more→title 130 (pb directions); title→logo 70; logo→res 150
   .partners
     padding-top: 0
     padding-bottom: 15rem
@@ -938,7 +1045,6 @@
     opacity: 1 !important
     transform: none !important
 
-  // Figma 1:1025: 14px Bold
   .resources__all
     order: 3
     margin-top: auto
@@ -985,7 +1091,6 @@
     padding: 1.7rem 2.4rem
     font-size: 1.3rem
 
-  // те же 18×14, gap 12, в одну линию
   .resources__nav
     position: absolute
     left: auto
@@ -1026,7 +1131,6 @@
   .resources__nav-btn::before
     display: none
 
-  // res→title 50; title→фото 30; date→след.фото 40; more→CTA 100
   .news
     margin-top: 0
     padding-top: 5rem
@@ -1065,7 +1169,6 @@
     opacity: 1
     color: var(--color-mute)
 
-  // Figma 1:1029: 14px Bold; date→more 70; more→cta 100; блок 144×20 по центру
   .news__more
     position: relative
     width: 14.4rem
@@ -1109,7 +1212,6 @@
     font-size: 1.8rem
     line-height: 1.28
 
-  // Figma 1:1050 h69 в 3 строки; наша метрика шрифта чуть уже, 32rem дает те же переносы
   .cta__title--address + .cta__text
     max-width: 32rem
     margin-bottom: 4rem
@@ -1132,7 +1234,6 @@
     font-size: 2.4rem
     margin-bottom: 1.5rem
 
-  // Figma: logo→products 57; products gap top-to-top 30 (16px); nav top-to-top 36 (17px)
   .footer
     padding-top: 4rem
     padding-bottom: 7rem
@@ -1246,3 +1347,136 @@
   .footer__meta p
     font-size: 1.6rem
     line-height: 1.9rem
+
+  .products
+    padding-top: 2.9rem
+    padding-bottom: 10rem
+
+  .products__title
+    max-width: 34.4rem
+    margin-bottom: 5rem
+    font-size: 3.2rem
+
+  .products__grid
+    grid-template-columns: 1fr
+    column-gap: 0
+    row-gap: 4rem
+    justify-content: stretch
+
+  .products-card
+    max-width: 34.5rem
+    width: 100%
+    gap: 1.5rem
+
+  .products-card__media
+    height: 22.8rem
+
+  .products-card__name
+    max-width: 34.5rem
+    font-size: 1.8rem
+
+  .subproduct
+    padding-top: 2.9rem
+    padding-bottom: 10rem
+
+  .subproduct__title
+    max-width: 33.4rem
+    margin-bottom: 5rem
+    font-size: 3.2rem
+
+  .subproduct__layout
+    row-gap: 1.5rem
+
+  .subproduct-nav__toggle
+    min-height: 6rem
+    padding: 0 2rem
+    font-size: 1.8rem
+
+  .subproduct-nav__panel
+    gap: 2.4rem
+    padding: 2rem
+
+  .subproduct-nav__link
+    font-size: 1.8rem
+
+  .subproduct__main
+    gap: 1.5rem
+
+  .subproduct-promo
+    min-height: 44.7rem
+
+  .subproduct-promo__slide
+    min-height: 44.7rem
+
+  .subproduct-promo__copy
+    max-width: none
+    min-height: 44.7rem
+    padding: 2rem 1.5rem
+    gap: 1rem
+
+  .subproduct-promo__name
+    font-size: 2.4rem
+    line-height: 1.4
+
+  .subproduct-promo__discount
+    margin: 0
+    font-size: 1.8rem
+
+  .subproduct-promo__btn
+    margin-top: auto
+    min-width: 13.1rem
+    min-height: 5rem
+    padding: 1.7rem 2.2rem
+    font-size: 1.3rem
+
+  .subproduct-promo__media
+    top: 12.4rem
+    left: 1.1rem
+    width: 32.3rem
+    height: 19.7rem
+
+  .subproduct-promo__media img
+    height: 100%
+
+  .subproduct-promo__media::after
+    left: -1.1rem
+    right: -1.1rem
+    height: 23rem
+
+  .subproduct-promo__nav
+    width: auto
+    right: 1.5rem
+    bottom: 1.5rem
+
+  .subproduct-promo__arrow
+    width: 4.8rem
+    height: 5rem
+    background: transparent
+
+  .subproduct-grid
+    grid-template-columns: 1fr
+    column-gap: 0
+    row-gap: 4rem
+    justify-content: stretch
+
+  .subproduct-card
+    max-width: 34.5rem
+    width: 100%
+    gap: 1.5rem
+
+  .subproduct-card__media
+    height: 22.8rem
+
+  .subproduct-card__badges
+    top: 1rem
+    left: 1rem
+    gap: 1rem
+
+  .subproduct-card__badge
+    min-width: 5.4rem
+    height: 2.4rem
+    padding: 0 0.7rem
+    font-size: 1.3rem
+
+  .subproduct-card__name
+    font-size: 1.8rem

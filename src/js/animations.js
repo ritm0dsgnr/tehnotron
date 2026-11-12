@@ -102,7 +102,6 @@ function initDirectionsSlider() {
 
   const mm = gsap.matchMedia();
 
-  // Мобилка: обычный скролл, фото в потоке над каждым текстом
   mm.add("(max-width: 767px)", () => {
     const photos = gsap.utils.toArray(stage.querySelectorAll("[data-directions-photo]"));
 
@@ -128,7 +127,6 @@ function initDirectionsSlider() {
     };
   });
 
-  // Десктоп: pin + смена фото
   mm.add("(min-width: 768px)", () => {
     const photos = gsap.utils.toArray(stage.querySelectorAll("[data-directions-photo]"));
     if (photos.length < 2 || panels.length < 2) return;

@@ -6,23 +6,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export function initSmoothScroll() {
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
-  if (location.hash === "" || location.hash === "#") {
+  if (location.hash) {
     history.replaceState(null, "", location.pathname + location.search);
   }
-
-  const startHash = location.hash && location.hash.length > 1 ? location.hash.slice(1) : "";
   window.scrollTo(0, 0);
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    if (startHash) {
-      window.addEventListener(
-        "load",
-        () => {
-          document.getElementById(startHash)?.scrollIntoView();
-        },
-        { once: true },
-      );
-    }
     return null;
   }
 
@@ -40,7 +29,6 @@ export function initSmoothScroll() {
   });
   gsap.ticker.lagSmoothing(0);
 
-  // Ctrl/Cmd+F: Lenis ломает нативный find-in-page, на время поиска отдаем скролл браузеру
   let findMode = false;
   const leaveFindMode = () => {
     if (!findMode) return;
@@ -75,17 +63,7 @@ export function initSmoothScroll() {
     () => {
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
-
-        if (!startHash) return;
-
-        const target = document.getElementById(startHash);
-        if (!target) return;
-
-        // После pin-расчетов, иначе #directions клинит Lenis/ScrollTrigger
-        requestAnimationFrame(() => {
-          ScrollTrigger.refresh();
-          lenis.scrollTo(target, { offset: -20, immediate: true });
-        });
+        lenis.scrollTo(0, { immediate: true });
       });
     },
     { once: true },
@@ -101,13 +79,14 @@ export function initSmoothScroll() {
     const id = url.hash.slice(1);
     if (!id) {
       e.preventDefault();
-      history.replaceState(null, "", location.pathname + location.search);
-      lenis.scrollTo(0);
       return;
     }
 
     const target = document.getElementById(id);
-    if (!target) return;
+    if (!target) {
+      e.preventDefault();
+      return;
+    }
 
     e.preventDefault();
     history.pushState(null, "", `${location.pathname}${location.search}#${id}`);

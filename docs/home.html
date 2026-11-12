@@ -8,28 +8,13 @@
   <link rel="icon" type="image/svg+xml" href="/tehnotron/favicon.svg" />
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    if (location.hash === "" || location.hash === "#") {
+    if (location.hash) {
       history.replaceState(null, "", location.pathname + location.search);
     }
     window.scrollTo(0, 0);
-  </script>
-  <style>
-    a { color: inherit; text-decoration: none; }
-    body { margin: 0; color: #141414; background: #fff; }
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      transform: translate3d(0, 0, 0);
-    }
-    .header--over { color: #fff; background: transparent; }
-    .header--solid { color: #035c8c; background: #fff; }
-    .header.is-hidden { transform: translate3d(0, -100%, 0); }
-  </style>
-  <script type="module" crossorigin src="/tehnotron/assets/home-BH4ok03R.js"></script>
-  <link rel="stylesheet" crossorigin href="/tehnotron/assets/home-DYW0PirB.css">
+  </script>
+  <script type="module" crossorigin src="/tehnotron/assets/main-C-vnybnk.js"></script>
+  <link rel="stylesheet" crossorigin href="/tehnotron/assets/main-DxrF6jgF.css">
 </head>
 
   <body data-page="home">
@@ -70,7 +55,7 @@
   <div class="header__bar">
     <div class="container header__inner">
       <div class="header__brand">
-        <a class="logo" href="/home.html" aria-label="Технотрон"><svg class="logo__icon" width="235" height="30" aria-hidden="true" focusable="false">
+        <a class="logo" href="home.html" aria-label="Технотрон"><svg class="logo__icon" width="235" height="30" aria-hidden="true" focusable="false">
   <use href="#logo"></use>
 </svg>
 </a>
@@ -78,45 +63,45 @@
       </div>
       <nav class="nav" aria-label="Основное меню">
         <div class="nav__item nav__item--mega" data-nav-mega>
-          <a href="#directions" data-nav="products">Продукция</a>
+          <a href="products.html" data-nav="products">Продукция</a>
           <div class="nav-mega nav-mega--products" id="nav-mega-products">
             <div class="container nav-mega__grid nav-mega__grid--products">
               <div class="nav-mega__col">
-                <a href="#directions">Автокомпоненты</a>
-                <a href="#directions">Оперение кабины (экстерьер)</a>
-                <a href="#directions">Принадлежности кабины (интерьер)</a>
-                <a href="#directions">Система охлаждения</a>
+                <a href="products.html">Автокомпоненты</a>
+                <a href="product.html">Оперение кабины (экстерьер)</a>
+                <a href="products.html">Принадлежности кабины (интерьер)</a>
+                <a href="products.html">Система охлаждения</a>
               </div>
               <div class="nav-mega__col">
-                <a href="#directions">Детали ДВС</a>
-                <a href="#directions">Система питания</a>
-                <a href="#directions">Элементы подвески</a>
-                <a href="#directions">Тягово-сцепные устройства</a>
+                <a href="products.html">Детали ДВС</a>
+                <a href="products.html">Система питания</a>
+                <a href="products.html">Элементы подвески</a>
+                <a href="products.html">Тягово-сцепные устройства</a>
               </div>
               <div class="nav-mega__col">
-                <a href="#directions">Электрика</a>
-                <a href="#directions">Седельно-сцепные устройства и монтажные плиты</a>
-                <a href="#directions">Прочее</a>
+                <a href="products.html">Электрика</a>
+                <a href="products.html">Седельно-сцепные устройства и монтажные плиты</a>
+                <a href="products.html">Прочее</a>
               </div>
             </div>
           </div>
         </div>
-        <a href="#resources" data-nav="services">Услуги</a>
-        <a href="#request" data-nav="suppliers">Поставщикам</a>
+        <a href="#" data-nav="services">Услуги</a>
+        <a href="#" data-nav="suppliers">Поставщикам</a>
         <div class="nav__item nav__item--mega" data-nav-mega>
-          <a href="#resources" data-nav="about">О предприятии</a>
+          <a href="#" data-nav="about">О предприятии</a>
           <div class="nav-mega nav-mega--about" id="nav-mega-about">
             <div class="container nav-mega__grid nav-mega__grid--about">
               <div class="nav-mega__col">
-                <a href="#resources">Ресурсы</a>
-                <a href="#news">Новости</a>
-                <a href="#request">Заявка</a>
+                <a href="#">Ресурсы</a>
+                <a href="#">Новости</a>
+                <a href="#">Заявка</a>
               </div>
             </div>
           </div>
         </div>
-        <a href="#resources" data-nav="quality">Качество</a>
-        <a href="#request" data-nav="contacts">Контакты</a>
+        <a href="#" data-nav="quality">Качество</a>
+        <a href="#" data-nav="contacts">Контакты</a>
       </nav>
       <div class="header__aside">
         <button class="header__menu" type="button" data-menu-open aria-expanded="false" aria-controls="nav-drawer" aria-label="Открыть меню">
@@ -148,15 +133,15 @@
 
     </button>
     <nav class="nav-drawer__nav" aria-label="Мобильное меню">
-      <a href="#directions">Продукция</a>
-      <a href="#resources">Услуги</a>
-      <a href="#request">Поставщикам</a>
-      <a href="#resources">О предприятии</a>
-      <a class="nav-drawer__sub" href="#resources">Ресурсы</a>
-      <a class="nav-drawer__sub" href="#news">Отзывы</a>
-      <a class="nav-drawer__sub" href="#request">Карьера</a>
-      <a href="#resources">Качество</a>
-      <a href="#request">Контакты</a>
+      <a href="products.html">Продукция</a>
+      <a href="#">Услуги</a>
+      <a href="#">Поставщикам</a>
+      <a href="#">О предприятии</a>
+      <a class="nav-drawer__sub" href="#">Ресурсы</a>
+      <a class="nav-drawer__sub" href="#">Отзывы</a>
+      <a class="nav-drawer__sub" href="#">Карьера</a>
+      <a href="#">Качество</a>
+      <a href="#">Контакты</a>
     </nav>
   </div>
 </div>
@@ -237,7 +222,7 @@
           <div class="container">
             <h2 class="directions__title is-animate">направления деятельности</h2>
             <div class="directions__stage" data-directions-stage>
-              <a class="directions__hit" href="#request"><span class="visually-hidden">Подробнее</span></a>
+              <a class="directions__hit" href="products.html"><span class="visually-hidden">Подробнее</span></a>
               <div class="directions__visual">
                 <div class="directions__photo is-active" data-directions-photo>
                   <img src="/tehnotron/img/04.png" alt="" width="802" height="785" />
@@ -272,7 +257,7 @@
                 </div>
               </div>
             </div>
-            <a class="directions__more" href="#directions"><span>все направления</span></a>
+            <a class="directions__more" href="products.html"><span>все направления</span></a>
           </div>
         </section>
       </div>
@@ -423,36 +408,36 @@
     </main>
     <footer class="footer">
   <div class="container footer__inner">
-    <a class="logo footer__logo" href="/home.html" aria-label="Технотрон"><svg class="logo__icon" width="235" height="30" aria-hidden="true" focusable="false">
+    <a class="logo footer__logo" href="home.html" aria-label="Технотрон"><svg class="logo__icon" width="235" height="30" aria-hidden="true" focusable="false">
   <use href="#logo"></use>
 </svg>
 </a>
 
     <div class="footer__col footer__col--products">
-      <a class="footer__heading" href="#directions">Продукция</a>
-      <a href="#directions">Автокомпоненты</a>
-      <a href="#directions">Оперение кабины (экстерьер)</a>
-      <a href="#directions">Принадлежности кабины (интерьер)</a>
-      <a href="#directions">Система охлаждения</a>
-      <a href="#directions">Детали ДВС</a>
-      <a href="#directions">Система питания</a>
-      <a href="#directions">Элементы подвески</a>
-      <a href="#directions">Тягово-сцепные устройства</a>
-      <a href="#directions">Электрика</a>
-      <a href="#directions">Седельно-сцепные устройства и монтажные плиты</a>
-      <a href="#directions">Прочее</a>
+      <a class="footer__heading" href="products.html">Продукция</a>
+      <a href="products.html">Автокомпоненты</a>
+      <a href="product.html">Оперение кабины (экстерьер)</a>
+      <a href="products.html">Принадлежности кабины (интерьер)</a>
+      <a href="products.html">Система охлаждения</a>
+      <a href="products.html">Детали ДВС</a>
+      <a href="products.html">Система питания</a>
+      <a href="products.html">Элементы подвески</a>
+      <a href="products.html">Тягово-сцепные устройства</a>
+      <a href="products.html">Электрика</a>
+      <a href="products.html">Седельно-сцепные устройства и монтажные плиты</a>
+      <a href="products.html">Прочее</a>
     </div>
 
     <div class="footer__col footer__col--nav">
       <div class="footer__nav-links">
-        <a href="#resources">Услуги</a>
-        <a href="#request">Поставщикам</a>
-        <a href="#resources">О компании</a>
-        <a href="#resources">Ресурсы</a>
-        <a href="#news">Отзывы</a>
-        <a href="#request">Карьера</a>
-        <a href="#resources">Качество</a>
-        <a href="#request">Контакты</a>
+        <a href="#">Услуги</a>
+        <a href="#">Поставщикам</a>
+        <a href="#">О компании</a>
+        <a href="#">Ресурсы</a>
+        <a href="#">Отзывы</a>
+        <a href="#">Карьера</a>
+        <a href="#">Качество</a>
+        <a href="#">Контакты</a>
       </div>
       <div class="footer__legal">
         <a class="footer__muted" href="#">Политика конфиденциальности</a>
