@@ -25,6 +25,7 @@ export default defineConfig({
         products: resolve(__dirname, "products.html"),
         product: resolve(__dirname, "product.html"),
         section: resolve(__dirname, "section.html"),
+        card: resolve(__dirname, "card.html"),
       },
     },
   },
