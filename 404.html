@@ -1,0 +1,21 @@
+<!-- data: {"title":"Страница не найдена — Технотрон","page":"error","header":"solid"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <section class="error" data-animate="error">
+        <div class="container error__inner">
+          <img class="error__code is-animate" src="/svg/404.svg" alt="404" width="805" height="366" />
+          <p class="error__text is-animate">Запрашиваемая страница не найдена. Вернуться на главную:</p>
+          <a class="btn error__btn is-animate" href="home.html">На главную</a>
+        </div>
+      </section>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>
