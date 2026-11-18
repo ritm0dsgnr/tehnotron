@@ -6,6 +6,42 @@ const assetUrl = (path) => {
   return `${BASE}${path.replace(/^\//, "")}`;
 };
 
+const frameFromVideo = (src, at = 1) =>
+  new Promise((resolve, reject) => {
+    const el = document.createElement("video");
+    el.muted = true;
+    el.playsInline = true;
+    el.preload = "auto";
+    el.src = assetUrl(src);
+
+    const fail = () => reject(new Error("video poster failed"));
+
+    el.addEventListener(
+      "loadeddata",
+      async () => {
+        try {
+          const duration = Number.isFinite(el.duration) ? el.duration : at;
+          el.currentTime = Math.min(at, Math.max(0.1, duration * 0.05));
+          await new Promise((done) => {
+            el.addEventListener("seeked", done, { once: true });
+          });
+          const canvas = document.createElement("canvas");
+          canvas.width = el.videoWidth || 1920;
+          canvas.height = el.videoHeight || 1080;
+          canvas.getContext("2d").drawImage(el, 0, 0);
+          resolve(canvas.toDataURL("image/jpeg", 0.86));
+        } catch (err) {
+          reject(err);
+        } finally {
+          el.removeAttribute("src");
+          el.load();
+        }
+      },
+      { once: true },
+    );
+    el.addEventListener("error", fail, { once: true });
+  });
+
 export function initCard() {
   const root = document.querySelector("[data-card]");
   if (!root) return;
@@ -37,7 +73,7 @@ export function initCard() {
     const nextSrc = assetUrl(src);
     main.hidden = true;
     video.hidden = false;
-    if (poster) video.poster = assetUrl(poster);
+    if (poster) video.poster = poster.startsWith("data:") ? poster : assetUrl(poster);
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
@@ -68,6 +104,23 @@ export function initCard() {
     thumbs.forEach((item, i) => item.classList.toggle("is-active", i === index));
   };
 
+  const prepareVideoPoster = async (thumb) => {
+    if (thumb.getAttribute("data-type") !== "video") return;
+    const src = thumb.getAttribute("data-src");
+    if (!src) return;
+
+    try {
+      const poster = await frameFromVideo(src);
+      thumb.setAttribute("data-poster", poster);
+      const img = thumb.querySelector("img");
+      if (img) img.src = poster;
+      if (video) video.poster = poster;
+      if (main && thumbs[index] === thumb) main.src = poster;
+    } catch {
+      /* leave static poster if any */
+    }
+  };
+
   thumbs.forEach((thumb, i) => {
     thumb.addEventListener("click", () => setActive(i));
   });
@@ -76,4 +129,7 @@ export function initCard() {
   next?.addEventListener("click", () => setActive(index + 1));
 
   setActive(index);
+  Promise.all(thumbs.map((thumb) => prepareVideoPoster(thumb))).then(() => {
+    if (thumbs[index]?.getAttribute("data-type") === "video") setActive(index);
+  });
 }
