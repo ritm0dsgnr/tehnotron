@@ -1,0 +1,89 @@
+<!-- data: {"title":"Контакты — Технотрон","page":"contacts","header":"solid"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <section class="contacts-page" data-animate="contacts">
+        <div class="container">
+          <h1 class="contacts-page__title is-animate">Контакты</h1>
+
+          <div class="contacts-page__grid is-animate">
+            <div class="contacts-page__col">
+              <h2 class="contacts-page__heading">Адрес</h2>
+              <p class="contacts-page__text">РФ, РТ, г. Набережные Челны, ул.Моторная, 38</p>
+            </div>
+
+            <div class="contacts-page__col">
+              <h2 class="contacts-page__heading">Телефоны</h2>
+              <div class="contacts-page__list">
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел кадров:</p>
+                  <a class="contacts-page__value" href="tel:+78552202110">8 (8552) 20-2110</a>
+                </div>
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел качества:</p>
+                  <a class="contacts-page__value" href="tel:+78552202048">8 (8552) 20-2048</a>
+                </div>
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел качества:</p>
+                  <a class="contacts-page__value" href="tel:+78552202048"
+                    >8 (8552) 20-2048<br />доб. 31-75, 35-87, 31-85</a
+                  >
+                </div>
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел снабжения:</p>
+                  <a class="contacts-page__value" href="tel:+78552202070">8 (8552) 20-20-70, 20-20-77</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacts-page__col">
+              <h2 class="contacts-page__heading">E-mail</h2>
+              <div class="contacts-page__list">
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел продаж:</p>
+                  <a class="contacts-page__value" href="mailto:market@tehnotron.biz">market@tehnotron.biz</a>
+                </div>
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел качества:</p>
+                  <a class="contacts-page__value" href="mailto:quality@tehnotron.biz">quality@tehnotron.biz</a>
+                </div>
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Приемная:</p>
+                  <a class="contacts-page__value" href="mailto:office@tehnotron.biz">office@tehnotron.biz</a>
+                </div>
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел кадров:</p>
+                  <a class="contacts-page__value" href="mailto:kadry@tehnotron.biz">kadry@tehnotron.biz</a>
+                </div>
+                <div class="contacts-page__item">
+                  <p class="contacts-page__label">Отдел маркетинга:</p>
+                  <a class="contacts-page__value" href="mailto:marketing@tehnotron.biz">marketing@tehnotron.biz</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacts-page__col">
+              <h2 class="contacts-page__heading">Банковские реквизиты</h2>
+              <div class="contacts-page__bank">
+                <p>ИНН/КПП - 1639049837/165001001</p>
+                <p>Банк - ОТДЕЛЕНИЕ "БАНК ТАТАРСТАН" N8610<br />ПАО СБЕРБАНК</p>
+                <p>Рас/сч - 40702810362000004631</p>
+                <p>Кор/сч - 30101810600000000603</p>
+                <p>ОГРН - 1141674001523</p>
+                <p>BIC - 049205603</p>
+              </div>
+              <a class="btn contacts-page__download" href="#">Скачать</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>

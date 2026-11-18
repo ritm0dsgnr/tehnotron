@@ -1,0 +1,20 @@
+<!-- data: {"title":"Политика обработки персональных данных — Технотрон","page":"policy","header":"solid"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <section class="legal" data-animate="legal">
+        <div class="container">
+          <h1 class="legal__title is-animate">Политика обработки персональных данных</h1>
+          <div class="legal__body is-animate">{{> policy-body}}</div>
+        </div>
+      </section>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>
