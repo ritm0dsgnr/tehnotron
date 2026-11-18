@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "img": "node scripts/rename-images.mjs",
+    "poster": "node scripts/video-poster.mjs",
     "predev": "npm run img",
     "dev": "vite",
     "build": "vite build",

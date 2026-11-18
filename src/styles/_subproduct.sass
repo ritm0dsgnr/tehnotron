@@ -202,19 +202,17 @@
 
 .subproduct-card__media
   position: relative
-  display: grid
-  place-items: center
   width: 100%
   height: 39.8rem
   overflow: hidden
   background: #efefef
 
 .subproduct-card__media img
-  width: 68%
-  max-width: 41.4rem
-  height: auto
-  max-height: 70%
-  object-fit: contain
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: cover
+  object-position: center
   filter: grayscale(1)
   transition: filter var(--t)
 

@@ -1,0 +1,15 @@
+---
+description: Каталожные фото — единый cover без кастомных кадров
+globs: products.html,product.html,section.html,card.html,src/styles/_products.sass,src/styles/_subproduct.sass,src/styles/_card.sass
+alwaysApply: false
+---
+
+# Catalog media
+
+Карточки каталога и разделов — один контейнер, без подгонки под каждое фото.
+
+- `.products-card__media img`, `.subproduct-card__media img`, `.card__thumb img`: `object-fit: cover`, `object-position: center`, на весь бокс
+- Не добавлять `frame--*`, left/top/width/height в %, `width: 68%` / `max-height: 70%`
+- Фото готовят под бокс сами; админка только URL
+- На `card` большое фото/видео в `.card__stage` тоже `cover`
+- Промо-баннер (`subproduct-promo__media`) не трогать без нужды
