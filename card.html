@@ -12,6 +12,16 @@
           <div class="card__gallery is-animate">
             <div class="card__stage">
               <img class="card__main" data-card-main src="/img/40.png" alt="" width="930" height="625" />
+              <video
+                class="card__video"
+                data-card-video
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="/img/40.png"
+                hidden
+              ></video>
               <button class="card__arrow card__arrow--prev" type="button" data-card-prev aria-label="Назад">
                 <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
                   <use href="#arrow"></use>
@@ -24,16 +34,24 @@
               </button>
             </div>
             <div class="card__thumbs" data-card-thumbs>
-              <button class="card__thumb is-active" type="button" data-card-thumb data-src="/img/40.png" aria-label="Фото 1">
+              <button
+                class="card__thumb card__thumb--video is-active"
+                type="button"
+                data-card-thumb
+                data-type="video"
+                data-src="video/hero.mp4"
+                data-poster="img/40.png"
+                aria-label="Видео"
+              >
                 <img src="/img/40.png" alt="" width="149" height="99" />
               </button>
-              <button class="card__thumb" type="button" data-card-thumb data-src="/img/41.png" aria-label="Фото 2">
+              <button class="card__thumb" type="button" data-card-thumb data-type="image" data-src="img/41.png" aria-label="Фото 1">
                 <img src="/img/41.png" alt="" width="99" height="47" />
               </button>
-              <button class="card__thumb" type="button" data-card-thumb data-src="/img/42.png" aria-label="Фото 3">
+              <button class="card__thumb" type="button" data-card-thumb data-type="image" data-src="img/42.png" aria-label="Фото 2">
                 <img src="/img/42.png" alt="" width="102" height="36" />
               </button>
-              <button class="card__thumb card__thumb--extra" type="button" data-card-thumb data-src="/img/43.png" aria-label="Фото 4">
+              <button class="card__thumb card__thumb--extra" type="button" data-card-thumb data-type="image" data-src="img/43.png" aria-label="Фото 3">
                 <img src="/img/43.png" alt="" width="102" height="36" />
               </button>
             </div>

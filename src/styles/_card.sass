@@ -38,12 +38,24 @@
   overflow: hidden
   background: #efefef
 
-.card__main
+.card__main,
+.card__video
   display: block
   width: 100%
   height: 100%
   object-fit: contain
   object-position: center
+
+.card__video
+  position: absolute
+  inset: 0
+  background: #efefef
+
+  &[hidden]
+    display: none
+
+.card__main[hidden]
+  display: none
 
 .card__arrow
   position: absolute
@@ -93,11 +105,15 @@
     max-height: 70%
     object-fit: contain
 
-  &:first-child img
+  &:first-child img,
+  &.card__thumb--video img
     width: 100%
     height: 100%
     max-height: none
     object-fit: cover
+
+  &.card__thumb--video
+    background: #111
 
 .card__aside
   grid-column: 2
