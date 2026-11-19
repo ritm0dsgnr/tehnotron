@@ -32,6 +32,7 @@ export default defineConfig({
         contacts: resolve(__dirname, "contacts.html"),
         dealers: resolve(__dirname, "dealers.html"),
         news: resolve(__dirname, "news.html"),
+        article: resolve(__dirname, "article.html"),
       },
     },
   },
