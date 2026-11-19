@@ -1,0 +1,121 @@
+.news-page
+  position: relative
+  background: var(--color-bg)
+  color: var(--color-text)
+  padding-top: 4.9rem
+  padding-bottom: 25rem
+
+.news-page__inner
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-left: 3rem
+  padding-right: 3rem
+
+.news-page__title
+  margin: 0 0 10rem
+  font-size: 7.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.news-page__list
+  display: grid
+  grid-template-columns: repeat(3, minmax(0, 1fr))
+  column-gap: 2rem
+  row-gap: 6rem
+
+.news-page .news-card
+  padding: 0
+
+.news-page .news-card__media
+  margin-bottom: 2rem
+
+.news-page .news-card__name
+  width: 80%
+  margin-bottom: 1rem
+
+.news-page__pager
+  margin-top: 10rem
+
+.news-page__pager-nums
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  gap: 2rem
+
+.news-page__pager-mobile
+  display: none
+
+.news-page__page
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  width: 6rem
+  height: 6rem
+  border: 0.1rem solid var(--color-border)
+  border-radius: 50%
+  font-size: 1.8rem
+  line-height: 1
+  font-weight: 400
+  color: var(--color-text)
+  text-decoration: none
+  transition: color var(--t), background-color var(--t), border-color var(--t)
+
+  &:hover
+    background: var(--color-bg-mute)
+
+  &.is-current
+    color: var(--color-white)
+    background: var(--color-blue)
+    border-color: var(--color-blue)
+    pointer-events: none
+
+.news-page__next
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  min-width: 16.8rem
+  height: 6rem
+  padding: 0 2rem
+  border: 0.1rem solid var(--color-border)
+  border-radius: 999rem
+  font-size: 1.8rem
+  line-height: 1.2
+  font-weight: 400
+  color: var(--color-text)
+  text-decoration: none
+  transition: color var(--t), background-color var(--t), border-color var(--t)
+
+  &:hover
+    color: var(--color-white)
+    background: var(--color-blue)
+    border-color: var(--color-blue)
+
+.news-page__step
+  display: flex
+  flex: 1 1 0
+  align-items: center
+  justify-content: center
+  height: 100%
+  font-size: 1.6rem
+  line-height: 1.2
+  font-weight: 400
+  color: var(--color-text)
+  text-decoration: none
+  transition: color var(--t), background-color var(--t), opacity var(--t)
+
+  &:first-child
+    border-right: 0.1rem solid var(--color-border)
+
+  &.is-disabled
+    opacity: 0.5
+    pointer-events: none
+
+  &:hover
+    color: var(--color-white)
+    background: var(--color-blue)
+
