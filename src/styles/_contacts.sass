@@ -6,6 +6,14 @@
   padding-bottom: 25rem
   overflow: hidden
 
+.contacts-page__inner
+  position: relative
+  z-index: 1
+  width: 100%
+  max-width: 192rem
+  margin-left: auto
+  margin-right: auto
+
 .contacts-page__lines
   position: absolute
   inset: 0
@@ -20,21 +28,19 @@
   background: var(--color-line)
 
 .contacts-page__lines span:nth-child(1)
-  left: 48rem
+  left: 25%
 
 .contacts-page__lines span:nth-child(2)
-  left: 96rem
+  left: 50%
 
 .contacts-page__lines span:nth-child(3)
-  left: 144rem
-
-.contacts-page .container
-  position: relative
-  z-index: 1
+  left: 75%
 
 .contacts-page__title
   max-width: 100.3rem
   margin: 0 0 10rem
+  padding-left: 3rem
+  padding-right: 3rem
   font-size: 7.6rem
   line-height: 1.3
   font-weight: 700
@@ -43,8 +49,12 @@
 .contacts-page__grid
   display: grid
   grid-template-columns: repeat(4, minmax(0, 1fr))
-  column-gap: 3rem
+  column-gap: 0
   align-items: start
+
+.contacts-page__col
+  padding-left: 3rem
+  padding-right: 3rem
 
 .contacts-page__heading
   margin: 0 0 7rem
