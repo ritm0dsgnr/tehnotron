@@ -31,6 +31,7 @@ export default defineConfig({
         consent: resolve(__dirname, "consent.html"),
         contacts: resolve(__dirname, "contacts.html"),
         dealers: resolve(__dirname, "dealers.html"),
+        news: resolve(__dirname, "news.html"),
       },
     },
   },
