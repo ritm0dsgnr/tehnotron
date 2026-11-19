@@ -373,6 +373,7 @@ a.cell:hover svg { transform: translate(0.15rem, -0.15rem); }
 
 .screens {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.2rem;
   padding: 0 var(--x) 2.5rem;
 }
@@ -383,7 +384,6 @@ a.cell:hover svg { transform: translate(0.15rem, -0.15rem); }
   justify-content: space-between;
   gap: 2rem;
   width: 100%;
-  max-width: 42rem;
   min-height: 6.4rem;
   padding: 1.6rem 2.2rem;
   border: 0.1rem solid var(--ink);
@@ -448,6 +448,7 @@ a.cell:hover svg { transform: translate(0.15rem, -0.15rem); }
   .side { border-left: 0; border-top: var(--rule); }
   .cells { grid-template-columns: 1fr; }
   .cell { border-right: 0; }
+  .screens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 560px) {
@@ -458,6 +459,7 @@ a.cell:hover svg { transform: translate(0.15rem, -0.15rem); }
   .section-head { padding-top: 3.2rem; }
   .side strong { font-size: 4.4rem; }
   .summary { font-size: 1.6rem; }
+  .screens { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
