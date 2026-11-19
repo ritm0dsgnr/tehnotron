@@ -212,6 +212,9 @@
     padding-top: 10rem
     padding-bottom: 12rem
 
+  .cta__lines
+    max-width: 144rem
+
   .cta__lines span:nth-child(1)
     left: 36rem
 
@@ -425,6 +428,26 @@
     padding-top: 3.4rem
     padding-bottom: 25rem
 
+  .contacts-page__lines span:nth-child(1)
+    left: 36rem
+
+  .contacts-page__lines span:nth-child(2)
+    left: 72.1rem
+
+  .contacts-page__lines span:nth-child(3)
+    left: 108rem
+
+  .contacts-page__inner
+    width: 144rem
+    margin-left: auto
+    margin-right: auto
+
+  .contacts-page__lines
+    max-width: 144rem
+
+  .contacts-page__grid
+    grid-template-columns: repeat(4, 36rem)
+
   .contacts-page__title
     margin-bottom: 10rem
     font-size: 5.2rem
@@ -435,6 +458,42 @@
 
   .contacts-page__text,
   .contacts-page__value
+    font-size: 2rem
+
+  .dealers-page
+    padding-top: 3.4rem
+    padding-bottom: 25rem
+
+  .dealers-page__lines
+    max-width: 144rem
+
+  .dealers-page__lines span
+    left: 72rem
+
+  .dealers-page__inner
+    width: 144rem
+    margin-left: auto
+    margin-right: auto
+
+  .dealers-page__title
+    margin-bottom: 10rem
+    font-size: 5.2rem
+
+  .dealers-page__row
+    grid-template-columns: 72rem 72rem
+    margin-bottom: 7.6rem
+
+  .dealers-page__media
+    width: 59.4rem
+    height: 37.4rem
+
+  .dealers-page__card
+    min-height: 37.4rem
+
+  .dealers-page__name
+    font-size: 2.4rem
+
+  .dealers-page__value
     font-size: 2rem
 
 @media (max-width: 1080px)
@@ -676,6 +735,9 @@
     padding-top: 10rem
     padding-bottom: 12rem
 
+  .cta__lines
+    max-width: 108rem
+
   .cta__lines span:nth-child(1)
     left: 36rem
 
@@ -912,18 +974,28 @@
     padding-bottom: 25rem
 
   .contacts-page__lines span:nth-child(1)
-    left: 50%
+    left: 36rem
 
-  .contacts-page__lines span:nth-child(2),
+  .contacts-page__lines span:nth-child(2)
+    left: 72.1rem
+
   .contacts-page__lines span:nth-child(3)
     display: none
+
+  .contacts-page__inner
+    width: 108rem
+    margin-left: auto
+    margin-right: auto
+
+  .contacts-page__lines
+    max-width: 108rem
 
   .contacts-page__title
     margin-bottom: 10rem
     font-size: 5.2rem
 
   .contacts-page__grid
-    grid-template-columns: repeat(2, minmax(0, 1fr))
+    grid-template-columns: repeat(2, 36rem)
     row-gap: 7rem
 
   .contacts-page__heading
@@ -932,6 +1004,47 @@
 
   .contacts-page__text,
   .contacts-page__value
+    font-size: 2rem
+
+  .dealers-page
+    padding-top: 3.4rem
+    padding-bottom: 25rem
+
+  .dealers-page__lines
+    max-width: 108rem
+
+  .dealers-page__lines span
+    left: 54rem
+
+  .dealers-page__inner
+    width: 108rem
+    margin-left: auto
+    margin-right: auto
+
+  .dealers-page__title
+    margin-bottom: 10rem
+    font-size: 5.2rem
+
+  .dealers-page__row
+    grid-template-columns: 54rem 54rem
+    margin-bottom: 5.7rem
+
+  .dealers-page__media
+    width: 44.6rem
+    height: 28rem
+
+  .dealers-page__card
+    min-height: 28rem
+
+  .dealers-page__name
+    margin-bottom: 3rem
+    font-size: 2.4rem
+
+  .dealers-page__meta
+    grid-template-columns: 1fr
+    row-gap: 3rem
+
+  .dealers-page__value
     font-size: 2rem
 
 @media (max-width: 767px)
@@ -1839,6 +1952,9 @@
   .contacts-page__lines
     display: none
 
+  .contacts-page__inner
+    width: 100%
+
   .contacts-page__title
     max-width: 34.5rem
     margin-bottom: 5rem
@@ -1850,9 +1966,55 @@
     grid-template-columns: 1fr
     row-gap: 5rem
 
-  .contacts-page__col
+  .contacts-page__col,
+  .contacts-page__col:first-child
     padding-left: 1.5rem
     padding-right: 1.5rem
+
+  .dealers-page
+    padding-top: 2.9rem
+    padding-bottom: 15rem
+
+  .dealers-page__lines
+    display: none
+
+  .dealers-page__inner
+    width: 100%
+
+  .dealers-page__title
+    max-width: 34.5rem
+    margin-bottom: 5rem
+    padding-left: 1.5rem
+    padding-right: 1.5rem
+    font-size: 3.2rem
+
+  .dealers-page__row
+    grid-template-columns: 1fr
+    row-gap: 3rem
+
+  .dealers-page__row
+    margin-bottom: 5rem
+
+  .dealers-page__media
+    width: auto
+    height: 22rem
+    margin-left: 1.5rem
+    margin-right: 1.5rem
+
+  .dealers-page__card
+    min-height: 0
+    padding: 0 1.5rem 5rem
+
+  .dealers-page__name
+    margin-bottom: 3rem
+    font-size: 2.4rem
+
+  .dealers-page__meta
+    grid-template-columns: 1fr
+    row-gap: 3rem
+
+  .dealers-page__value
+    font-size: 1.8rem
 
   .contacts-page__heading
     margin-bottom: 3rem
