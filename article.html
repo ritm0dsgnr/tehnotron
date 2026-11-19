@@ -1,0 +1,61 @@
+<!-- data: {"title":"Новость Технотрон","page":"article","header":"solid"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <article class="article" data-animate="article" data-article>
+        <div class="article__inner">
+          <h1 class="article__title is-animate">Современные Технологии на выставке MinTech 2023</h1>
+          <p class="article__date is-animate">18.09.2023</p>
+
+          <div class="article__main-col">
+            <div class="article__gallery is-animate">
+              <div class="article__stage">
+                <img class="article__main" data-article-main src="/img/11.jpg" alt="" width="1520" height="700" />
+                <button class="article__arrow article__arrow--prev" type="button" data-article-prev aria-label="Назад">
+                  <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+                    <use href="#arrow"></use>
+                  </svg>
+                </button>
+                <button class="article__arrow article__arrow--next" type="button" data-article-next aria-label="Вперед">
+                  <svg class="icon icon--arrow" width="18" height="14" aria-hidden="true" focusable="false">
+                    <use href="#arrow"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="article__thumbs" data-article-thumbs>
+                <button class="article__thumb is-active" type="button" data-article-thumb data-src="/img/11.jpg" aria-label="Фото 1">
+                  <img src="/img/11.jpg" alt="" width="151" height="101" />
+                </button>
+                <button class="article__thumb" type="button" data-article-thumb data-src="/img/12.jpg" aria-label="Фото 2">
+                  <img src="/img/12.jpg" alt="" width="151" height="101" />
+                </button>
+                <button class="article__thumb" type="button" data-article-thumb data-src="/img/13.jpg" aria-label="Фото 3">
+                  <img src="/img/13.jpg" alt="" width="151" height="101" />
+                </button>
+              </div>
+            </div>
+
+            <div class="article__body is-animate">
+              <p>
+                В период с 29 по 31 мая в г. Усть-Каменогорск (Республика Казахстан) прошла Международная выставка оборудования и технологий горнодобывающей, металлургической, угольной и энергетической промышленности «MinTech-2023». На выставке были представлены ведущие компании в области энергетической, горнодобывающей и металлургической промышленности, которые продемонстрировали свои последние разработки и новые технологические решения.
+              </p>
+              <p>
+                Компания «Современные Технологии» совместно с дилером по Республике Казахстан «Казпромкран» представили на стенде защищенную систему токоподвода - троллейный шинопровод. Гости выставки отметили высокое качество изготовления, минимальные сроки поставки и были приятно удивлены цене продукции.
+              </p>
+              <p>
+                Также представители компании «Современные Технологии» провели ряд встреч с потенциальными партнерами. Продукция вызвала немалый интерес, т.к. она является востребованной и перспективной на любом крупном производственном предприятии.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>
