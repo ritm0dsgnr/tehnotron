@@ -1,8 +1,36 @@
 .contacts-page
+  position: relative
   background: var(--color-bg)
   color: var(--color-text)
   padding-top: 4.9rem
   padding-bottom: 25rem
+  overflow: hidden
+
+.contacts-page__lines
+  position: absolute
+  inset: 0
+  pointer-events: none
+  z-index: 0
+
+.contacts-page__lines span
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 0.1rem
+  background: var(--color-line)
+
+.contacts-page__lines span:nth-child(1)
+  left: 48rem
+
+.contacts-page__lines span:nth-child(2)
+  left: 96rem
+
+.contacts-page__lines span:nth-child(3)
+  left: 144rem
+
+.contacts-page .container
+  position: relative
+  z-index: 1
 
 .contacts-page__title
   max-width: 100.3rem
