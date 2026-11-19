@@ -254,9 +254,10 @@ body:has(.header--solid)
     display: inline-flex
 
 @media (max-width: 767px)
-  .header__inner
+  .header__inner,
+  .header--solid .header__inner
     min-height: 0
-    padding-top: 2rem
+    padding-top: 1.8rem
     gap: 0
 
   .header__brand
@@ -283,6 +284,9 @@ body:has(.header--solid)
 
   .nav-drawer__panel
     width: 100%
+
+  body:has(.header--solid)
+    padding-top: calc(4.9rem + 0.1rem)
 
 .nav-mega
   position: absolute
