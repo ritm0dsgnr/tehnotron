@@ -11,6 +11,7 @@ export function initArticle() {
   if (!root) return;
 
   const main = root.querySelector("[data-article-main]");
+  const stage = root.querySelector(".article__stage");
   const thumbs = [...root.querySelectorAll("[data-article-thumb]")];
   const prev = root.querySelector("[data-article-prev]");
   const next = root.querySelector("[data-article-next]");
@@ -35,4 +36,43 @@ export function initArticle() {
   });
   prev?.addEventListener("click", () => show(index - 1));
   next?.addEventListener("click", () => show(index + 1));
+
+  if (!stage) return;
+
+  let startX = 0;
+  let startY = 0;
+  let tracking = false;
+
+  stage.addEventListener(
+    "pointerdown",
+    (event) => {
+      if (event.target.closest(".article__arrow")) return;
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      tracking = true;
+      startX = event.clientX;
+      startY = event.clientY;
+    },
+    { passive: true },
+  );
+
+  stage.addEventListener(
+    "pointerup",
+    (event) => {
+      if (!tracking) return;
+      tracking = false;
+      const dx = event.clientX - startX;
+      const dy = event.clientY - startY;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      show(index + (dx < 0 ? 1 : -1));
+    },
+    { passive: true },
+  );
+
+  stage.addEventListener(
+    "pointercancel",
+    () => {
+      tracking = false;
+    },
+    { passive: true },
+  );
 }
