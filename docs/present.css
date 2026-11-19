@@ -60,6 +60,7 @@ h1, h2, h3 {
 
 .label,
 .back,
+.preview,
 .eyebrow,
 .hint,
 .chip,
@@ -87,14 +88,16 @@ h1, h2, h3 {
   border-bottom: var(--rule);
 }
 
-.back {
+.back,
+.preview {
   font-size: 1.2rem;
   color: var(--ink);
   background: linear-gradient(currentColor, currentColor) left bottom / 0 0.1rem no-repeat;
   transition: color var(--hover), background-size var(--hover);
 }
 
-.back:hover {
+.back:hover,
+.preview:hover {
   color: var(--accent);
   background-size: 100% 0.1rem;
 }
