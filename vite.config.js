@@ -34,6 +34,7 @@ export default defineConfig({
         news: resolve(__dirname, "news.html"),
         article: resolve(__dirname, "article.html"),
         reviews: resolve(__dirname, "reviews.html"),
+        resources: resolve(__dirname, "resources.html"),
       },
     },
   },

@@ -1,0 +1,109 @@
+body[data-page="resources"]
+  background: #f0f0f0
+
+  .header--solid,
+  .header--solid.is-scrolled,
+  .header--solid.is-mega
+    background: #f0f0f0
+
+.resources-page
+  position: relative
+  background: #f0f0f0
+  color: var(--color-text)
+  padding-top: 4.9rem
+  padding-bottom: 25rem
+  overflow: hidden
+
+.resources-page__lines
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  max-width: 192rem
+  margin-left: auto
+  margin-right: auto
+  pointer-events: none
+  z-index: 0
+
+.resources-page__lines span
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 50%
+  width: 0.1rem
+  margin-left: -0.05rem
+  background: var(--color-line)
+
+.resources-page__inner
+  position: relative
+  z-index: 1
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-left: 3rem
+  padding-right: 3rem
+
+.resources-page__title
+  margin: 0 0 10rem
+  font-size: 7.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.resources-page__list
+  display: flex
+  flex-direction: column
+
+.resources-page__block
+  display: grid
+  grid-template-columns: 83.1rem 1fr
+  column-gap: 12rem
+  align-items: start
+  margin-bottom: 15rem
+
+.resources-page__block:last-child
+  margin-bottom: 0
+
+.resources-page__media
+  overflow: hidden
+  aspect-ratio: 831 / 553
+  background: #d9d9d9
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.resources-page__block-title
+  margin: 0 0 2rem
+  font-size: 3.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.resources-page__items
+  list-style: none
+  margin: 0
+  padding: 0
+
+.resources-page__row
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  gap: 2rem
+  border-top: 0.1rem solid var(--color-line)
+  padding: 1.5rem 0
+  font-size: 2rem
+  line-height: 1.3
+
+.resources-page__label
+  flex: 1
+  min-width: 0
+
+.resources-page__count
+  flex-shrink: 0
+  white-space: nowrap
