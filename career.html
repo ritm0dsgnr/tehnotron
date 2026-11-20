@@ -1,0 +1,118 @@
+<!-- data: {"title":"Карьера Технотрон","page":"career","header":"over"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <section class="career-hero">
+        <div class="career-hero__media" aria-hidden="true">
+          <img src="/img/career/hero.jpg" alt="" width="1920" height="960" />
+        </div>
+        <div class="career-hero__overlay" aria-hidden="true"></div>
+        <div class="career-hero__body">
+          <h1 class="career-hero__title">Карьера</h1>
+          <div class="career-hero__copy">
+            <p class="career-hero__lead">
+              Успех «Калашникова» — это работа слаженной команды сотрудников, объединенных общей целью. Наша главная ценность и движущая сила — люди, сплоченные, профессиональные, готовые реализовать самые амбициозные проекты.
+            </p>
+            <a class="btn btn--ghost" href="#work">Найти вакансию</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="career-work" id="work" data-animate="career-work">
+        <div class="career-work__inner">
+          <h2 class="career-work__title is-animate">Работа у нас</h2>
+          <div class="career-work__feature is-animate">
+            <img class="career-work__num" src="/img/career/num-1.svg" alt="" width="217" height="585" />
+            <p class="career-work__text">Стабильность и уверенность<br />в завтрашнем дне</p>
+          </div>
+          <div class="career-work__actions is-animate">
+            <a class="btn btn--outline" href="#">Вакансии</a>
+            <a class="btn btn--outline" href="contacts.html">контакты</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="career-media" data-animate="career-media">
+        <div class="career-media__frame is-animate">
+          <img src="/img/career/hero.jpg" alt="" width="1860" height="968" loading="lazy" />
+          <button class="career-media__play" type="button" aria-label="Смотреть видео">
+            <span class="career-media__play-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="career-figures" data-animate="career-figures">
+        <div class="career-figures__inner is-animate">
+          <div class="career-figures__item">
+            <p class="career-figures__value">25 000</p>
+            <p class="career-figures__label">Сотрудников</p>
+          </div>
+          <div class="career-figures__item">
+            <p class="career-figures__value">&gt; 100</p>
+            <p class="career-figures__label">Наименований продукции</p>
+          </div>
+          <div class="career-figures__item">
+            <p class="career-figures__value">&gt; 15</p>
+            <p class="career-figures__label">Предприятий ОПК</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="career-events" data-career-events>
+        <div class="career-events__media" aria-hidden="true">
+          <div class="career-events__photo is-active" data-career-events-photo>
+            <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
+          </div>
+          <div class="career-events__photo" data-career-events-photo>
+            <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
+          </div>
+          <div class="career-events__photo" data-career-events-photo>
+            <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
+          </div>
+          <div class="career-events__photo" data-career-events-photo>
+            <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
+          </div>
+        </div>
+        <div class="career-events__shade" aria-hidden="true"></div>
+        <div class="career-events__body">
+          <h2 class="career-events__title">корпоративные мероприятия</h2>
+          <div class="career-events__right">
+            <div class="career-events__slides">
+              <article class="career-events__slide is-active" data-career-events-slide>
+                <h3 class="career-events__name">день семьи</h3>
+                <p class="career-events__count" data-career-events-count></p>
+              </article>
+              <article class="career-events__slide" data-career-events-slide>
+                <h3 class="career-events__name">день семьи</h3>
+                <p class="career-events__count" data-career-events-count></p>
+              </article>
+              <article class="career-events__slide" data-career-events-slide>
+                <h3 class="career-events__name">день семьи</h3>
+                <p class="career-events__count" data-career-events-count></p>
+              </article>
+              <article class="career-events__slide" data-career-events-slide>
+                <h3 class="career-events__name">день семьи</h3>
+                <p class="career-events__count" data-career-events-count></p>
+              </article>
+            </div>
+            <div class="career-events__nav">
+              <button class="career-events__nav-btn career-events__nav-btn--prev" type="button" data-career-events-prev aria-label="Назад">
+                {{> icon-arrow}}
+              </button>
+              <button class="career-events__nav-btn" type="button" data-career-events-next aria-label="Вперед">
+                {{> icon-arrow}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>

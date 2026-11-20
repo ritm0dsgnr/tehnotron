@@ -35,6 +35,7 @@ export default defineConfig({
         article: resolve(__dirname, "article.html"),
         reviews: resolve(__dirname, "reviews.html"),
         resources: resolve(__dirname, "resources.html"),
+        career: resolve(__dirname, "career.html"),
       },
     },
   },

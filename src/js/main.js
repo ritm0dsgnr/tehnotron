@@ -7,6 +7,7 @@ import { initResources } from "./resources.js";
 import { initSubproduct } from "./subproduct.js";
 import { initCard } from "./card.js";
 import { initArticle } from "./article.js";
+import { initCareer } from "./career.js";
 
 initSmoothScroll();
 initHeader();
@@ -16,4 +17,5 @@ initResources();
 initSubproduct();
 initCard();
 initArticle();
+initCareer();
 initMap();
