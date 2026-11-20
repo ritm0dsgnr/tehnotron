@@ -1,6 +1,45 @@
 import gsap from "gsap";
 
+function initCareerMedia() {
+  const root = document.querySelector("[data-career-media]");
+  if (!root) return;
+
+  const video = root.querySelector("[data-career-media-video]");
+  const play = root.querySelector("[data-career-media-play]");
+  if (!video || !play) return;
+
+  const setPlaying = (on) => {
+    root.classList.toggle("is-playing", on);
+  };
+
+  const showIdle = () => {
+    video.controls = false;
+    setPlaying(false);
+  };
+
+  const showPlayer = () => {
+    video.controls = true;
+    setPlaying(true);
+  };
+
+  play.addEventListener("click", async () => {
+    video.muted = false;
+    try {
+      await video.play();
+      showPlayer();
+    } catch {
+      showIdle();
+    }
+  });
+
+  video.addEventListener("play", showPlayer);
+  video.addEventListener("pause", showIdle);
+  video.addEventListener("ended", showIdle);
+}
+
 export function initCareer() {
+  initCareerMedia();
+
   const root = document.querySelector("[data-career-events]");
   if (!root) return;
 
