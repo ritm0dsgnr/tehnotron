@@ -4,7 +4,7 @@ body[data-page="career"]
 .career-hero
   position: relative
   width: 100%
-  height: 100rem
+  height: 100vh
   color: var(--color-white)
   overflow: hidden
   background: var(--color-black)
@@ -40,7 +40,7 @@ body[data-page="career"]
   max-width: 100%
   margin-left: auto
   margin-right: auto
-  padding: 14.9rem 3rem 16rem
+  padding: 14.9rem 3rem 10rem
 
 .career-hero__title
   margin: 0
@@ -130,6 +130,11 @@ body[data-page="career"]
   padding: 2rem
   text-transform: uppercase
 
+  &:hover
+    background: var(--color-blue)
+    border-color: var(--color-blue)
+    color: var(--color-white)
+
 .career-media
   background: #efefef
   padding: 0 3rem 11.8rem
@@ -144,13 +149,13 @@ body[data-page="career"]
   overflow: hidden
   background: #d9d9d9
 
-  img
-    display: block
-    width: 100%
-    height: 100%
-    object-fit: cover
+.career-media__video
+  display: block
+  width: 100%
+  height: 100%
+  object-fit: cover
 
-.career-media__frame:after
+.career-media__frame:not(.is-playing):after
   content: ""
   position: absolute
   inset: 0
@@ -161,19 +166,29 @@ body[data-page="career"]
   position: absolute
   top: 50%
   left: 50%
-  z-index: 1
+  z-index: 2
   display: grid
   place-items: center
   width: 10rem
   height: 10rem
   border-radius: 50%
-  background: rgba(255, 255, 255, 0.2)
+  border: 0.1rem solid var(--color-white)
+  background: transparent
   color: var(--color-white)
   transform: translate(-50%, -50%)
-  transition: background-color var(--t)
+  transition: background-color var(--t), opacity var(--t), visibility var(--t)
 
   &:hover
     background: rgba(255, 255, 255, 0.35)
+
+.career-media__frame.is-playing .career-media__play
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+
+.career-media__frame.is-playing .career-media__video
+  position: relative
+  z-index: 1
 
 .career-media__play-icon
   display: block
@@ -187,21 +202,24 @@ body[data-page="career"]
 .career-figures
   background: #efefef
   color: var(--color-text)
-  padding-bottom: 15rem
   border-top: 0.1rem solid var(--color-line)
 
 .career-figures__inner
   display: grid
   grid-template-columns: repeat(3, minmax(0, 1fr))
+  align-items: stretch
   width: 192rem
   max-width: 100%
+  min-height: 60.6rem
   margin-left: auto
   margin-right: auto
 
 .career-figures__item
   min-width: 0
-  padding: 10rem 3rem 0
+  min-height: 100%
+  padding: 10rem 3rem 0 0
   border-left: 0.1rem solid var(--color-line)
+  box-sizing: border-box
 
   &:first-child
     border-left: 0
@@ -228,6 +246,27 @@ body[data-page="career"]
   color: var(--color-white)
   overflow: hidden
   background: var(--color-black)
+
+.career-events__lines
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  max-width: 192rem
+  margin-left: auto
+  margin-right: auto
+  pointer-events: none
+  z-index: 2
+
+.career-events__lines span
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 96rem
+  width: 0.1rem
+  background: rgba(255, 255, 255, 0.5)
 
 .career-events__media,
 .career-events__shade
@@ -259,7 +298,7 @@ body[data-page="career"]
   position: relative
   z-index: 1
   display: grid
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 96rem 1fr
   height: 100%
   width: 192rem
   max-width: 100%
@@ -281,7 +320,6 @@ body[data-page="career"]
   flex-direction: column
   justify-content: flex-end
   min-height: 0
-  border-left: 0.1rem solid var(--color-white)
 
 .career-events__slides
   position: relative
@@ -325,9 +363,9 @@ body[data-page="career"]
 
 .career-events__nav
   display: grid
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 48rem 1fr
   height: 10.1rem
-  border-top: 0.1rem solid var(--color-white)
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.5)
 
 .career-events__nav-btn
   position: relative
@@ -357,7 +395,7 @@ body[data-page="career"]
       transform: scaleX(1)
 
   & + &
-    border-left: 0.1rem solid var(--color-white)
+    border-left: 0.1rem solid rgba(255, 255, 255, 0.5)
 
 .career-events__nav-btn--prev .icon--arrow
   transform: scaleX(-1)

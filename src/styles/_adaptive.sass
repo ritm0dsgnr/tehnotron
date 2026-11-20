@@ -548,12 +548,12 @@
     font-size: 3.2rem
 
   .career-hero
-    height: 75rem
+    height: 100vh
 
   .career-hero__body
     width: 144rem
     padding-top: 13.4rem
-    padding-bottom: 11rem
+    padding-bottom: 5rem
 
   .career-hero__title
     font-size: 5.2rem
@@ -595,14 +595,17 @@
     width: 138rem
     aspect-ratio: 1380 / 718
 
-  .career-figures
-    padding-bottom: 12rem
-
   .career-figures__inner
     width: 144rem
+    min-height: 54.1rem
 
   .career-figures__item
     padding-top: 10rem
+    padding-right: 3rem
+    padding-left: 0
+
+    &:first-child
+      padding-left: 3rem
 
   .career-figures__value
     margin-bottom: 2rem
@@ -614,8 +617,15 @@
   .career-events
     height: 75rem
 
+  .career-events__lines
+    max-width: 144rem
+
+  .career-events__lines span
+    left: 72.1rem
+
   .career-events__body
     width: 144rem
+    grid-template-columns: 72.1rem 1fr
 
   .career-events__title
     padding-top: 7.8rem
@@ -630,6 +640,7 @@
 
   .career-events__nav
     height: 7.6rem
+    grid-template-columns: 35.9rem 1fr
 
   .article
     padding-top: 3.4rem
@@ -1298,12 +1309,12 @@
     font-size: 2rem
 
   .career-hero
-    height: 130rem
+    height: 100vh
 
   .career-hero__body
     width: 108rem
     padding-top: 13.4rem
-    padding-bottom: 13rem
+    padding-bottom: 7rem
 
   .career-hero__title
     font-size: 5.6rem
@@ -1355,14 +1366,17 @@
     width: 102rem
     aspect-ratio: 1020 / 531
 
-  .career-figures
-    padding-bottom: 10rem
-
   .career-figures__inner
     width: 108rem
+    min-height: 44.6rem
 
   .career-figures__item
     padding-top: 10rem
+    padding-right: 3rem
+    padding-left: 0
+
+    &:first-child
+      padding-left: 3rem
 
   .career-figures__value
     margin-bottom: 1.5rem
@@ -1373,6 +1387,9 @@
 
   .career-events
     height: 130rem
+
+  .career-events__lines
+    display: none
 
   .career-events__body
     display: flex
@@ -1388,7 +1405,6 @@
   .career-events__right
     flex: 1
     justify-content: flex-end
-    border-left: 0
 
   .career-events__slides
     margin: 0 3rem 5rem
@@ -2508,14 +2524,14 @@
     opacity: 0.6
 
   .career-hero
-    height: 70rem
+    height: 100vh
 
   .career-hero__overlay
     background: rgba(0, 0, 0, 0.2)
 
   .career-hero__body
     width: 100%
-    padding: 8.1rem 1.5rem 10rem
+    padding: 8.1rem 1.5rem 5rem
     justify-content: flex-start
     gap: 0
 
@@ -2594,17 +2610,19 @@
   .career-media__play-icon
     border-width: 0.8rem 0 0.8rem 1.3rem
 
-  .career-figures
-    padding-bottom: 5rem
-
   .career-figures__inner
     grid-template-columns: 1fr
     width: 100%
+    min-height: 0
 
   .career-figures__item
-    padding: 5rem 1.5rem 0
+    min-height: 0
+    padding: 5rem 1.5rem
     border-left: 0
     border-top: 0.1rem solid var(--color-line)
+
+    &:first-child
+      padding-left: 1.5rem
 
   .career-figures__value
     margin-bottom: 1.5rem
@@ -2615,6 +2633,9 @@
 
   .career-events
     height: 68.6rem
+
+  .career-events__lines
+    display: none
 
   .career-events__body
     display: flex
@@ -2630,10 +2651,9 @@
   .career-events__right
     flex: 1
     justify-content: flex-end
-    border-left: 0
 
   .career-events__slides
-    margin: 0 1.5rem 2rem
+    margin: 0 1.5rem 4.3rem
 
   .career-events__slide
     flex-direction: column
@@ -2650,7 +2670,7 @@
   .career-events__nav
     position: absolute
     right: 1.5rem
-    bottom: 11.6rem
+    bottom: 4.3rem
     left: auto
     display: block
     width: 4.8rem
@@ -2682,6 +2702,7 @@
     left: 3rem
 
   .career-events__nav-btn .icon--arrow
+    display: block
     width: 1.8rem
     height: 1.4rem
 

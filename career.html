@@ -36,9 +36,16 @@
       </section>
 
       <section class="career-media" data-animate="career-media">
-        <div class="career-media__frame is-animate">
-          <img src="/img/career/hero.jpg" alt="" width="1860" height="968" loading="lazy" />
-          <button class="career-media__play" type="button" aria-label="Смотреть видео">
+        <div class="career-media__frame is-animate" data-career-media>
+          <video
+            class="career-media__video"
+            src="/video/hero.mp4"
+            poster="/img/career/hero.jpg"
+            playsinline
+            preload="metadata"
+            data-career-media-video
+          ></video>
+          <button class="career-media__play" type="button" data-career-media-play aria-label="Смотреть видео">
             <span class="career-media__play-icon" aria-hidden="true"></span>
           </button>
         </div>
@@ -62,18 +69,21 @@
       </section>
 
       <section class="career-events" data-career-events>
+        <div class="career-events__lines" aria-hidden="true">
+          <span></span>
+        </div>
         <div class="career-events__media" aria-hidden="true">
           <div class="career-events__photo is-active" data-career-events-photo>
             <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
           </div>
           <div class="career-events__photo" data-career-events-photo>
-            <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
+            <img src="/img/15.jpg" alt="" width="1024" height="533" />
           </div>
           <div class="career-events__photo" data-career-events-photo>
-            <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
+            <img src="/img/16.jpg" alt="" width="1024" height="532" />
           </div>
           <div class="career-events__photo" data-career-events-photo>
-            <img src="/img/career/events.jpg" alt="" width="1920" height="1000" />
+            <img src="/img/14.jpg" alt="" width="1024" height="532" />
           </div>
         </div>
         <div class="career-events__shade" aria-hidden="true"></div>
@@ -86,15 +96,15 @@
                 <p class="career-events__count" data-career-events-count></p>
               </article>
               <article class="career-events__slide" data-career-events-slide>
-                <h3 class="career-events__name">день семьи</h3>
+                <h3 class="career-events__name">день семьи1</h3>
                 <p class="career-events__count" data-career-events-count></p>
               </article>
               <article class="career-events__slide" data-career-events-slide>
-                <h3 class="career-events__name">день семьи</h3>
+                <h3 class="career-events__name">день семьи2</h3>
                 <p class="career-events__count" data-career-events-count></p>
               </article>
               <article class="career-events__slide" data-career-events-slide>
-                <h3 class="career-events__name">день семьи</h3>
+                <h3 class="career-events__name">день семьи3</h3>
                 <p class="career-events__count" data-career-events-count></p>
               </article>
             </div>
