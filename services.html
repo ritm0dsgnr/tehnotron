@@ -1,0 +1,83 @@
+<!-- data: {"title":"Услуги Технотрон","page":"services","header":"over"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <section class="services-hero">
+        <div class="services-hero__media" aria-hidden="true">
+          <img src="/img/services/hero.jpg" alt="" width="1920" height="960" />
+        </div>
+        <div class="services-hero__overlay" aria-hidden="true"></div>
+        <div class="services-hero__body">
+          <h1 class="services-hero__title">Услуги</h1>
+          <div class="services-hero__bottom">
+            <a class="services-hero__scroll" href="#services" aria-label="К списку услуг"></a>
+            <p class="services-hero__lead">
+              Лидирующая компания в области машиностроения, которая стабильно поставляет инновационные и качественные решения, пользующиеся доверием потребителей. Основным видом деятельности компании является производство автокомпонентов для коммерческого автотранспорта. Продукция АО «ПТФК «ТЕХНОТРОН» поставляется на конвейер крупнейших автосборочных предприятий РФ и стран СНГ.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="services-list" id="services">
+        <article class="services-item">
+          <div class="services-item__media" aria-hidden="true">
+            <img src="/img/services/01.jpg" alt="" width="2000" height="1333" loading="lazy" />
+          </div>
+          <div class="services-item__shade" aria-hidden="true"></div>
+          <div class="services-item__body">
+            <p class="services-item__count"><span>01</span><span class="services-item__count-rest"> / 04</span></p>
+            <h2 class="services-item__title">Гибка металла</h2>
+            <p class="services-item__text">Краткое описание направление продукции в две или три строчки</p>
+            <a class="btn btn--ghost services-item__btn" href="#">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="services-item">
+          <div class="services-item__media" aria-hidden="true">
+            <img src="/img/services/02.jpg" alt="" width="1402" height="768" loading="lazy" />
+          </div>
+          <div class="services-item__shade" aria-hidden="true"></div>
+          <div class="services-item__body">
+            <p class="services-item__count"><span>02</span><span class="services-item__count-rest"> / 04</span></p>
+            <h2 class="services-item__title">Лазерная резка</h2>
+            <p class="services-item__text">Краткое описание направление продукции в две или три строчки</p>
+            <a class="btn btn--ghost services-item__btn" href="#">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="services-item">
+          <div class="services-item__media" aria-hidden="true">
+            <img src="/img/services/03.jpg" alt="" width="1920" height="1080" loading="lazy" />
+          </div>
+          <div class="services-item__shade" aria-hidden="true"></div>
+          <div class="services-item__body">
+            <p class="services-item__count"><span>03</span><span class="services-item__count-rest"> / 04</span></p>
+            <h2 class="services-item__title">Азотирование</h2>
+            <p class="services-item__text">Краткое описание направление продукции в две или три строчки</p>
+            <a class="btn btn--ghost services-item__btn" href="#">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="services-item">
+          <div class="services-item__media" aria-hidden="true">
+            <img src="/img/services/04.jpg" alt="" width="1080" height="719" loading="lazy" />
+          </div>
+          <div class="services-item__shade" aria-hidden="true"></div>
+          <div class="services-item__body">
+            <p class="services-item__count"><span>04</span><span class="services-item__count-rest"> / 04</span></p>
+            <h2 class="services-item__title">Механическая обработка</h2>
+            <p class="services-item__text">Краткое описание направление продукции в две или три строчки</p>
+            <a class="btn btn--ghost services-item__btn" href="#">Подробнее</a>
+          </div>
+        </article>
+      </section>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>

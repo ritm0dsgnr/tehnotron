@@ -1,0 +1,144 @@
+body[data-page="services"]
+  background: #efefef
+
+.services-hero
+  position: relative
+  width: 100%
+  height: 100rem
+  color: var(--color-white)
+  overflow: hidden
+  background: var(--color-black)
+  isolation: isolate
+
+.services-hero__media,
+.services-hero__overlay
+  position: absolute
+  inset: 0
+
+.services-hero__media
+  z-index: 0
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.services-hero__overlay
+  z-index: 1
+  background: rgba(0, 0, 0, 0.3)
+  pointer-events: none
+
+.services-hero__body
+  position: relative
+  z-index: 2
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 100%
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding: 14.9rem 3rem 7.7rem
+
+.services-hero__title
+  margin: 0
+  max-width: 129.3rem
+  font-size: 7.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.services-hero__bottom
+  display: flex
+  align-items: flex-end
+  justify-content: space-between
+  gap: 3rem
+
+.services-hero__scroll
+  flex-shrink: 0
+  display: block
+  width: 1.4rem
+  height: 0.8rem
+  margin-left: 1.4rem
+  margin-bottom: 0.3rem
+  color: var(--color-white)
+  background: currentColor
+  clip-path: polygon(0 0, 100% 0, 50% 100%)
+
+.services-hero__lead
+  margin: 0
+  width: 93rem
+  max-width: 100%
+  font-size: 2.4rem
+  line-height: 1.4
+  font-weight: 400
+
+.services-item
+  position: relative
+  height: 100rem
+  color: var(--color-white)
+  overflow: hidden
+  background: var(--color-black)
+
+.services-item__media,
+.services-item__shade
+  position: absolute
+  inset: 0
+
+.services-item__media
+  overflow: hidden
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.services-item__shade
+  background: rgba(0, 0, 0, 0.3)
+  pointer-events: none
+
+.services-item__body
+  position: relative
+  z-index: 1
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  height: 100%
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding: 10rem 3rem 0
+  box-sizing: border-box
+
+.services-item__count
+  margin: 0 0 5rem
+  font-size: 2.4rem
+  line-height: normal
+  font-weight: 400
+
+.services-item__count-rest
+  color: var(--color-mute)
+
+.services-item__title
+  margin: 0 0 3rem
+  max-width: 77.8rem
+  font-size: 4.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.services-item__text
+  margin: 0 0 9rem
+  max-width: 51rem
+  font-size: 2.4rem
+  line-height: normal
+  font-weight: 400
+  opacity: 0.7
+
+.services-item__btn
+  min-width: 18.2rem
+  padding: 2.1rem 3.9rem
