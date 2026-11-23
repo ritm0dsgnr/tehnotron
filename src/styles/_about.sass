@@ -139,8 +139,6 @@ body[data-page="about"]
   margin-top: 7rem
   overflow-x: auto
   overflow-y: hidden
-  cursor: grab
-  touch-action: pan-x
   scrollbar-width: none
   outline: none
 
@@ -151,9 +149,9 @@ body[data-page="about"]
     outline: 0.2rem solid var(--color-white)
     outline-offset: -0.4rem
 
-  &.is-dragging
-    cursor: grabbing
-    user-select: none
+.about-stages.is-scroll-driven .about-stages__track
+  overflow: hidden
+  touch-action: pan-y
 
 .about-stages__list
   display: flex
@@ -164,6 +162,7 @@ body[data-page="about"]
   margin: 0
   padding: 0 3rem 8rem 47.6rem
   list-style: none
+  will-change: transform
 
 .about-stages__item
   flex: 0 0 47.7rem
