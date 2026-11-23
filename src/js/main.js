@@ -8,6 +8,7 @@ import { initSubproduct } from "./subproduct.js";
 import { initCard } from "./card.js";
 import { initArticle } from "./article.js";
 import { initCareer } from "./career.js";
+import { initAbout } from "./about.js";
 import { initService } from "./service.js";
 import { initRequest } from "./request.js";
 
@@ -20,6 +21,7 @@ initSubproduct();
 initCard();
 initArticle();
 initCareer();
+initAbout();
 initService();
 initMap();
 initRequest();

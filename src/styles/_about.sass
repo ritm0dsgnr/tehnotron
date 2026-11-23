@@ -1,0 +1,279 @@
+body[data-page="about"]
+  background: #efefef
+
+.about-hero
+  position: relative
+  width: 100%
+  height: 100vh
+  color: var(--color-white)
+  overflow: hidden
+  background: var(--color-black)
+  isolation: isolate
+
+.about-hero__media,
+.about-hero__overlay
+  position: absolute
+  inset: 0
+
+.about-hero__media
+  z-index: 0
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.about-hero__overlay
+  z-index: 1
+  background: rgba(0, 0, 0, 0.3)
+  pointer-events: none
+
+.about-hero__body
+  position: relative
+  z-index: 2
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 100%
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding: 14.9rem 3rem 7rem
+
+.about-hero__title
+  margin: 0
+  max-width: 129.3rem
+  font-size: 7.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.about-hero__lead
+  margin: 0 0 0 auto
+  width: 93rem
+  max-width: 100%
+  font-size: 2.4rem
+  line-height: 1.4
+  font-weight: 400
+
+.about-stages
+  position: relative
+  height: 100rem
+  color: var(--color-white)
+  overflow: hidden
+  background: var(--color-black)
+
+.about-stages__media,
+.about-stages__shade
+  position: absolute
+  inset: 0
+
+.about-stages__media
+  overflow: hidden
+
+  img
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.about-stages__shade
+  background: rgba(0, 0, 0, 0.3)
+  pointer-events: none
+
+.about-stages__lines
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  max-width: 192rem
+  margin-left: auto
+  margin-right: auto
+  pointer-events: none
+  z-index: 2
+
+.about-stages__lines span
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 0.1rem
+  background: rgba(255, 255, 255, 0.5)
+
+  &:nth-child(1)
+    left: 48rem
+
+  &:nth-child(2)
+    left: 96rem
+
+  &:nth-child(3)
+    left: 144rem
+
+.about-stages__body
+  position: relative
+  z-index: 1
+  display: flex
+  flex-direction: column
+  height: 100%
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-top: 5rem
+
+.about-stages__title
+  margin: 0
+  padding: 0 3rem
+  max-width: 87.1rem
+  font-size: 7.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.about-stages__track
+  flex: 1
+  min-height: 0
+  margin-top: 7rem
+  overflow-x: auto
+  overflow-y: hidden
+  cursor: grab
+  touch-action: pan-x
+  scrollbar-width: none
+  outline: none
+
+  &::-webkit-scrollbar
+    display: none
+
+  &:focus-visible
+    outline: 0.2rem solid var(--color-white)
+    outline-offset: -0.4rem
+
+  &.is-dragging
+    cursor: grabbing
+    user-select: none
+
+.about-stages__list
+  display: flex
+  align-items: flex-start
+  gap: 16.9rem
+  width: max-content
+  min-height: 100%
+  margin: 0
+  padding: 0 3rem 8rem 47.6rem
+  list-style: none
+
+.about-stages__item
+  flex: 0 0 47.7rem
+  max-width: 47.7rem
+
+.about-stages__year
+  margin: 0 0 3rem
+  font-size: 15rem
+  line-height: 1.3
+  font-weight: 400
+  text-transform: uppercase
+
+.about-stages__text
+  margin: 0
+  font-size: 2.2rem
+  line-height: 1.4
+  font-weight: 400
+
+.about-strategy__top
+  background: #efefef
+  color: var(--color-text)
+  padding-top: 10rem
+  padding-bottom: 8rem
+
+.about-strategy__inner
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding: 0 3rem
+
+.about-strategy__title
+  margin: 0
+  max-width: 68.5rem
+  font-size: 7.6rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+
+.about-strategy__feature
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  min-height: 58.5rem
+  margin-top: 0.6rem
+
+.about-strategy__num
+  position: absolute
+  left: 50%
+  top: 50%
+  width: 21.7rem
+  height: auto
+  transform: translate(-54%, -50%)
+  pointer-events: none
+
+.about-strategy__goal
+  position: relative
+  z-index: 1
+  margin: 0
+  width: 65.7rem
+  max-width: 100%
+  font-size: 4.2rem
+  line-height: 1.4
+  font-weight: 400
+
+.about-strategy__values
+  position: relative
+  background: var(--color-white)
+  color: var(--color-text)
+  padding: 15rem 0 25rem
+
+.about-strategy__values-line
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 50%
+  width: 0.1rem
+  background: var(--color-line)
+  pointer-events: none
+
+.about-strategy__values-inner
+  width: 192rem
+  max-width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding: 0 8rem 0 96rem
+  box-sizing: border-box
+
+.about-strategy__lead
+  margin: 0 0 8rem
+  max-width: 88rem
+  font-size: 3.2rem
+  line-height: 1.4
+  font-weight: 400
+
+.about-strategy__heading
+  margin: 0 0 3rem
+  max-width: 88rem
+  font-size: 4.2rem
+  line-height: 1.4
+  font-weight: 700
+  text-transform: uppercase
+
+.about-strategy__text
+  margin: 0 0 8rem
+  max-width: 88rem
+  font-size: 2.4rem
+  line-height: 1.4
+  font-weight: 400
+
+  &:last-child
+    margin-bottom: 0
