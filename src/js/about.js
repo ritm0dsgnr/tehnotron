@@ -5,6 +5,11 @@ import { getLenis } from "./smooth.js";
 gsap.registerPlugin(ScrollTrigger);
 
 export function initAbout() {
+  initAboutStages();
+  initAboutStrategy();
+}
+
+function initAboutStages() {
   const root = document.querySelector("[data-about-stages]");
   if (!root) return;
 
@@ -56,6 +61,62 @@ export function initAbout() {
     const lenis = getLenis();
     if (lenis) lenis.scrollTo(next, { duration: 0.6 });
     else window.scrollTo({ top: next, behavior: "smooth" });
+  });
+
+  const refresh = () => ScrollTrigger.refresh();
+  window.addEventListener("load", refresh, { once: true });
+  if (document.fonts?.ready) document.fonts.ready.then(refresh);
+}
+
+function initAboutStrategy() {
+  const root = document.querySelector("[data-about-strategy]");
+  if (!root) return;
+
+  const slides = gsap.utils.toArray(root.querySelectorAll("[data-about-strategy-slide]"));
+  if (slides.length < 2) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    root.classList.add("is-static");
+    slides.forEach((slide) => slide.classList.add("is-active"));
+    return;
+  }
+
+  root.classList.add("is-scroll-driven");
+
+  gsap.set(slides, { autoAlpha: 0 });
+  gsap.set(slides[0], { autoAlpha: 1 });
+  slides[0].classList.add("is-active");
+
+  const steps = slides.length - 1;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: root,
+      start: "top top",
+      end: () => `+=${steps * window.innerHeight}`,
+      pin: true,
+      scrub: 0.5,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const index = Math.min(steps, Math.round(self.progress * steps));
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("is-active", i === index);
+        });
+      },
+    },
+  });
+
+  slides.forEach((slide, i) => {
+    if (i === 0) return;
+    const at = i - 1;
+    tl.to(slides[i - 1], { autoAlpha: 0, duration: 0.55, ease: "power1.inOut" }, at);
+    tl.fromTo(
+      slide,
+      { autoAlpha: 0 },
+      { autoAlpha: 1, duration: 0.55, ease: "power1.inOut" },
+      at,
+    );
   });
 
   const refresh = () => ScrollTrigger.refresh();
