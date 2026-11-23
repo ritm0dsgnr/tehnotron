@@ -1,0 +1,65 @@
+<!-- data: {"title":"Гибка металла Технотрон","page":"service","header":"over"} -->
+<!doctype html>
+<html lang="ru">
+  {{> head}}
+  <body data-page="{{page}}">
+    {{> header}}
+    <main>
+      <section class="service-hero">
+        <div class="service-hero__media" aria-hidden="true">
+          <img src="/img/service/hero.jpg" alt="" width="2000" height="1333" />
+        </div>
+        <div class="service-hero__overlay" aria-hidden="true"></div>
+        <div class="service-hero__body">
+          <h1 class="service-hero__title">Гибка металла</h1>
+          <div class="service-hero__bottom">
+            <a class="service-hero__scroll" href="#tech" aria-label="К техническим возможностям"></a>
+            <p class="service-hero__lead">
+              Выполняем высокоточную гибку металла любой сложности. Наш станочный парк позволяет работать как с деликатными деталями, так и с массивными заготовками, обеспечивая идеальную геометрию угла по всей длине изделия.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-tech" id="tech">
+        <div class="service-tech__lines" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="service-tech__inner">
+          <h2 class="service-tech__title">Технические возможности</h2>
+          <div class="service-tech__grid">
+            <div class="service-tech__gallery" data-service-gallery>
+              <div class="service-tech__stage">
+                <img class="service-tech__photo is-active" src="/img/service/tech.jpg" alt="" width="3449" height="1912" data-service-photo />
+                <img class="service-tech__photo" src="/img/services/01.jpg" alt="" width="2000" height="1333" data-service-photo />
+              </div>
+              <button class="service-tech__nav service-tech__nav--prev" type="button" data-service-prev aria-label="Назад">
+                {{> icon-arrow}}
+              </button>
+              <button class="service-tech__nav service-tech__nav--next" type="button" data-service-next aria-label="Вперед">
+                {{> icon-arrow}}
+              </button>
+            </div>
+            <div class="service-tech__aside">
+              <ul class="service-tech__list">
+                <li>Пресс 500 т: длина до 4 м, толщина до 20 мм — для крупногабаритных и толстостенных изделий.</li>
+                <li>Пресс 160 т: длина до 3 м, толщина до 12 мм — универсальное решение для большинства задач.</li>
+                <li>Пресс 100 т: длина до 2 м, толщина до 8 мм — для серийных и небольших деталей.</li>
+              </ul>
+              <p class="service-tech__note">
+                Гарантируем точность и отсутствие дефектов на поверхности.<br />
+                Подробности уточняйте у отдела продаж
+                <a href="tel:88002004738">+7 800 200-47-38</a>
+              </p>
+              <a class="btn btn--outline service-tech__btn" href="contacts.html">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{> cta}}
+    </main>
+    {{> footer}}
+    {{> scripts}}
+  </body>
+</html>

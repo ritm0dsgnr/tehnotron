@@ -37,6 +37,7 @@ export default defineConfig({
         resources: resolve(__dirname, "resources.html"),
         career: resolve(__dirname, "career.html"),
         services: resolve(__dirname, "services.html"),
+        service: resolve(__dirname, "service.html"),
       },
     },
   },
