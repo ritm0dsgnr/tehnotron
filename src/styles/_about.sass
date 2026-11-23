@@ -186,6 +186,12 @@ body[data-page="about"]
   color: var(--color-text)
   padding-top: 10rem
   padding-bottom: 8rem
+  box-sizing: border-box
+
+.about-strategy__top.is-scroll-driven
+  height: 100rem
+  padding-bottom: 0
+  overflow: hidden
 
 .about-strategy__inner
   width: 192rem
@@ -193,6 +199,8 @@ body[data-page="about"]
   margin-left: auto
   margin-right: auto
   padding: 0 3rem
+  height: 100%
+  box-sizing: border-box
 
 .about-strategy__title
   margin: 0
@@ -209,6 +217,46 @@ body[data-page="about"]
   justify-content: flex-end
   min-height: 58.5rem
   margin-top: 0.6rem
+
+.about-strategy__top.is-scroll-driven .about-strategy__feature
+  flex: 1
+  min-height: 0
+  margin-top: 0
+
+.about-strategy__slide
+  position: absolute
+  inset: 0
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  width: 100%
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+
+  &.is-active
+    opacity: 1
+    visibility: visible
+    pointer-events: auto
+
+.about-strategy__top.is-static
+  height: auto
+
+  .about-strategy__feature
+    display: flex
+    flex-direction: column
+    align-items: stretch
+    justify-content: flex-start
+    gap: 6rem
+    min-height: 0
+
+  .about-strategy__slide
+    position: relative
+    inset: auto
+    min-height: 40rem
+    opacity: 1
+    visibility: visible
+    pointer-events: auto
 
 .about-strategy__num
   position: absolute
