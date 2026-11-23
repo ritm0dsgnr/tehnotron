@@ -37,6 +37,7 @@ export default defineConfig({
         reviews: resolve(__dirname, "reviews.html"),
         resources: resolve(__dirname, "resources.html"),
         career: resolve(__dirname, "career.html"),
+        about: resolve(__dirname, "about.html"),
         services: resolve(__dirname, "services.html"),
         service: resolve(__dirname, "service.html"),
       },
