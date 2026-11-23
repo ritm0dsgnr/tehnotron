@@ -1,75 +1,70 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getLenis } from "./smooth.js";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export function initAbout() {
   const root = document.querySelector("[data-about-stages]");
   if (!root) return;
 
   const track = root.querySelector("[data-about-stages-track]");
-  if (!track) return;
+  const list = track?.querySelector(".about-stages__list");
+  if (!track || !list) return;
 
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    initFallbackScroll(track);
+    return;
+  }
 
-  let dragging = false;
-  let startX = 0;
-  let startScroll = 0;
-  let moved = false;
+  root.classList.add("is-scroll-driven");
 
-  const maxScroll = () => Math.max(0, track.scrollWidth - track.clientWidth);
+  const getTravel = () => Math.max(0, list.scrollWidth - track.clientWidth);
 
-  const onWheel = (e) => {
-    if (track.scrollWidth <= track.clientWidth) return;
+  const tween = gsap.to(list, {
+    x: () => -getTravel(),
+    ease: "none",
+    scrollTrigger: {
+      trigger: root,
+      start: "top top",
+      end: () => `+=${Math.max(getTravel() * 1.05, window.innerHeight)}`,
+      pin: true,
+      scrub: 0.45,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    },
+  });
 
-    const absX = Math.abs(e.deltaX);
-    const absY = Math.abs(e.deltaY);
-    const horizontalIntent = absX > absY || e.shiftKey;
-    if (!horizontalIntent) return;
+  const st = tween.scrollTrigger;
 
-    const delta = e.shiftKey && absY >= absX ? e.deltaY : e.deltaX || e.deltaY;
-    const next = track.scrollLeft + delta;
-    const max = maxScroll();
-    if (next <= 0 && track.scrollLeft <= 0) return;
-    if (next >= max && track.scrollLeft >= max) return;
+  track.addEventListener("keydown", (e) => {
+    if (!st || getTravel() <= 0) return;
+
+    const range = st.end - st.start;
+    const step = Math.max(80, range * 0.08);
+    let next = window.scrollY;
+
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") next = st.start + st.progress * range + step;
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = st.start + st.progress * range - step;
+    else if (e.key === "Home") next = st.start;
+    else if (e.key === "End") next = st.end;
+    else return;
 
     e.preventDefault();
-    track.scrollLeft = Math.min(max, Math.max(0, next));
-  };
+    next = Math.min(st.end, Math.max(st.start, next));
 
-  track.addEventListener("wheel", onWheel, { passive: false });
+    const lenis = getLenis();
+    if (lenis) lenis.scrollTo(next, { duration: 0.6 });
+    else window.scrollTo({ top: next, behavior: "smooth" });
+  });
 
-  if (!reduceMotion) {
-    track.addEventListener("pointerdown", (e) => {
-      if (e.button !== 0 || e.pointerType === "touch") return;
-      dragging = true;
-      moved = false;
-      startX = e.clientX;
-      startScroll = track.scrollLeft;
-      track.classList.add("is-dragging");
-      track.setPointerCapture(e.pointerId);
-    });
+  const refresh = () => ScrollTrigger.refresh();
+  window.addEventListener("load", refresh, { once: true });
+  if (document.fonts?.ready) document.fonts.ready.then(refresh);
+}
 
-    track.addEventListener("pointermove", (e) => {
-      if (!dragging) return;
-      const dx = e.clientX - startX;
-      if (Math.abs(dx) > 3) moved = true;
-      track.scrollLeft = startScroll - dx;
-    });
-
-    const endDrag = (e) => {
-      if (!dragging) return;
-      dragging = false;
-      track.classList.remove("is-dragging");
-      try {
-        track.releasePointerCapture(e.pointerId);
-      } catch {
-        /* noop */
-      }
-    };
-
-    track.addEventListener("pointerup", endDrag);
-    track.addEventListener("pointercancel", endDrag);
-
-    track.addEventListener("click", (e) => {
-      if (moved) e.preventDefault();
-    });
-  }
+function initFallbackScroll(track) {
+  const maxScroll = () => Math.max(0, track.scrollWidth - track.clientWidth);
 
   track.addEventListener("keydown", (e) => {
     if (track.scrollWidth <= track.clientWidth) return;
