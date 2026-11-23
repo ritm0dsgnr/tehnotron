@@ -1,0 +1,85 @@
+<div class="request" id="request" data-request hidden>
+  <div class="request__shade" data-request-close tabindex="-1" aria-hidden="true"></div>
+  <div
+    class="request__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="request-title"
+    data-request-panel
+  >
+    <button class="request__close" type="button" data-request-close aria-label="Закрыть">
+      {{> icon-close}}
+    </button>
+
+    <div class="request__body" data-request-form-view>
+      <h2 class="request__title" id="request-title">Есть вопросы или нужна консультация специалиста?</h2>
+      <p class="request__lead">
+        Оставьте заявку, наш менеджер проконсультирует Вас по&nbsp;всем интересующим вопросам
+      </p>
+
+      <form class="request__form" data-request-form novalidate>
+        <label class="request__field">
+          <span class="visually-hidden">Имя</span>
+          <input class="request__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
+        </label>
+
+        <label class="request__field">
+          <span class="visually-hidden">Название компании</span>
+          <input
+            class="request__input"
+            type="text"
+            name="company"
+            placeholder="Название компании"
+            autocomplete="organization"
+          />
+        </label>
+
+        <label class="request__field">
+          <span class="visually-hidden">Телефон</span>
+          <input
+            class="request__input"
+            type="tel"
+            name="phone"
+            placeholder="Телефон *"
+            inputmode="numeric"
+            autocomplete="tel"
+            maxlength="15"
+            required
+            data-request-phone
+          />
+          <span class="request__error" data-request-error-phone>Не верно заполненное поле</span>
+        </label>
+
+        <label class="request__field">
+          <span class="visually-hidden">E-mail</span>
+          <input
+            class="request__input"
+            type="email"
+            name="email"
+            placeholder="E-mail *"
+            autocomplete="email"
+            required
+            data-request-email
+          />
+          <span class="request__error" data-request-error-email>Не верно заполненное поле</span>
+        </label>
+
+        <div class="request__actions">
+          <button class="request__submit" type="submit">Отправить</button>
+          <p class="request__consent">
+            Нажимая кнопку «Отправить», я даю свое согласие на обработку моих
+            <a href="consent.html">персональных данных</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div class="request__success" data-request-success hidden>
+      <div class="request__success-icon" aria-hidden="true">
+        <img class="request__success-circle" src="/img/request/success-circle.svg" alt="" width="100" height="100" />
+        <img class="request__success-check" src="/img/request/success-check.svg" alt="" width="35" height="25" />
+      </div>
+      <p class="request__success-text">Заявка успешно отправлена</p>
+    </div>
+  </div>
+</div>

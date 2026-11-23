@@ -1,0 +1,228 @@
+.request
+  position: fixed
+  inset: 0
+  z-index: 200
+  pointer-events: none
+
+.request.is-open
+  pointer-events: auto
+
+.request__shade
+  position: absolute
+  inset: 0
+  background: #191919
+  opacity: 0
+  transition: opacity var(--t)
+
+.request.is-open .request__shade
+  opacity: 0.4
+
+.request__panel
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 1
+  display: flex
+  flex-direction: column
+  width: 65rem
+  max-width: 100%
+  padding: 3.6rem 3rem 4rem
+  background: var(--color-white)
+  color: #242424
+  overflow: auto
+  transform: translateX(100%)
+  transition: transform var(--t)
+
+.request.is-open .request__panel
+  transform: translateX(0)
+
+.request__close
+  position: absolute
+  top: 2rem
+  right: 2rem
+  display: grid
+  place-items: center
+  width: 1.5rem
+  height: 1.5rem
+  color: #242424
+
+  &:hover
+    opacity: 0.7
+
+.request__body
+  display: flex
+  flex-direction: column
+  flex: 1
+  min-height: 0
+
+  &[hidden]
+    display: none
+
+  &[hidden]
+    display: none
+
+.request__title
+  margin: 0
+  max-width: 60rem
+  font-size: 3.2rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+  color: #242424
+
+.request__lead
+  margin: 3rem 0 0
+  max-width: 56.3rem
+  font-size: 2.2rem
+  line-height: normal
+  font-weight: 400
+  color: #242424
+  opacity: 0.5
+
+.request__form
+  display: flex
+  flex-direction: column
+  margin-top: 6.4rem
+  max-width: 59rem
+
+.request__field
+  display: block
+  position: relative
+  margin: 0 0 4.1rem
+
+  &:last-of-type
+    margin-bottom: 0
+
+.request__input
+  display: block
+  width: 100%
+  margin: 0
+  padding: 0 0 1.2rem
+  border: 0
+  border-bottom: 0.1rem solid #242424
+  border-radius: 0
+  background: transparent
+  color: #242424
+  font: inherit
+  font-size: 1.8rem
+  line-height: 1.2
+  outline: none
+  transition: border-color var(--t), color var(--t)
+
+  &::placeholder
+    color: #191919
+    opacity: 0.4
+    transition: opacity var(--t)
+
+  &:hover::placeholder
+    opacity: 0.2
+
+  &:focus::placeholder
+    opacity: 0.2
+
+  &.is-invalid
+    color: #ff3232
+    border-bottom-color: #ff3232
+
+.request__error
+  position: absolute
+  top: calc(100% + 0.8rem)
+  left: 0
+  margin: 0
+  font-size: 1.4rem
+  line-height: 1
+  color: #ff3232
+  opacity: 0
+  pointer-events: none
+  transition: opacity var(--t)
+
+  &.is-show
+    opacity: 1
+
+.request__actions
+  display: flex
+  align-items: flex-start
+  gap: 3rem
+  margin-top: 5.1rem
+
+.request__submit
+  flex-shrink: 0
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  min-width: 18.8rem
+  min-height: 6rem
+  padding: 2rem 3.6rem
+  border: 0.1rem solid #242424
+  background: transparent
+  color: #242424
+  font-size: 1.6rem
+  line-height: 1.2
+  font-weight: 700
+  text-transform: uppercase
+  transition: color var(--t), background-color var(--t), border-color var(--t)
+
+  &:hover
+    background: var(--color-blue)
+    border-color: var(--color-blue)
+    color: var(--color-white)
+
+.request__consent
+  margin: 1.4rem 0 0
+  max-width: 36.1rem
+  font-size: 1.4rem
+  line-height: normal
+  color: #242424
+
+  a
+    color: inherit
+    text-decoration: underline
+    text-underline-offset: 0.15em
+    transition: color var(--t)
+
+    &:hover
+      color: var(--color-blue)
+
+.request__success
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  flex: 1
+  min-height: 40rem
+  text-align: center
+
+  &[hidden]
+    display: none
+
+.request__success-icon
+  position: relative
+  width: 10rem
+  height: 10rem
+
+.request__success-circle
+  display: block
+  width: 10rem
+  height: 10rem
+
+.request__success-check
+  position: absolute
+  top: 50%
+  left: 50%
+  display: block
+  width: 3.5rem
+  height: 2.5rem
+  transform: translate(-50%, -50%)
+
+.request__success-text
+  margin: 3rem 0 0
+  max-width: 51.3rem
+  font-size: 3.2rem
+  line-height: 1.3
+  font-weight: 700
+  text-transform: uppercase
+  color: #242424
+
+html.is-request-open
+  overflow: hidden

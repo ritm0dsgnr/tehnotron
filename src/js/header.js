@@ -58,13 +58,6 @@ export function initHeader() {
   };
 
   const show = (y = window.scrollY) => {
-    if (menuOpen) {
-      header.classList.remove("is-hidden");
-      header.classList.toggle("is-scrolled", y > solidAfter());
-      lastY = y;
-      return;
-    }
-
     header.classList.remove("is-hidden");
     header.classList.toggle("is-scrolled", y > solidAfter());
     lastY = y;
@@ -83,7 +76,13 @@ export function initHeader() {
       return;
     }
 
-    const goingDown = y > lastY;
+    const delta = y - lastY;
+    if (Math.abs(delta) < 4) {
+      header.classList.toggle("is-scrolled", y > solidAfter());
+      return;
+    }
+
+    const goingDown = delta > 0;
     const past = y > 40;
     const solid = y > solidAfter();
 
@@ -92,7 +91,7 @@ export function initHeader() {
       header.classList.toggle("is-scrolled", solid);
     } else if (goingDown && past) {
       header.classList.add("is-hidden");
-      header.classList.remove("is-scrolled");
+      header.classList.toggle("is-scrolled", solid);
       closeAll();
     } else {
       header.classList.remove("is-hidden");
