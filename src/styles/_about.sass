@@ -1,5 +1,6 @@
 body[data-page="about"]
   background: #efefef
+  overflow-x: hidden
 
 .about-hero
   position: relative
@@ -60,10 +61,26 @@ body[data-page="about"]
 
 .about-stages
   position: relative
-  height: 100rem
+  z-index: 1
+  width: 100%
+  height: 100vh
   color: var(--color-white)
   overflow: hidden
   background: var(--color-black)
+
+.about-stages.is-scroll-driven
+  width: 100vw !important
+  max-width: none !important
+  left: 0 !important
+  right: 0 !important
+  margin-left: 0 !important
+  box-sizing: border-box
+
+.about-stages-gap
+  width: 100%
+  height: 0
+  pointer-events: none
+  visibility: hidden
 
 .about-stages__media,
 .about-stages__shade
@@ -122,7 +139,7 @@ body[data-page="about"]
   max-width: 100%
   margin-left: auto
   margin-right: auto
-  padding-top: 5rem
+  padding-top: 10rem
 
 .about-stages__title
   margin: 0
@@ -136,7 +153,9 @@ body[data-page="about"]
 .about-stages__track
   flex: 1
   min-height: 0
-  margin-top: 7rem
+  display: flex
+  align-items: center
+  margin-top: 0
   overflow-x: auto
   overflow-y: hidden
   scrollbar-width: none
@@ -158,9 +177,8 @@ body[data-page="about"]
   align-items: flex-start
   gap: 16.9rem
   width: max-content
-  min-height: 100%
   margin: 0
-  padding: 0 3rem 8rem 47.6rem
+  padding: 0 3rem 0 47.6rem
   list-style: none
   will-change: transform
 
@@ -182,25 +200,34 @@ body[data-page="about"]
   font-weight: 400
 
 .about-strategy__top
+  position: relative
+  z-index: 2
+  width: 100%
+  height: 100vh
+  box-sizing: border-box
+  overflow: hidden
   background: #efefef
   color: var(--color-text)
   padding-top: 10rem
-  padding-bottom: 8rem
-  box-sizing: border-box
+  padding-bottom: 0
 
 .about-strategy__top.is-scroll-driven
-  height: 100rem
-  padding-bottom: 0
-  overflow: hidden
+  width: 100vw !important
+  max-width: none !important
+  left: 0 !important
+  right: 0 !important
+  margin-left: 0 !important
 
 .about-strategy__inner
+  position: relative
+  z-index: 10
   width: 192rem
   max-width: 100%
   margin-left: auto
   margin-right: auto
-  padding: 0 3rem
-  height: 100%
+  padding: 0 3.3rem
   box-sizing: border-box
+  pointer-events: none
 
 .about-strategy__title
   margin: 0
@@ -211,71 +238,89 @@ body[data-page="about"]
   text-transform: uppercase
 
 .about-strategy__feature
-  position: relative
-  display: flex
-  align-items: center
-  justify-content: flex-end
-  min-height: 58.5rem
-  margin-top: 0.6rem
-
-.about-strategy__top.is-scroll-driven .about-strategy__feature
-  flex: 1
-  min-height: 0
-  margin-top: 0
+  position: absolute
+  inset: 0
+  z-index: 1
+  overflow: hidden
 
 .about-strategy__slide
   position: absolute
   inset: 0
-  display: flex
-  align-items: center
-  justify-content: flex-end
-  width: 100%
-  opacity: 0
-  visibility: hidden
+  overflow: hidden
+  background: transparent
   pointer-events: none
 
   &.is-active
-    opacity: 1
-    visibility: visible
     pointer-events: auto
 
 .about-strategy__top.is-static
   height: auto
+  overflow: visible
+  padding-bottom: 8rem
 
   .about-strategy__feature
+    position: relative
+    inset: auto
     display: flex
     flex-direction: column
-    align-items: stretch
-    justify-content: flex-start
     gap: 6rem
-    min-height: 0
+    overflow: visible
 
   .about-strategy__slide
     position: relative
     inset: auto
-    min-height: 40rem
-    opacity: 1
-    visibility: visible
+    min-height: 50rem
     pointer-events: auto
+    transform: none
+    overflow: hidden
+
+  .about-strategy__num
+    position: relative
+    left: auto
+    top: auto
+    transform: none
+    margin: 0 auto 4rem
+    font-size: 40rem
+    line-height: 1
+
+  .about-strategy__goal
+    position: relative
+    top: auto
+    left: auto
+    transform: none
+    margin: 0 auto
+    padding: 0 3rem
 
 .about-strategy__num
   position: absolute
-  left: 50%
+  left: calc(50% - 23.2rem)
   top: 50%
-  width: 21.7rem
-  height: auto
-  transform: translate(-54%, -50%)
+  z-index: 0
+  margin: 0
+  font-size: 84rem
+  line-height: 1
+  font-weight: 400
+  color: var(--color-white)
+  text-transform: uppercase
   pointer-events: none
+  user-select: none
+  white-space: nowrap
+  transform: translateY(-50%)
 
 .about-strategy__goal
-  position: relative
-  z-index: 1
+  position: absolute
+  left: calc(50% + 27.8rem)
+  top: 50%
+  z-index: 2
   margin: 0
   width: 65.7rem
-  max-width: 100%
+  max-width: calc(100% - 6rem)
   font-size: 4.2rem
   line-height: 1.4
   font-weight: 400
+  color: var(--color-text)
+  transform: translateY(-50%)
+  text-align: left
 
 .about-strategy__values
   position: relative
@@ -287,10 +332,22 @@ body[data-page="about"]
   position: absolute
   top: 0
   bottom: 0
-  left: 50%
-  width: 0.1rem
-  background: var(--color-line)
+  left: 0
+  right: 0
+  width: 100%
+  max-width: 192rem
+  margin-left: auto
+  margin-right: auto
   pointer-events: none
+
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 96rem
+    width: 0.1rem
+    background: var(--color-line)
 
 .about-strategy__values-inner
   width: 192rem
