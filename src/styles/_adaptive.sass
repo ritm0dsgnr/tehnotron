@@ -655,7 +655,7 @@
     font-size: 2.2rem
 
   .about-stages
-    height: 75rem
+    height: 100vh
 
   .about-stages__lines
     max-width: 144rem
@@ -678,11 +678,11 @@
     font-size: 5.2rem
 
   .about-stages__track
-    margin-top: 4rem
+    margin-top: 0
 
   .about-stages__list
     gap: 16.9rem
-    padding-left: 35.6rem
+    padding: 0 3rem 0 35.6rem
 
   .about-stages__item
     flex-basis: 47.7rem
@@ -696,11 +696,6 @@
 
   .about-strategy__top
     padding-top: 5rem
-    padding-bottom: 5rem
-
-  .about-strategy__top.is-scroll-driven
-    height: 75rem
-    padding-bottom: 0
 
   .about-strategy__inner
     width: 144rem
@@ -711,19 +706,23 @@
   .about-strategy__feature
     min-height: 43.9rem
 
-  .about-strategy__slide
-    align-items: center
-    justify-content: flex-end
-
   .about-strategy__num
-    width: 16.3rem
+    left: calc(50% - 17.4rem)
+    font-size: 63rem
 
   .about-strategy__goal
+    left: calc(50% + 20.9rem)
     width: 48.4rem
     font-size: 3.2rem
 
   .about-strategy__values
     padding: 15rem 0 20rem
+
+  .about-strategy__values-line
+    max-width: 144rem
+
+    &::before
+      left: 72.1rem
 
   .about-strategy__values-inner
     width: 144rem
@@ -1599,7 +1598,7 @@
     font-size: 2.4rem
 
   .about-stages
-    height: 133.4rem
+    height: 100vh
 
   .about-stages__lines
     max-width: 108rem
@@ -1622,12 +1621,12 @@
     font-size: 5rem
 
   .about-stages__track
-    margin-top: 7rem
+    margin-top: 0
 
   .about-stages__list
     align-items: flex-start
     gap: 0
-    padding: 0 3rem 8rem 35.6rem
+    padding: 0 3rem 0 35.6rem
 
   .about-stages__item
     flex: 0 0 53.4rem
@@ -1647,11 +1646,6 @@
 
   .about-strategy__top
     padding-top: 7rem
-    padding-bottom: 10rem
-
-  .about-strategy__top.is-scroll-driven
-    height: 133.4rem
-    padding-bottom: 0
 
   .about-strategy__inner
     width: 108rem
@@ -1660,34 +1654,29 @@
     font-size: 5.6rem
 
   .about-strategy__feature
-    flex-direction: column
-    align-items: flex-start
-    justify-content: flex-start
     min-height: 0
-    margin-top: 21.3rem
 
   .about-strategy__top.is-scroll-driven .about-strategy__feature
-    margin-top: 21.3rem
-
-  .about-strategy__slide
-    flex-direction: column
-    align-items: flex-start
-    justify-content: flex-start
+    margin-top: 0
 
   .about-strategy__num
-    position: absolute
-    left: 42.9rem
-    top: -17.8rem
-    width: 16.3rem
-    transform: none
+    left: calc(50% - 12rem)
+    font-size: 48rem
 
   .about-strategy__goal
+    left: auto
+    right: 3rem
     width: 48.4rem
-    margin-left: auto
     font-size: 3.2rem
 
   .about-strategy__values
     padding: 15rem 0 20rem
+
+  .about-strategy__values-line
+    max-width: 108rem
+
+    &::before
+      left: 72.1rem
 
   .about-strategy__values-inner
     width: 108rem
@@ -3088,14 +3077,14 @@
     font-size: 1.6rem
 
   .about-stages
-    height: 70rem
+    height: 100vh
 
   .about-stages__lines
     display: none
 
   .about-stages__body
     width: 100%
-    padding-top: 5rem
+    padding-top: 7rem
 
   .about-stages__title
     padding: 0 1.5rem
@@ -3103,11 +3092,11 @@
     font-size: 3.2rem
 
   .about-stages__track
-    margin-top: 5.9rem
+    margin-top: 0
 
   .about-stages__list
     gap: 0
-    padding: 0 1.5rem 5rem 6.5rem
+    padding: 0 1.5rem 0 6.5rem
 
   .about-stages__item
     flex: 0 0 22.6rem
@@ -3128,11 +3117,6 @@
 
   .about-strategy__top
     padding-top: 5rem
-    padding-bottom: 5rem
-
-  .about-strategy__top.is-scroll-driven
-    height: 70rem
-    padding-bottom: 0
 
   .about-strategy__inner
     width: 100%
@@ -3144,31 +3128,23 @@
     font-size: 2.8rem
 
   .about-strategy__feature
-    flex-direction: column
-    align-items: flex-start
-    justify-content: flex-start
     min-height: 0
-    margin-top: 9.8rem
 
   .about-strategy__top.is-scroll-driven .about-strategy__feature
-    margin-top: 9.8rem
-
-  .about-strategy__slide
-    flex-direction: column
-    align-items: flex-start
-    justify-content: flex-start
+    margin-top: 0
 
   .about-strategy__num
-    position: relative
-    left: auto
-    top: auto
-    width: 7.7rem
-    margin: 0 auto 10rem
-    transform: none
+    left: 50%
+    font-size: 28rem
+    transform: translate(-50%, -50%)
 
   .about-strategy__goal
-    width: 31.9rem
+    left: 1.5rem
+    right: 1.5rem
+    width: auto
+    max-width: none
     font-size: 1.8rem
+    transform: translateY(-50%)
 
   .about-strategy__values
     padding: 5rem 0 10rem

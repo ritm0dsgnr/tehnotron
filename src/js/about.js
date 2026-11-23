@@ -4,6 +4,8 @@ import { getLenis } from "./smooth.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const desktopPin = () => window.matchMedia("(min-width: 768px)").matches;
+
 export function initAbout() {
   initAboutStages();
   initAboutStrategy();
@@ -25,6 +27,34 @@ function initAboutStages() {
   root.classList.add("is-scroll-driven");
 
   const getTravel = () => Math.max(0, list.scrollWidth - track.clientWidth);
+  const cover = () => (desktopPin() ? window.innerHeight * 0.85 : 0);
+
+  let gap = root.nextElementSibling;
+  if (!gap?.hasAttribute("data-about-stages-gap")) {
+    gap = document.createElement("div");
+    gap.className = "about-stages-gap";
+    gap.setAttribute("data-about-stages-gap", "");
+    gap.setAttribute("aria-hidden", "true");
+    root.after(gap);
+  }
+
+  const syncGap = () => {
+    // Room for horizontal travel so strategy arrives only on cover (not on the pinned node)
+    root.style.marginBottom = "";
+    gap.style.height = desktopPin() ? `${getTravel()}px` : "0px";
+  };
+  syncGap();
+
+  ScrollTrigger.create({
+    trigger: root,
+    start: "top top",
+    end: () => `+=${getTravel() + cover()}`,
+    pin: true,
+    pinSpacing: !desktopPin(),
+    anticipatePin: 1,
+    invalidateOnRefresh: true,
+    onRefresh: syncGap,
+  });
 
   const tween = gsap.to(list, {
     x: () => -getTravel(),
@@ -32,10 +62,8 @@ function initAboutStages() {
     scrollTrigger: {
       trigger: root,
       start: "top top",
-      end: () => `+=${Math.max(getTravel() * 1.05, window.innerHeight)}`,
-      pin: true,
+      end: () => `+=${Math.max(getTravel(), window.innerHeight * 0.5)}`,
       scrub: 0.45,
-      anticipatePin: 1,
       invalidateOnRefresh: true,
     },
   });
@@ -63,7 +91,10 @@ function initAboutStages() {
     else window.scrollTo({ top: next, behavior: "smooth" });
   });
 
-  const refresh = () => ScrollTrigger.refresh();
+  const refresh = () => {
+    syncGap();
+    ScrollTrigger.refresh();
+  };
   window.addEventListener("load", refresh, { once: true });
   if (document.fonts?.ready) document.fonts.ready.then(refresh);
 }
@@ -83,11 +114,17 @@ function initAboutStrategy() {
 
   root.classList.add("is-scroll-driven");
 
-  gsap.set(slides, { autoAlpha: 0 });
-  gsap.set(slides[0], { autoAlpha: 1 });
-  slides[0].classList.add("is-active");
-
   const steps = slides.length - 1;
+  const rise = () => Math.min(120, window.innerHeight * 0.1);
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("is-active", i === 0);
+    gsap.set(slide, {
+      autoAlpha: i === 0 ? 1 : 0,
+      y: i === 0 ? 0 : rise(),
+      zIndex: i + 1,
+    });
+  });
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -109,13 +146,16 @@ function initAboutStrategy() {
 
   slides.forEach((slide, i) => {
     if (i === 0) return;
-    const at = i - 1;
-    tl.to(slides[i - 1], { autoAlpha: 0, duration: 0.55, ease: "power1.inOut" }, at);
+    tl.to(
+      slides[i - 1],
+      { autoAlpha: 0, y: () => -rise() * 0.4, duration: 1, ease: "none" },
+      i - 1,
+    );
     tl.fromTo(
       slide,
-      { autoAlpha: 0 },
-      { autoAlpha: 1, duration: 0.55, ease: "power1.inOut" },
-      at,
+      { autoAlpha: 0, y: () => rise() },
+      { autoAlpha: 1, y: 0, duration: 1, ease: "none", immediateRender: false },
+      i - 1,
     );
   });
 
