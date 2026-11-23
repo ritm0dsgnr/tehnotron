@@ -3,19 +3,26 @@ import "lenis/dist/lenis.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+let lenis = null;
+
+export function getLenis() {
+  return lenis;
+}
+
 export function initSmoothScroll() {
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 
-  if (location.hash) {
+  if (location.hash && location.hash !== "#request") {
     history.replaceState(null, "", location.pathname + location.search);
   }
   window.scrollTo(0, 0);
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    lenis = null;
     return null;
   }
 
-  const lenis = new Lenis({
+  lenis = new Lenis({
     duration: 1.1,
     smoothWheel: true,
     touchMultiplier: 1.2,

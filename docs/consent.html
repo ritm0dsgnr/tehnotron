@@ -13,8 +13,8 @@
     }
     window.scrollTo(0, 0);
   </script>
-  <script type="module" crossorigin src="/tehnotron/assets/main-B6LMXrve.js"></script>
-  <link rel="stylesheet" crossorigin href="/tehnotron/assets/main-CA8wDMnh.css">
+  <script type="module" crossorigin src="/tehnotron/assets/main-ox21WKd4.js"></script>
+  <link rel="stylesheet" crossorigin href="/tehnotron/assets/main-C5_OFH26.css">
 </head>
 
   <body data-page="consent">
@@ -257,7 +257,7 @@
         </div>
       </section>
 
-      <section class="cta" id="request">
+      <section class="cta">
   <div class="cta__lines" aria-hidden="true">
     <span></span>
     <span></span>
@@ -266,7 +266,7 @@
   <div class="cta__inner">
     <h2 class="cta__title">Есть вопросы или нужна консультация специалиста?</h2>
     <p class="cta__text">Оставьте заявку, наш менеджер проконсультирует Вас по всем интересующим вопросам</p>
-    <a class="btn btn--ghost" href="#request">Оставить заявку</a>
+    <a class="btn btn--ghost" href="#request" data-request-open>Оставить заявку</a>
 
     <h2 class="cta__title cta__title--address">Наш адрес</h2>
     <p class="cta__text">РФ, Республика Татарстан, г. Набережные Челны, ул. Моторная, 38</p>
@@ -329,7 +329,7 @@
   <use href="#phone"></use>
 </svg>
 <span>8 800 200-47-38</span></a>
-        <a class="btn btn--ghost" href="#request">Оставить заявку</a>
+        <a class="btn btn--ghost" href="#request" data-request-open>Оставить заявку</a>
         <p class="footer__muted">Мы в социальных сетях и меседжерах:</p>
         <div class="footer__socials">
           <a href="#" aria-label="VK"><svg class="icon icon--social" width="34" height="34" aria-hidden="true" focusable="false">
@@ -353,6 +353,95 @@
     </div>
   </div>
 </footer>
+
+    <div class="request" id="request" data-request hidden>
+  <div class="request__shade" data-request-close tabindex="-1" aria-hidden="true"></div>
+  <div
+    class="request__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="request-title"
+    data-request-panel
+  >
+    <button class="request__close" type="button" data-request-close aria-label="Закрыть">
+      <svg class="icon icon--close" width="14" height="14" aria-hidden="true" focusable="false">
+  <use href="#close"></use>
+</svg>
+
+    </button>
+
+    <div class="request__body" data-request-form-view>
+      <h2 class="request__title" id="request-title">Есть вопросы или нужна консультация специалиста?</h2>
+      <p class="request__lead">
+        Оставьте заявку, наш менеджер проконсультирует Вас по&nbsp;всем интересующим вопросам
+      </p>
+
+      <form class="request__form" data-request-form novalidate>
+        <label class="request__field">
+          <span class="visually-hidden">Имя</span>
+          <input class="request__input" type="text" name="name" placeholder="Имя" autocomplete="name" />
+        </label>
+
+        <label class="request__field">
+          <span class="visually-hidden">Название компании</span>
+          <input
+            class="request__input"
+            type="text"
+            name="company"
+            placeholder="Название компании"
+            autocomplete="organization"
+          />
+        </label>
+
+        <label class="request__field">
+          <span class="visually-hidden">Телефон</span>
+          <input
+            class="request__input"
+            type="tel"
+            name="phone"
+            placeholder="Телефон *"
+            inputmode="numeric"
+            autocomplete="tel"
+            maxlength="15"
+            required
+            data-request-phone
+          />
+          <span class="request__error" data-request-error-phone>Не верно заполненное поле</span>
+        </label>
+
+        <label class="request__field">
+          <span class="visually-hidden">E-mail</span>
+          <input
+            class="request__input"
+            type="email"
+            name="email"
+            placeholder="E-mail *"
+            autocomplete="email"
+            required
+            data-request-email
+          />
+          <span class="request__error" data-request-error-email>Не верно заполненное поле</span>
+        </label>
+
+        <div class="request__actions">
+          <button class="request__submit" type="submit">Отправить</button>
+          <p class="request__consent">
+            Нажимая кнопку «Отправить», я даю свое согласие на обработку моих
+            <a href="consent.html">персональных данных</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div class="request__success" data-request-success hidden>
+      <div class="request__success-icon" aria-hidden="true">
+        <img class="request__success-circle" src="/tehnotron/img/request/success-circle.svg" alt="" width="100" height="100" />
+        <img class="request__success-check" src="/tehnotron/img/request/success-check.svg" alt="" width="35" height="25" />
+      </div>
+      <p class="request__success-text">Заявка успешно отправлена</p>
+    </div>
+  </div>
+</div>
 
 
   </body>

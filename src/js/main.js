@@ -9,6 +9,7 @@ import { initCard } from "./card.js";
 import { initArticle } from "./article.js";
 import { initCareer } from "./career.js";
 import { initService } from "./service.js";
+import { initRequest } from "./request.js";
 
 initSmoothScroll();
 initHeader();
@@ -21,3 +22,4 @@ initArticle();
 initCareer();
 initService();
 initMap();
+initRequest();

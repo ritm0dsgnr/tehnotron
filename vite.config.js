@@ -1,12 +1,13 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import { htmlPartials } from "./scripts/vite-html-partials.js";
+import { fixViteEnvDefines } from "./scripts/vite-fix-env-defines.js";
 
 export default defineConfig({
   root: ".",
   base: "/tehnotron/",
   publicDir: "public",
-  plugins: [htmlPartials()],
+  plugins: [htmlPartials(), fixViteEnvDefines()],
   server: {
     watch: {
       ignored: [
