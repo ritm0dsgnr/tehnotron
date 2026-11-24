@@ -12,8 +12,35 @@
       history.replaceState(null, "", location.pathname + location.search);
     }
     window.scrollTo(0, 0);
-  </script>
-  <script type="module" crossorigin src="/tehnotron/assets/main-DvLZoNzR.js"></script>
+  </script>
+  <style id="page-transition-css">
+    html::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      background: #fff;
+      pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.55s ease, visibility 0.55s ease;
+    }
+    html.is-page-ready:not(.is-page-leaving)::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+    html.is-page-leaving::before {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.35s ease;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html::before {
+        display: none !important;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="/tehnotron/assets/main-waoc5lM0.js"></script>
   <link rel="stylesheet" crossorigin href="/tehnotron/assets/main-B7URWodp.css">
 </head>
 

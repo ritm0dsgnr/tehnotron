@@ -11,7 +11,9 @@ import { initCareer } from "./career.js";
 import { initAbout } from "./about.js";
 import { initService } from "./service.js";
 import { initRequest } from "./request.js";
+import { initPageTransition } from "./transition.js";
 
+initPageTransition();
 initSmoothScroll();
 initHeader();
 initHero();
